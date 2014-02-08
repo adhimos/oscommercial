@@ -215,7 +215,11 @@
       if (SESSION_RECREATE == 'True') {
         tep_session_recreate();
       }
-
+	
+	//Email Authentication
+	$hash=md5(rand(1, 50000));
+	tep_db_query("update" . TABLE_CUSTOMERS . " set customers_authentication='" . $hash. "' where customers_id = '" . (int)$customer_id . "'");
+	
       $customer_first_name = $firstname;
       $customer_default_address_id = $address_id;
       $customer_country_id = $country;

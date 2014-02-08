@@ -1,6 +1,6 @@
 <?php
-  define('HTTP_SERVER', 'http://192.168.56.105');
-  define('HTTPS_SERVER', 'http://192.168.56.105');
+  define('HTTP_SERVER', 'http://192.168.56.101');
+  define('HTTPS_SERVER', 'http://192.168.56.101');
   define('ENABLE_SSL', false);
   define('HTTP_COOKIE_DOMAIN', '');
   define('HTTPS_COOKIE_DOMAIN', '');
