@@ -22,6 +22,7 @@
   tep_session_unregister('customer_country_id');
   tep_session_unregister('customer_zone_id');
   tep_session_unregister('comments');
+  tep_session_unregister('assistant');
 
   $cart->reset();
 
