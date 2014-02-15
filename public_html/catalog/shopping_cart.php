@@ -170,13 +170,9 @@
   </div>
 </div>
 
-
-
-
-
-<?php 
+<?php
   }
-include_customer_assistant("If you need to change the number of item you want to buy from each product; please press the corresponding 'Update' button after doing so. This would update the total price. Check the total price of the item(s). If you have a paypal account you can proceed through the Paypal check out.", 60, -21, 114); 
+
   require(DIR_WS_INCLUDES . 'template_bottom.php');
   require(DIR_WS_INCLUDES . 'application_bottom.php');
 ?>

@@ -211,11 +211,6 @@ $("#piGal a[rel^='fancybox']").fancybox({
 </div>
 
 </form>
-<?php
-include_customer_assistant("You can proceed to buy the item by clicking on 'Add to Cart' button. In case we have product available in multiple configurations; you can select the required configuration as well. You may also read the reviews to get a better idea of the product.", 40, -281, 116);
-?>
-
-
 
 <?php
   }

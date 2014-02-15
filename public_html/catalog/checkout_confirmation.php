@@ -312,12 +312,6 @@ $('#coProgressBar').progressbar({
 </form>
 
 <?php
-include_customer_assistant("<b>Chekc whether all the details are correct.</b> You may stil can change any detail by clicking on the corresponding 'Edit' buttons. Finally press onthe 'Confirm Order' button to purchase the item.", 90, -393, -360);
-?>
-
-
-
-<?php
   require(DIR_WS_INCLUDES . 'template_bottom.php');
   require(DIR_WS_INCLUDES . 'application_bottom.php');
 ?>

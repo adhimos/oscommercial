@@ -113,12 +113,6 @@
 </form>
 
 <?php
-include_customer_assistant("<b>Your order has been placed successfully.</b> Please tick the check boxes if you want to receive immeidiate updates of each items. Please press continue to start a new order.", 100);
-?>
-
-
-
-<?php
   require(DIR_WS_INCLUDES . 'template_bottom.php');
   require(DIR_WS_INCLUDES . 'application_bottom.php');
 ?>

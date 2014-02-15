@@ -132,9 +132,6 @@
     <?php echo tep_draw_button(IMAGE_BUTTON_BACK, 'triangle-1-w', tep_href_link(FILENAME_PRODUCT_INFO, tep_get_all_get_params())); ?>
   </div>
 </div>
-<?php
-include_customer_assistant("You can proceed to buy the item by clicking on 'Add to Cart' button. You may check the existing reviews or write a review.", 40, 32, 145);
-?>
 
 <?php
   require(DIR_WS_INCLUDES . 'template_bottom.php');

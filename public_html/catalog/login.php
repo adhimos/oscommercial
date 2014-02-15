@@ -25,15 +25,23 @@
     $password = tep_db_prepare_input($HTTP_POST_VARS['password']);
 
 // Check if email exists
-    $check_customer_query = tep_db_query("select customers_id, customers_firstname, customers_password, customers_email_address, customers_default_address_id from " . TABLE_CUSTOMERS . " where customers_email_address = '" . tep_db_input($email_address) . "'");
+    $check_customer_query = tep_db_query("select customers_id, customers_firstname, customers_password, customers_email_address, customers_default_address_id, customers_verified from " . TABLE_CUSTOMERS . " where customers_email_address = '" . tep_db_input($email_address) . "'");
+    
+    
     if (!tep_db_num_rows($check_customer_query)) {
       $error = true;
     } else {
       $check_customer = tep_db_fetch_array($check_customer_query);
+	
 // Check that password is good
-      if (!tep_validate_password($password, $check_customer['customers_password'])) {
+      if (!(tep_validate_password($password, $check_customer['customers_password']))) {
         $error = true;
       } else {
+      	
+		if ($check_customer['customers_verified']==0){
+			$error=true;
+		}
+		else{
         if (SESSION_RECREATE == 'True') {
           tep_session_recreate();
         }
@@ -74,8 +82,8 @@
         }
       }
     }
+   }
   }
-
   if ($error == true) {
     $messageStack->add('login', TEXT_LOGIN_ERROR);
   }

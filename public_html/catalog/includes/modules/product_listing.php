@@ -148,7 +148,7 @@
   } else {
 ?>
 
-    <p><?php echo TEXT_NO_PRODUCTS; $no_products = true;?></p>
+    <p><?php echo TEXT_NO_PRODUCTS; ?></p>
 
 <?php
   }
