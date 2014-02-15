@@ -356,10 +356,6 @@ $('#coProgressBar').progressbar({
 </form>
 
 <?php
-include_customer_assistant("Please check and verify the shipping address is correct. If not please change the address before proceeding to the next step. Click Continue button to go to the next step.", 70, -385, -345);
-?>
-
-<?php
   require(DIR_WS_INCLUDES . 'template_bottom.php');
   require(DIR_WS_INCLUDES . 'application_bottom.php');
 ?>

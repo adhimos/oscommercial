@@ -1,7 +1,7 @@
 <?php
-  define('HTTP_SERVER', 'http://192.168.56.105');
-  define('HTTP_CATALOG_SERVER', 'http://192.168.56.105');
-  define('HTTPS_CATALOG_SERVER', 'http://192.168.56.105');
+  define('HTTP_SERVER', 'http://192.168.56.101');
+  define('HTTP_CATALOG_SERVER', 'http://192.168.56.101');
+  define('HTTPS_CATALOG_SERVER', 'http://192.168.56.101');
   define('ENABLE_SSL_CATALOG', 'false');
   define('DIR_FS_DOCUMENT_ROOT', '/home/student/public_html/catalog/');
   define('DIR_WS_ADMIN', '/catalog/admin/');
