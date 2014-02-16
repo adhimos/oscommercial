@@ -22,6 +22,7 @@ class pfcCommand_join extends pfcCommand
     $sender      = $p["sender"];
     $recipient   = $p["recipient"];
     $recipientid = $p["recipientid"];
+	
 
     $c =& pfcGlobalConfig::Instance();
     $u =& pfcUserConfig::Instance();
@@ -31,18 +32,47 @@ class pfcCommand_join extends pfcCommand
     $chanid    = pfcCommand_join::GetRecipientId($channame);
 	
 	//Modification of the file for assignement
-	$check_room_query=tep_db_query("select room_owner from " . TABLE_CHAT_ROOM . " where room_name = '" . $channame . "'");
+	
+    $verify=true;
+	
+	
+	if(isset($p['verify'])){
+		$verify=$p['verify'];
+	}
+	
+	
+	$safe_channame=mysql_real_escape_string($channame);
+	$safe_sender=mysql_real_escape_string($sender);
+	
+	
+	$check_room_query=tep_db_query("select count(*) as total ,room_owner from " . TABLE_CHAT_ROOM . " where room_name = '" . $safe_channame . "'");
     $check_room=tep_db_fetch_array($check_room_query);
 	
-    if ($channame == "" OR $check_room)
+	
+	$room_owner=$check_room['room_owner'];
+	if($check_room['total']==0)
+	{
+		$room_owner=$safe_sender;
+		$check_chat_query = tep_db_query("INSERT INTO `".TABLE_CHAT_ROOM."`(`room_name`, `room_owner`) VALUES ('".$safe_channame."','".$room_owner."')");
+		
+	}
+	
+	
+	if (($room_owner!=$safe_sender AND $safe_channame!="Common Room") AND $verify AND $safe_channame!="")
     {
       $cmdp = $p;
-      $cmdp["param"] = _pfc("Missing parameter");
+      $cmdp["param"] = _pfc("You can't join this room");
       $cmdp["param"] .= " (".$this->usage.")";
       $cmd =& pfcCommand::Factory("error");
       $cmd->run($xml_reponse, $cmdp);
       return;
     }
+	 //isset($res['verify']) ? $res['verify']:true;   
+
+	
+
+	
+
     
     if(!isset($u->channels[$chanid]))
     {

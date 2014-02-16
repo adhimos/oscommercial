@@ -2,7 +2,7 @@
   'serverid' => '237faee55c05db8dd56effc62c2b5c56',
   'language' => '',
   'output_encoding' => 'UTF-8',
-  'max_nick_len' => 15,
+  'max_nick_len' => 30,
   'frozen_nick' => true,
   'nickmeta_private' => 
   array (
@@ -89,7 +89,7 @@
   'short_url' => true,
   'short_url_width' => 40,
   'display_ping' => true,
-  'display_pfc_logo' => true,
+  'display_pfc_logo' => false,
   'displaytabimage' => true,
   'displaytabclosebutton' => true,
   'showwhosonline' => true,
@@ -281,7 +281,7 @@
   array (
   ),
   'is_init' => true,
-  'version' => '1.7',
+  'version' => '',
   'container_cfg_chat_dir' => '/home/student/public_html/catalog/phpfreechat/src/../data/private/chat',
   'container_cfg_server_dir' => '/home/student/public_html/catalog/phpfreechat/src/../data/private/chat/s_237faee55c05db8dd56effc62c2b5c56',
 );

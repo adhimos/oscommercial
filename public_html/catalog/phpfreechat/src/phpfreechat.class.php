@@ -239,7 +239,11 @@ class phpFreeChat
     $params      = array_slice(is_array($res['params']) ? $res['params'] : array() ,2);
     $param       = implode(" ",$params); // to keep compatibility (will be removed)
     $sender      = $u->getNickname();
-    
+	
+	//WebSecurity
+	$verify=isset($res['verify']) ? $res['verify']:true;  
+	
+	
     // translate the recipientid to the channel name
     if (isset($u->channels[$recipientid]))
     {
@@ -277,6 +281,8 @@ class phpFreeChat
     $cmdp["sender"]      = $sender;
     $cmdp["recipient"]   = $recipient;
     $cmdp["recipientid"] = $recipientid;
+	//Web Security
+	$cmdp['verify']=$verify;
     // before playing the wanted command
     // play the found commands into the meta 'cmdtoplay'
     pfcCommand::RunPendingCmdToPlay($u->nickid, $cmdp, $xml_reponse);    

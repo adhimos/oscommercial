@@ -9,8 +9,8 @@ div#pfc_container {
   color: #000;
   padding: 10px;
   min-height: 20px;
-  background-color: #FFF;
-  background-image: url("<?php echo $c->getFileUrlFromTheme('images/background.gif'); ?>");
+  background-color: #A9D0F5;
+  /*background-image: url("<?php echo $c->getFileUrlFromTheme('images/background.gif'); ?>");*/
   background-position: right;
 /*  background-repeat: repeat-xy;*/
   font-family: Verdana, Sans-Serif; /* without this rule, the tabs are not correctly display on FF */

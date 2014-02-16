@@ -2,6 +2,10 @@
 
 require_once(dirname(__FILE__)."/../pfccommand.class.php");
 
+//Modification for osCommerce
+set_include_path('/home/student/public_html/catalog/');
+require_once('includes/application_top.php');
+
 class pfcCommand_quit extends pfcCommand
 {
   function run(&$xml_reponse, $p)
@@ -17,6 +21,13 @@ class pfcCommand_quit extends pfcCommand
     $ct =& pfcContainer::Instance();
 
     $nick = $ct->getNickname($u->nickid);
+	
+	//Deleting the chat rooms associated to sender
+	$safe_sender=mysql_real_escape_string($sender);
+	
+	
+	$check_room_query=tep_db_query("delete from " . TABLE_CHAT_ROOM . " where room_owner = '" . $safe_sender . "'");
+    
     
     // leave the channels
     foreach( $u->channels as $id => $chandetail )

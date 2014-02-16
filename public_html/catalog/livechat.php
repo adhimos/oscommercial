@@ -8,34 +8,39 @@
     tep_redirect(tep_href_link(FILENAME_LOGIN, '', 'SSL'));
 	}
   	
-	$check_customer_query = tep_db_query("select customers_firstname, customers_lastname from " . TABLE_CUSTOMERS . " where customers_id = '" . (int)$customer_id . "'");
+	$check_customer_query = tep_db_query("select customers_firstname, customers_lastname, customers_id from " . TABLE_CUSTOMERS . " where customers_id = '" . (int)$customer_id . "'");
     $check_customer = tep_db_fetch_array($check_customer_query);
-	$name=$check_customer['customers_firstname']."".$check_customer['customers_lastname'];
+	$name=$check_customer['customers_firstname']."".$check_customer['customers_lastname'].$check_customer['customers_id'];
+	$name=mysql_real_escape_string($name);
 	
+	/*
 	//WATCH FOR SQL INJECTION WITH $NAME
 	$check_chat_query = tep_db_query("select room_name from " . TABLE_CHAT_ROOM. " where room_owner = '" . $name . "'");
+
 	$not_found=true;
-	while ($check_chat=tep_db_fetch_array($check_chat) AND not_found)
+	while ($check_chat=tep_db_fetch_array($check_chat_query) AND not_found)
 	{
-		if($check_chat['room_name']=="Private Room ".$name)
+		if($check_chat['room_name']=="private room ".$name)
 		{
 			$not_found=false;
 		}
 	}
-	/*
+	
 	if($not_found)
 	{
-		$check_chat_query = tep_db_query("INSERT INTO `".TABLE_CHAT_ROOM."`(`room_name`, `room_owner`) VALUES ('Private Room ".$name."','".$name."')");
+		$check_chat_query = tep_db_query("INSERT INTO `".TABLE_CHAT_ROOM."`(`room_name`, `room_owner`) VALUES ('private room ".$name."','".$name."')");
 	}
-	 */ 
+	 */
   //Chat
   
   require_once "phpfreechat/src/phpfreechat.class.php"; // adjust to your own path
   $params["serverid"] = md5(__FILE__); // used to identify the chat
   $params["title"]="osCommerce Chat Room";
-  $params["channels"]=array("Common Room","Private Room ".$name);
+  $params["channels"]=array("Common Room");
+  $params["max_nick_len"] = 30;
   $params["nick"]=$name;
-  $params['admins'] = array('arnauddhimolea'  => 'dhimos',
+  $params["theme"]="default";
+  $params['admins'] = array('arnauddhimolea19'  => 'dhimos',
                             'boby' => 'bobypw');
   $params["frozen_nick"]=true;
   /*

@@ -395,7 +395,7 @@ class pfcGlobalConfig
    * before setting this to false!
    * (Default value: true)</p>
    */
-  var $display_pfc_logo = true; 
+  var $display_pfc_logo = false; 
 
   /**
    * <p>Used to show/hide the images in the channels and pv tabs.
