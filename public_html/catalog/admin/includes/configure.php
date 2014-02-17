@@ -1,13 +1,13 @@
 <?php
-  define('HTTP_SERVER', 'http://192.168.56.105');
-  define('HTTP_CATALOG_SERVER', 'http://192.168.56.105');
-  define('HTTPS_CATALOG_SERVER', 'http://192.168.56.105');
+  define('HTTP_SERVER', 'http://localhost');
+  define('HTTP_CATALOG_SERVER', 'http://localhost');
+  define('HTTPS_CATALOG_SERVER', 'http://localhost');
   define('ENABLE_SSL_CATALOG', 'false');
-  define('DIR_FS_DOCUMENT_ROOT', '/home/student/public_html/catalog/');
+  define('DIR_FS_DOCUMENT_ROOT', 'C:/OsCommerce/SRC/oscommercial/public_html/catalog/');
   define('DIR_WS_ADMIN', '/catalog/admin/');
-  define('DIR_FS_ADMIN', '/home/student/public_html/catalog/admin/');
+  define('DIR_FS_ADMIN', 'C:/OsCommerce/SRC/oscommercial/public_html/catalog/admin/');
   define('DIR_WS_CATALOG', '/catalog/');
-  define('DIR_FS_CATALOG', '/home/student/public_html/catalog/');
+  define('DIR_FS_CATALOG', 'C:/OsCommerce/SRC/oscommercial/public_html/catalog/');
   define('DIR_WS_IMAGES', 'images/');
   define('DIR_WS_ICONS', DIR_WS_IMAGES . 'icons/');
   define('DIR_WS_CATALOG_IMAGES', DIR_WS_CATALOG . 'images/');
@@ -28,7 +28,7 @@
   define('DB_SERVER', 'localhost');
   define('DB_SERVER_USERNAME', 'root');
   define('DB_SERVER_PASSWORD', 'student');
-  define('DB_DATABASE', 'osCommerce');
+  define('DB_DATABASE', 'oscommerce');
   define('USE_PCONNECT', 'false');
   define('STORE_SESSIONS', 'mysql');
   define('CFG_TIME_ZONE', 'Asia/Singapore');

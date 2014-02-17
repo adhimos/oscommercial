@@ -67,7 +67,12 @@
         'code' => FILENAME_WHOS_ONLINE,
         'title' => BOX_TOOLS_WHOS_ONLINE,
         'link' => tep_href_link(FILENAME_WHOS_ONLINE)
-      )
+      ),
+        array(
+            'code' => FILENAME_WEB_ANALYTICS,
+            'title' => BOX_TOOLS_WEB_ANALYTICS,
+            'link' => tep_href_link(FILENAME_WEB_ANALYTICS)
+        )
     )
   );
 ?>

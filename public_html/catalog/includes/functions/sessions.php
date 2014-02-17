@@ -98,13 +98,13 @@
     if ($sane_session_id == false) {
       tep_redirect(tep_href_link(FILENAME_DEFAULT, '', 'NONSSL', false));
     }
-
+	
     return session_start();
   }
 
   function tep_session_register($variable) {
     global $session_started;
-
+    
     if ($session_started == true) {
       if (PHP_VERSION < 4.3) {
         return session_register($variable);
@@ -183,4 +183,5 @@
       }
     }
   }
+
 ?>

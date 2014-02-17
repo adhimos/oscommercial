@@ -76,19 +76,35 @@
       $messageStack->add('addressbook', ENTRY_LAST_NAME_ERROR);
     }
 
-    if (strlen($street_address) < ENTRY_STREET_ADDRESS_MIN_LENGTH) {
+    // if (strlen($street_address) < ENTRY_STREET_ADDRESS_MIN_LENGTH) {
+      // $error = true;
+
+      // $messageStack->add('addressbook', ENTRY_STREET_ADDRESS_ERROR);
+    // }
+
+    // if (strlen($postcode) < ENTRY_POSTCODE_MIN_LENGTH) {
+      // $error = true;
+
+      // $messageStack->add('addressbook', ENTRY_POST_CODE_ERROR);
+    // }
+
+    // if (strlen($city) < ENTRY_CITY_MIN_LENGTH) {
+	// social login start 
+    if (strlen($street_address) < ENTRY_STREET_ADDRESS_MIN_LENGTH || $street_address=="default") {
+// social login end 
       $error = true;
 
       $messageStack->add('addressbook', ENTRY_STREET_ADDRESS_ERROR);
     }
-
-    if (strlen($postcode) < ENTRY_POSTCODE_MIN_LENGTH) {
+// social login start 
+    if (strlen($postcode) < ENTRY_POSTCODE_MIN_LENGTH || $postcode == "default") {
+// social login end 
       $error = true;
-
-      $messageStack->add('addressbook', ENTRY_POST_CODE_ERROR);
+	   $messageStack->add('addressbook', ENTRY_POST_CODE_ERROR);
     }
-
-    if (strlen($city) < ENTRY_CITY_MIN_LENGTH) {
+// social login start 
+    if (strlen($city) < ENTRY_CITY_MIN_LENGTH || $city == "default") {
+// social login end 
       $error = true;
 
       $messageStack->add('addressbook', ENTRY_CITY_ERROR);
@@ -149,7 +165,9 @@
         $check_query = tep_db_query("select address_book_id from " . TABLE_ADDRESS_BOOK . " where address_book_id = '" . (int)$HTTP_GET_VARS['edit'] . "' and customers_id = '" . (int)$customer_id . "' limit 1");
         if (tep_db_num_rows($check_query) == 1) {
           tep_db_perform(TABLE_ADDRESS_BOOK, $sql_data_array, 'update', "address_book_id = '" . (int)$HTTP_GET_VARS['edit'] . "' and customers_id ='" . (int)$customer_id . "'");
-
+// social login start		  
+		  tep_db_query("update " . TABLE_CUSTOMERS_INFO . " set valid_address = 1 where customers_info_id = '" . (int)$customer_id . "'");
+// social login end	
 // reregister session variables
           if ( (isset($HTTP_POST_VARS['primary']) && ($HTTP_POST_VARS['primary'] == 'on')) || ($HTTP_GET_VARS['edit'] == $customer_default_address_id) ) {
             $customer_first_name = $firstname;

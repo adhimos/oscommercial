@@ -127,7 +127,7 @@
 
 // include navigation history class
   require(DIR_WS_CLASSES . 'navigation_history.php');
-
+ 
 // define how the session functions will be used
   require(DIR_WS_FUNCTIONS . 'sessions.php');
 
@@ -485,4 +485,11 @@
 // initialize the message stack for output messages
   require(DIR_WS_CLASSES . 'message_stack.php');
   $messageStack = new messageStack;
+
+  
+   //cs5331 - web analytics
+  require(DIR_WS_FUNCTIONS . 'web_analytics.php');
+
 ?>
+
+

@@ -1,6 +1,6 @@
 <?php
-  define('HTTP_SERVER', 'http://192.168.56.101');
-  define('HTTPS_SERVER', 'http://192.168.56.101');
+  define('HTTP_SERVER', 'http://localhost');
+  define('HTTPS_SERVER', 'http://localhost');
   define('ENABLE_SSL', false);
   define('HTTP_COOKIE_DOMAIN', '');
   define('HTTPS_COOKIE_DOMAIN', '');
@@ -17,14 +17,14 @@
   define('DIR_WS_LANGUAGES', DIR_WS_INCLUDES . 'languages/');
 
   define('DIR_WS_DOWNLOAD_PUBLIC', 'pub/');
-  define('DIR_FS_CATALOG', '/home/student/public_html/catalog/');
+  define('DIR_FS_CATALOG', 'C:/OsCommerce/SRC/oscommercial/public_html/catalog/');
   define('DIR_FS_DOWNLOAD', DIR_FS_CATALOG . 'download/');
   define('DIR_FS_DOWNLOAD_PUBLIC', DIR_FS_CATALOG . 'pub/');
 
   define('DB_SERVER', 'localhost');
   define('DB_SERVER_USERNAME', 'root');
   define('DB_SERVER_PASSWORD', 'student');
-  define('DB_DATABASE', 'osCommerce');
+  define('DB_DATABASE', 'oscommerce');
   define('USE_PCONNECT', 'false');
   define('STORE_SESSIONS', 'mysql');
   define('CFG_TIME_ZONE', 'Asia/Singapore');

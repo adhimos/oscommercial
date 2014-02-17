@@ -109,7 +109,9 @@ define('BOX_TOOLS_SEC_DIR_PERMISSIONS', 'Security Directory Permissions');
 define('BOX_TOOLS_SERVER_INFO', 'Server Info');
 define('BOX_TOOLS_VERSION_CHECK', 'Version Checker');
 define('BOX_TOOLS_WHOS_ONLINE', 'Who\'s Online');
-
+//web analytics
+define('BOX_TOOLS_WEB_ANALYTICS', 'Web Analytics');
+//web analytics
 // localizaion box text in includes/boxes/localization.php
 define('BOX_HEADING_LOCALIZATION', 'Localization');
 define('BOX_LOCALIZATION_CURRENCIES', 'Currencies');
@@ -167,6 +169,12 @@ define('ENTRY_EMAIL_ADDRESS', 'E-Mail Address:');
 define('ENTRY_EMAIL_ADDRESS_ERROR', '&nbsp;<span class="errorText">min ' . ENTRY_EMAIL_ADDRESS_MIN_LENGTH . ' chars</span>');
 define('ENTRY_EMAIL_ADDRESS_CHECK_ERROR', '&nbsp;<span class="errorText">The email address doesn\'t appear to be valid!</span>');
 define('ENTRY_EMAIL_ADDRESS_ERROR_EXISTS', '&nbsp;<span class="errorText">This email address already exists!</span>');
+// social login start
+define('ENTRY_SOCIAL_LOGIN_COMPLETE_ERROR', 'During the signup process we could not retieve all the required information !
+Please make the necessary corrections ');
+define('SOCIAL_LOGIN_ERROR', 'There was an error with your Social Login attempt !');
+
+// social login end
 define('ENTRY_COMPANY', 'Company name:');
 define('ENTRY_STREET_ADDRESS', 'Street Address:');
 define('ENTRY_STREET_ADDRESS_ERROR', '&nbsp;<span class="errorText">min ' . ENTRY_STREET_ADDRESS_MIN_LENGTH . ' chars</span>');

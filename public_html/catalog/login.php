@@ -16,6 +16,25 @@
   if ($session_started == false) {
     tep_redirect(tep_href_link(FILENAME_COOKIE_USAGE));
   }
+// social login start 
+if (array_key_exists("oauth_provider", $_GET)) {
+    $oauth_provider = $_GET['oauth_provider'];
+    if ($oauth_provider == 'google') {
+		require(DIR_WS_INCLUDES.'gplus_login.php');
+       
+    } else if ($oauth_provider == 'facebook') {
+		
+		require(DIR_WS_INCLUDES.'login-facebook.php');
+    }
+}else{
+  if(isset($_SESSION['social_login_error'])){
+	 foreach ($_SESSION['social_login_error']['error'] as $sl_value){
+		 $messageStack->add('login', $sl_value);
+	 }
+  	unset($_SESSION['social_login_error']);
+  }
+}
+// social login stop 
 
   require(DIR_WS_LANGUAGES . $language . '/' . FILENAME_LOGIN);
 
@@ -92,7 +111,20 @@
     echo $messageStack->output('login');
   }
 ?>
+<?
+// social login start
+?>
 
+    
+<a id="wojnt" class="slogin" href="login.php?login&oauth_provider=google" name="windowX"><img src="images/g_login.png"></a>
+ <div class="jqt"></div>
+ <script> 
+ $('#wojnt').remove();   
+$(".jqt").append('<a class="slogin" href="login.php?login&oauth_provider=google&js=1" name="windowX"><img src="images/g_login.png"></a>');  
+</script>
+<?
+// social login end
+?>
 <div class="contentContainer" style="width: 45%; float: left;">
   <h2><?php echo HEADING_NEW_CUSTOMER; ?></h2>
 
@@ -130,7 +162,15 @@
     </form>
   </div>
 </div>
-
+<script type="text/javascript"> 
+jQuery(document).ready(function($) {   
+	 jQuery('a.slogin').live('click', function(){ 
+	        newwindow=window.open($(this).attr('href'),'','height=500,width=850');  
+			if (window.focus) {newwindow.focus()}       
+			 return false;    
+			 });
+			 });
+</script>
 <?php
   require(DIR_WS_INCLUDES . 'template_bottom.php');
   require(DIR_WS_INCLUDES . 'application_bottom.php');
