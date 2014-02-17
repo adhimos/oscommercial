@@ -291,6 +291,12 @@ $('#coProgressBar').progressbar({
 </form>
 
 <?php
+include_customer_assistant("Please check your Billing Address and update it if necessary. Also select the preffered payment mehtod of yours.Then click on 'Continue' to proceed.", 80, -448, -342);
+?>
+
+
+
+<?php
   require(DIR_WS_INCLUDES . 'template_bottom.php');
   require(DIR_WS_INCLUDES . 'application_bottom.php');
 ?>

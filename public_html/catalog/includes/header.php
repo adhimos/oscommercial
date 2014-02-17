@@ -32,6 +32,7 @@
 
 <script type="text/javascript">
   $("#headerShortcuts").buttonset();
+  var customerAssistantWindow;
 </script>
 </div>
 
