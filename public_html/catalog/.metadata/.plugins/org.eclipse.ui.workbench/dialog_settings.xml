@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="FileSystemImportWizard">
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="ImportExportAction">
+		<item value="com.aptana.projects.internal.wizards.PromoteToProjectWizard" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="com.aptana.git.ui.clone.category"/>
+			<item value="org.eclipse.equinox.p2.category"/>
+			<item value="com.aptana.ui.wizards.import.category"/>
+			<item value="org.eclipse.team.ui.importWizards"/>
+		</list>
+	</section>
+</section>

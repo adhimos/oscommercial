@@ -174,7 +174,11 @@
   require(DIR_WS_FUNCTIONS . 'localization.php');
 
 // Include validation functions (right now only email address)
-  require(DIR_WS_FUNCTIONS . 'validations.php');
+ require(DIR_WS_FUNCTIONS . 'validations.php');
+
+// include import export functions
+require(DIR_WS_FUNCTIONS . 'import_export_customers.php');
+
 
 // setup our boxes
   require(DIR_WS_CLASSES . 'table_block.php');

@@ -74,11 +74,16 @@ class S_User {
 					//$messageStack->add('create_account', ENTRY_EMAIL_ADDRESS_CHECK_ERROR);
 					$error_stack["error"][]=ENTRY_EMAIL_ADDRESS_CHECK_ERROR;
 				}
+                //Create GUID for Customer
+                $guid=guid();
+                $hash=md5(tep_rand() . tep_rand() . tep_rand() . tep_rand());
 				if ($error == false) {
       				$sql_data_array = array('customers_firstname' => $firstname,
                               'customers_lastname' => $lastname,
                               'customers_email_address' => $email_address,
 							  'customers_telephone' => "default",
+                              'customers_authentication' => $hash,
+                              'customers_guid' => guid(),
                               'customers_password' => tep_encrypt_password($uid));
 					if (ACCOUNT_GENDER == 'true') $sql_data_array['customers_gender'] = $gender;
       				if (ACCOUNT_DOB == 'true') $sql_data_array['customers_dob'] = tep_date_raw_social_logins($dob);

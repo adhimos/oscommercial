@@ -106,58 +106,6 @@ if(!tep_get_valid_address_status($customer_id)){
 </div>
 
 <?php
-
-
-if (isset($HTTP_GET_VARS['assistant'])){
-
-if($HTTP_GET_VARS['assistant'] == 'true') {
-	$assistant = true;
-	$_SESSION['assistant'] = true;
-} else if ($HTTP_GET_VARS['assistant'] == 'false'){
-	$assistant = false;
-	$_SESSION['assistant'] = false;
-}
-
-tep_session_register(assistant);
-}
-?>
-
-<?php
-if (!tep_session_is_registered('assistant')) {
-
-?>
-<div class="ui-widget infoBoxContainer">
-<div class="ui-widget-header infoBoxHeading">
-<?php
-echo TITLE_CUSTOMER_ASSITANCE_REQUIRED; ?>
-</div>
-<div class="ui-widget-content infoBoxContents" id="assistentConfirmation" style="text-align: center;">
-<?php
-echo IS_CUSTOMER_ASSISTANT_REQUIRED;
-echo "<br>";
-echo tep_draw_button(CUSTOMER_ASSISTANT_NEEDED, 'needAssistant', tep_href_link(FILENAME_ACCOUNT, 'assistant=true', 'SSL')).
-tep_draw_button(CUSTOMER_ASSISTANT_NOT_NEEDED, 'noAssistant', tep_href_link(FILENAME_ACCOUNT, 'assistant=false', 'SSL'));
-?>
-
-
-</div>
-</div> 
-
-<?php
-} 
-
-include_customer_assistant("<b>Pick an item to buy</b>. 
-You can see the new items and items with special prices on the menu bars on either side. You are encourage to browse through the item using the categories list. You can use the menu on left hand side to find product by manufaturer. You can use the quick search to query the available products by any keyword.", 0, 5, 126);
-?>
-
-
-<?php
   require(DIR_WS_INCLUDES . 'template_bottom.php');
   require(DIR_WS_INCLUDES . 'application_bottom.php');
 ?>
-
-<script type="text/javascript">
-  $("#assistentConfirmation").buttonset();
-</script>
-
-

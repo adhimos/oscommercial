@@ -12,6 +12,8 @@
 
   require('includes/application_top.php');
 
+
+
   $languages = tep_get_languages();
   $languages_array = array();
   $languages_selected = DEFAULT_LANGUAGE;
@@ -102,4 +104,4 @@
 <?php
   require(DIR_WS_INCLUDES . 'template_bottom.php');
   require(DIR_WS_INCLUDES . 'application_bottom.php');
-?>
+?>*/

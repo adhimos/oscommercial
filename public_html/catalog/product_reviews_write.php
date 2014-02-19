@@ -161,10 +161,6 @@ function checkForm() {
 </form>
 
 <?php
-include_customer_assistant("Write your review; you should also rate the product and click on the 'Continue' button. You can proceed to buy the item by clicking on 'Add to Cart' button.", 40, -42, 118);
-?>
-
-<?php
   require(DIR_WS_INCLUDES . 'template_bottom.php');
   require(DIR_WS_INCLUDES . 'application_bottom.php');
 ?>

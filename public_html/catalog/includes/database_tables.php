@@ -64,6 +64,8 @@
   // social login end
   // web analytics
   define('TABLE_WA_SESSIONS', 'wa_sessions');
-define('TABLE_WA_VIEWS', 'wa_views');
-  // web analytics
+  define('TABLE_WA_VIEWS', 'wa_views');
+  // web analytics  
+  //Table for the chat
+  define('TABLE_CHAT_ROOM', 'chat_room');
 ?>

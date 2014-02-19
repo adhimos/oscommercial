@@ -34,5 +34,16 @@ CREATE TABLE IF NOT EXISTS `wa_views` (
   `product_id` int(11) DEFAULT NULL,
   `view_datetime` datetime DEFAULT NULL,
   PRIMARY KEY (`view_ID`)
-) '
+) ;
 
+ALTER TABLE `customers` ADD `customers_guid` VARCHAR(255) DEFAULT NULL;
+ALTER TABLE `customers` ADD `customers_authentication` VARCHAR(255) DEFAULT NULL;
+ALTER TABLE `customers` ADD `customers_verified` INT(11) NOT NULL DEFAULT '0' ;
+
+CREATE TABLE IF NOT EXISTS `chat_room` (
+  `room_name` varchar(255) NOT NULL,
+  `room_owner` varchar(255) NOT NULL
+  PRIMARY KEY (`room_nanme`)
+) ;
+
+INSERT INTO `oscommerce`.`chat_room` (`room_name`, `room_owner`) VALUES ('Common Rom', 'admin');

@@ -381,11 +381,6 @@ $('#coProgressBar').progressbar({
 </form>
 
 <?php
-include_customer_assistant("Enter the correct values to update the address, then click 'Continue'.", 85, -275, 374);
-?>
-
-
-<?php
   require(DIR_WS_INCLUDES . 'template_bottom.php');
   require(DIR_WS_INCLUDES . 'application_bottom.php');
 ?>
