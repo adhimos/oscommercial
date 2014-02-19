@@ -5,7 +5,7 @@
   osCommerce, Open Source E-Commerce Solutions
   http://www.oscommerce.com
 
-  Copyright (c) 2013 osCommerce
+  Copyright (c) 2010 osCommerce
 
   Released under the GNU General Public License
 */
@@ -14,10 +14,7 @@
 
 // needs to be included earlier to set the success message in the messageStack
   require(DIR_WS_LANGUAGES . $language . '/' . FILENAME_CREATE_ACCOUNT);
-if (tep_session_is_registered('customer_id')) {
-    $navigation->set_snapshot();
-    tep_redirect(tep_href_link(FILENAME_LOGIN, '', 'SSL'));
-}
+
   $process = false;
   if (isset($HTTP_POST_VARS['action']) && ($HTTP_POST_VARS['action'] == 'process') && isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $sessiontoken)) {
     $process = true;
@@ -80,7 +77,7 @@ if (tep_session_is_registered('customer_id')) {
     }
 
     if (ACCOUNT_DOB == 'true') {
-      if ((strlen($dob) < ENTRY_DOB_MIN_LENGTH) || (!empty($dob) && (!is_numeric(tep_date_raw($dob)) || !@checkdate(substr(tep_date_raw($dob), 4, 2), substr(tep_date_raw($dob), 6, 2), substr(tep_date_raw($dob), 0, 4))))) {
+      if ((is_numeric(tep_date_raw($dob)) == false) || (@checkdate(substr(tep_date_raw($dob), 4, 2), substr(tep_date_raw($dob), 6, 2), substr(tep_date_raw($dob), 0, 4)) == false)) {
         $error = true;
 
         $messageStack->add('create_account', ENTRY_DATE_OF_BIRTH_ERROR);
@@ -210,8 +207,14 @@ if (tep_session_is_registered('customer_id')) {
       tep_db_perform(TABLE_ADDRESS_BOOK, $sql_data_array);
 
       $address_id = tep_db_insert_id();
+	  
+	  //Create GUID for Customer
+	 $guid=guid();
+	
+	
+      tep_db_query("update " . TABLE_CUSTOMERS . " set customers_default_address_id = '" . (int)$address_id . "'    where customers_id = '" . (int)$customer_id . "'");
 
-      tep_db_query("update " . TABLE_CUSTOMERS . " set customers_default_address_id = '" . (int)$address_id . "' where customers_id = '" . (int)$customer_id . "'");
+      tep_db_query("insert into " . TABLE_CUSTOMERS_INFO . " (customers_info_id, customers_info_number_of_logons, customers_info_date_account_created) values ('" . (int)$customer_id . "', '0', now())");
 
       //tep_db_query("insert into " . TABLE_CUSTOMERS_INFO . " (customers_info_id, customers_info_number_of_logons, customers_info_date_account_created) values ('" . (int)$customer_id . "', '0', now())");
 // social login start
@@ -221,6 +224,13 @@ if (tep_session_is_registered('customer_id')) {
         tep_session_recreate();
       }
 
+	//Email Authentication
+	$hash=md5(tep_rand() . tep_rand() . tep_rand() . tep_rand());
+	
+	
+	tep_db_query("update " . TABLE_CUSTOMERS . " set customers_authentication='" . $hash. "'   where customers_id = '" . (int)$customer_id . "'");
+	tep_db_query("update " . TABLE_CUSTOMERS . " set customers_guid='" . $guid. "'   where customers_id = '" . (int)$customer_id . "'");
+	/*
       $customer_first_name = $firstname;
       $customer_default_address_id = $address_id;
       $customer_country_id = $country;
@@ -230,7 +240,7 @@ if (tep_session_is_registered('customer_id')) {
       tep_session_register('customer_default_address_id');
       tep_session_register('customer_country_id');
       tep_session_register('customer_zone_id');
-
+*/
 // reset session token
       $sessiontoken = md5(tep_rand() . tep_rand() . tep_rand() . tep_rand());
 
@@ -251,6 +261,13 @@ if (tep_session_is_registered('customer_id')) {
       }
 
       $email_text .= EMAIL_WELCOME . EMAIL_TEXT . EMAIL_CONTACT . EMAIL_WARNING;
+	  
+	  //Email authentication
+	  $email_link=tep_href_link(FILENAME_ACCOUNT_VERIFICATION, '', 'SSL')."?id=".$guid."&code=".$hash;
+	  define('EMAIL_AUTH',"To verify your account, please click and the link below ".$email_link);
+	  $email_authentication .= EMAIL_WELCOME.EMAIL_AUTH;
+	  tep_mail($name, $email_address, EMAIL_SUBJECT, $email_authentication, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS);
+	  
       tep_mail($name, $email_address, EMAIL_SUBJECT, $email_text, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS);
 
       tep_redirect(tep_href_link(FILENAME_CREATE_ACCOUNT_SUCCESS, '', 'SSL'));

@@ -59,11 +59,13 @@
   define('TABLE_ZONES_TO_GEO_ZONES', 'zones_to_geo_zones');
   define('TABLE_WHOS_ONLINE', 'whos_online');
   define('TABLE_ZONES', 'zones');
-  // social login start
+   // social login start
   define('TABLE_USERS', 'users');
   // social login end
   // web analytics
   define('TABLE_WA_SESSIONS', 'wa_sessions');
 define('TABLE_WA_VIEWS', 'wa_views');
-  // web analytics
+  // web analytics  
+  //Table for the chat
+  define('TABLE_CHAT_ROOM', 'chat_room');
 ?>

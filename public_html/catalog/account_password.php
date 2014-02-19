@@ -38,7 +38,7 @@
     }
 
     if ($error == false) {
-      $check_customer_query = tep_db_query("select customers_password from " . TABLE_CUSTOMERS . " where customers_id = '" . (int)$customer_id . "'");
+      $check_customer_query = tep_db_query("select customers_email_address, customers_password from " . TABLE_CUSTOMERS . " where customers_id = '" . (int)$customer_id . "'");
       $check_customer = tep_db_fetch_array($check_customer_query);
 
       if (tep_validate_password($password_current, $check_customer['customers_password'])) {
@@ -47,7 +47,11 @@
         tep_db_query("update " . TABLE_CUSTOMERS_INFO . " set customers_info_date_account_last_modified = now() where customers_info_id = '" . (int)$customer_id . "'");
 
         $messageStack->add_session('account', SUCCESS_PASSWORD_UPDATED, 'success');
-
+		
+		
+		//Email Authentication
+        tep_mail($check_customer['customers_firstname'] . ' ' . $check_customer['customers_lastname'], $check_customer['customers_email_address'], EMAIL_PASSWORD_RESET_SUBJECT, EMAIL_PASSWORD_RESET_BODY, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS);
+		
         tep_redirect(tep_href_link(FILENAME_ACCOUNT, '', 'SSL'));
       } else {
         $error = true;
