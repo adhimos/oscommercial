@@ -216,14 +216,11 @@
 
       tep_db_query("insert into " . TABLE_CUSTOMERS_INFO . " (customers_info_id, customers_info_number_of_logons, customers_info_date_account_created) values ('" . (int)$customer_id . "', '0', now())");
 
-      //tep_db_query("insert into " . TABLE_CUSTOMERS_INFO . " (customers_info_id, customers_info_number_of_logons, customers_info_date_account_created) values ('" . (int)$customer_id . "', '0', now())");
-// social login start
-      tep_db_query("insert into " . TABLE_CUSTOMERS_INFO . " (customers_info_id, customers_info_number_of_logons, customers_info_date_account_created, valid_address, personal_details_valid) values ('" . (int)$customer_id . "', '0', now(),1,1)");
-// social login end
+/*
       if (SESSION_RECREATE == 'True') {
         tep_session_recreate();
       }
-
+*/
 	//Email Authentication
 	$hash=md5(tep_rand() . tep_rand() . tep_rand() . tep_rand());
 	
@@ -295,7 +292,6 @@
 <div class="contentContainer">
   <div>
     <span class="inputRequirement" style="float: right;"><?php echo FORM_REQUIRED_INFORMATION; ?></span>
-    <?php echo $SOCIALLOGININTERFACE;?>
     <h2><?php echo CATEGORY_PERSONAL; ?></h2>
   </div>
 

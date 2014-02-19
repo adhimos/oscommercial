@@ -38,6 +38,15 @@
   //Email Authentication
   define('FILENAME_ACCOUNT_VERIFICATION', 'account_verification.php');
   //END 
+  //EXPORT
+  define('FILENAME_EXPORT', 'export.php');
+  //
+  //VideoChat
+  define('FILENAME_VIDEOCHAT', 'videochat.php');
+  //END
+  //LiveCHAT
+  define('FILENAME_LIVECHAT', 'livechat.php');
+  //END
   define('FILENAME_DEFAULT', 'index.php');
   define('FILENAME_DOWNLOAD', 'download.php');
   define('FILENAME_INFO_SHOPPING_CART', 'info_shopping_cart.php');

@@ -26,7 +26,7 @@
       <file leaf-file-name="videochat.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/videochat.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="7" selection-end="47" vertical-scroll-proportion="-0.0" vertical-offset="34" max-vertical-offset="4794">
+            <state line="2" column="0" selection-start="7" selection-end="47" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="4794">
               <folding />
             </state>
           </provider>
@@ -35,10 +35,8 @@
       <file leaf-file-name="import_export_customers.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/includes/functions/import_export_customers.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="0" selection-start="5555" selection-end="5555" vertical-scroll-proportion="-16.653847" vertical-offset="1913" max-vertical-offset="2686">
-              <folding>
-                <element signature="e#6#86#0" expanded="true" />
-              </folding>
+            <state line="138" column="0" selection-start="5555" selection-end="5555" vertical-scroll-proportion="0.0" vertical-offset="1913" max-vertical-offset="2686">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -46,7 +44,7 @@
       <file leaf-file-name="template_top.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/includes/template_top.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="41" selection-start="448" selection-end="450" vertical-scroll-proportion="-2.2884614" vertical-offset="0" max-vertical-offset="1275">
+            <state line="16" column="41" selection-start="448" selection-end="450" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1428">
               <folding />
             </state>
           </provider>
@@ -55,7 +53,7 @@
       <file leaf-file-name="create_account.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/create_account.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="186" column="40" selection-start="6836" selection-end="6871" vertical-scroll-proportion="-5.3846154" vertical-offset="2729" max-vertical-offset="8177">
+            <state line="183" column="40" selection-start="6688" selection-end="6688" vertical-scroll-proportion="0.0" vertical-offset="3111" max-vertical-offset="8262">
               <folding />
             </state>
           </provider>
@@ -73,7 +71,7 @@
       <file leaf-file-name="web_analytics.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/functions/web_analytics.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="51" selection-start="1516" selection-end="2669" vertical-scroll-proportion="-15.461538" vertical-offset="1026" max-vertical-offset="1615">
+            <state line="84" column="51" selection-start="1516" selection-end="2669" vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="1615">
               <folding />
             </state>
           </provider>
@@ -82,7 +80,7 @@
       <file leaf-file-name="customers.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/customers.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="662" column="17" selection-start="26674" selection-end="26678" vertical-scroll-proportion="-2.7692308" vertical-offset="10957" max-vertical-offset="13413">
+            <state line="662" column="17" selection-start="26674" selection-end="26678" vertical-scroll-proportion="0.0" vertical-offset="11254" max-vertical-offset="13566">
               <folding />
             </state>
           </provider>
@@ -91,7 +89,7 @@
       <file leaf-file-name="backup.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/backup.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="376" column="24" selection-start="14665" selection-end="14665" vertical-scroll-proportion="0.4896074" vertical-offset="6027" max-vertical-offset="8228">
+            <state line="376" column="24" selection-start="14665" selection-end="14665" vertical-scroll-proportion="-0.33333334" vertical-offset="6392" max-vertical-offset="8228">
               <folding />
             </state>
           </provider>
@@ -100,7 +98,7 @@
       <file leaf-file-name="customers_export.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/customers_export.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="2" selection-start="156" selection-end="156" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="221">
+            <state line="10" column="2" selection-start="156" selection-end="156" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="306">
               <folding />
             </state>
           </provider>
@@ -183,7 +181,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -268,6 +265,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -342,14 +340,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="699" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32780847" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22132471" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22455573" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39864865" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296501" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -357,11 +355,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -379,9 +377,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23505655" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -484,9 +482,7 @@
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/_superglobals.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="226" column="19" selection-start="6756" selection-end="6756" vertical-scroll-proportion="0.79435486" vertical-offset="3448" max-vertical-offset="3944">
-          <folding />
-        </state>
+        <state line="226" column="19" selection-start="6756" selection-end="6756" vertical-scroll-proportion="0.79435486" vertical-offset="3448" max-vertical-offset="3944" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/functions/sessions.php">
@@ -598,30 +594,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/livechat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="7" selection-end="614" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="1547">
-          <folding />
-        </state>
+        <state line="2" column="0" selection-start="7" selection-end="614" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="1547" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/includes/functions/sessions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="12" selection-start="650" selection-end="847" vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="2992">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/countries.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="61" selection-start="3888" selection-end="3947" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="3111">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/videochat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="7" selection-end="47" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="4794">
-          <folding />
-        </state>
+        <state line="31" column="12" selection-start="650" selection-end="847" vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="2992" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/web_analytics_data.php">
@@ -634,43 +612,6 @@
         <state line="8" column="0" selection-start="128" selection-end="174" vertical-scroll-proportion="0.28936172" vertical-offset="0" max-vertical-offset="4369" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/functions/whos_online.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="262" selection-end="262" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="918">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/customers_export.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="2" selection-start="156" selection-end="156" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="221">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create_account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="186" column="40" selection-start="6836" selection-end="6871" vertical-scroll-proportion="-5.3846154" vertical-offset="2729" max-vertical-offset="8177">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/includes/functions/import_export_customers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="0" selection-start="5555" selection-end="5555" vertical-scroll-proportion="-16.653847" vertical-offset="1913" max-vertical-offset="2686">
-          <folding>
-            <element signature="e#6#86#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/includes/template_top.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="41" selection-start="448" selection-end="450" vertical-scroll-proportion="-2.2884614" vertical-offset="0" max-vertical-offset="1275">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/includes/application_top.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="186" column="32" selection-start="6823" selection-end="6823" vertical-scroll-proportion="0.40522876" vertical-offset="2823" max-vertical-offset="3893">
@@ -680,28 +621,75 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/includes/functions/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="7" selection-start="4217" selection-end="4217" vertical-scroll-proportion="5.2222223" vertical-offset="0" max-vertical-offset="2618">
+        <state line="150" column="7" selection-start="4217" selection-end="4217" vertical-scroll-proportion="5.2222223" vertical-offset="0" max-vertical-offset="2618" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/videochat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="7" selection-end="47" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="4794">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/includes/functions/import_export_customers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="138" column="0" selection-start="5555" selection-end="5555" vertical-scroll-proportion="0.0" vertical-offset="1913" max-vertical-offset="2686">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/includes/template_top.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="41" selection-start="448" selection-end="450" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1428">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create_account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="183" column="40" selection-start="6688" selection-end="6688" vertical-scroll-proportion="0.0" vertical-offset="3111" max-vertical-offset="8262">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/functions/whos_online.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="20" selection-start="262" selection-end="262" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="918">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/functions/web_analytics.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="51" selection-start="1516" selection-end="2669" vertical-scroll-proportion="-15.461538" vertical-offset="1026" max-vertical-offset="1615">
+        <state line="84" column="51" selection-start="1516" selection-end="2669" vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="1615">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/customers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="662" column="17" selection-start="26674" selection-end="26678" vertical-scroll-proportion="-2.7692308" vertical-offset="10957" max-vertical-offset="13413">
+        <state line="662" column="17" selection-start="26674" selection-end="26678" vertical-scroll-proportion="0.0" vertical-offset="11254" max-vertical-offset="13566">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/backup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="376" column="24" selection-start="14665" selection-end="14665" vertical-scroll-proportion="0.4896074" vertical-offset="6027" max-vertical-offset="8228">
+        <state line="376" column="24" selection-start="14665" selection-end="14665" vertical-scroll-proportion="-0.33333334" vertical-offset="6392" max-vertical-offset="8228">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/customers_export.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="2" selection-start="156" selection-end="156" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="306">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/countries.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="61" selection-start="3888" selection-end="3947" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="3111">
           <folding />
         </state>
       </provider>

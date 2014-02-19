@@ -57,6 +57,7 @@ if (array_key_exists("oauth_provider", $_GET)) {
         $error = true;
       } else {
       	
+		//Check if the account is verified
 		if ($check_customer['customers_verified']==0){
 			$error=true;
 		}
