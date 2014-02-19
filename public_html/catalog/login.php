@@ -16,25 +16,6 @@
   if ($session_started == false) {
     tep_redirect(tep_href_link(FILENAME_COOKIE_USAGE));
   }
-// social login start 
-if (array_key_exists("oauth_provider", $_GET)) {
-    $oauth_provider = $_GET['oauth_provider'];
-    if ($oauth_provider == 'google') {
-		require(DIR_WS_INCLUDES.'gplus_login.php');
-       
-    } else if ($oauth_provider == 'facebook') {
-		
-		require(DIR_WS_INCLUDES.'login-facebook.php');
-    }
-}else{
-  if(isset($_SESSION['social_login_error'])){
-	 foreach ($_SESSION['social_login_error']['error'] as $sl_value){
-		 $messageStack->add('login', $sl_value);
-	 }
-  	unset($_SESSION['social_login_error']);
-  }
-}
-// social login stop 
 
   require(DIR_WS_LANGUAGES . $language . '/' . FILENAME_LOGIN);
 
@@ -44,15 +25,24 @@ if (array_key_exists("oauth_provider", $_GET)) {
     $password = tep_db_prepare_input($HTTP_POST_VARS['password']);
 
 // Check if email exists
-    $check_customer_query = tep_db_query("select customers_id, customers_firstname, customers_password, customers_email_address, customers_default_address_id from " . TABLE_CUSTOMERS . " where customers_email_address = '" . tep_db_input($email_address) . "'");
+    $check_customer_query = tep_db_query("select customers_id, customers_firstname, customers_password, customers_email_address, customers_default_address_id, customers_verified from " . TABLE_CUSTOMERS . " where customers_email_address = '" . tep_db_input($email_address) . "'");
+    
+    
     if (!tep_db_num_rows($check_customer_query)) {
       $error = true;
     } else {
       $check_customer = tep_db_fetch_array($check_customer_query);
+	
 // Check that password is good
-      if (!tep_validate_password($password, $check_customer['customers_password'])) {
+      if (!(tep_validate_password($password, $check_customer['customers_password']))) {
         $error = true;
       } else {
+      	
+		//Check if the account is verified
+		if ($check_customer['customers_verified']==0){
+			$error=true;
+		}
+		else{
         if (SESSION_RECREATE == 'True') {
           tep_session_recreate();
         }
@@ -93,8 +83,8 @@ if (array_key_exists("oauth_provider", $_GET)) {
         }
       }
     }
+   }
   }
-
   if ($error == true) {
     $messageStack->add('login', TEXT_LOGIN_ERROR);
   }
@@ -111,20 +101,7 @@ if (array_key_exists("oauth_provider", $_GET)) {
     echo $messageStack->output('login');
   }
 ?>
-<?
-// social login start
-?>
 
-    
-<a id="wojnt" class="slogin" href="login.php?login&oauth_provider=google" name="windowX"><img src="images/g_login.png"></a>
- <div class="jqt"></div>
- <script> 
- $('#wojnt').remove();   
-$(".jqt").append('<a class="slogin" href="login.php?login&oauth_provider=google&js=1" name="windowX"><img src="images/g_login.png"></a>');  
-</script>
-<?
-// social login end
-?>
 <div class="contentContainer" style="width: 45%; float: left;">
   <h2><?php echo HEADING_NEW_CUSTOMER; ?></h2>
 
@@ -162,15 +139,7 @@ $(".jqt").append('<a class="slogin" href="login.php?login&oauth_provider=google&
     </form>
   </div>
 </div>
-<script type="text/javascript"> 
-jQuery(document).ready(function($) {   
-	 jQuery('a.slogin').live('click', function(){ 
-	        newwindow=window.open($(this).attr('href'),'','height=500,width=850');  
-			if (window.focus) {newwindow.focus()}       
-			 return false;    
-			 });
-			 });
-</script>
+
 <?php
   require(DIR_WS_INCLUDES . 'template_bottom.php');
   require(DIR_WS_INCLUDES . 'application_bottom.php');

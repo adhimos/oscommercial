@@ -1384,6 +1384,24 @@
 
     return $addresses['total'];
   }
+	//Create guid
+function guid(){
+    if (function_exists('com_create_guid')){
+        return com_create_guid();
+    }else{
+        mt_srand((double)microtime()*10000);//optional for php 4.2.0 and up.
+        $charid = strtoupper(md5(uniqid(rand(), true)));
+        $hyphen = chr(45);// "-"
+        $uuid = chr(123)// "{"
+                .substr($charid, 0, 8).$hyphen
+                .substr($charid, 8, 4).$hyphen
+                .substr($charid,12, 4).$hyphen
+                .substr($charid,16, 4).$hyphen
+                .substr($charid,20,12)
+                .chr(125);// "}"
+        return $uuid;
+    }
+}	
 
 // nl2br() prior PHP 4.2.0 did not convert linefeeds on all OSs (it only converted \n)
   function tep_convert_linefeeds($from, $to, $string) {
@@ -1393,32 +1411,4 @@
       return str_replace($from, $to, $string);
     }
   }
-  
-  // social login start
-function tep_get_valid_address_status($customer_id) {
-    $address_status_query = tep_db_query("select valid_address from " . TABLE_CUSTOMERS_INFO . " where customers_info_id = '" . (int)$customer_id . "'");
-    $address_status = tep_db_fetch_array($address_status_query);
-
-    return $address_status['valid_address'];
-  }
-function tep_get_valid_personal_details($customer_id) {
-    $personal_details_query = tep_db_query("select personal_details_valid from " . TABLE_CUSTOMERS_INFO . " where customers_info_id = '" . (int)$customer_id . "'");
-    $personal_details = tep_db_fetch_array($personal_details_query);
-
-    return $personal_details['personal_details_valid'];
-  }
- function tep_default_address_id($customer_id) {
-    $default_address_query = tep_db_query("select customers_default_address_id from " . TABLE_CUSTOMERS . " where customers_id = '" . (int)$customer_id . "'");
-    $default_address = tep_db_fetch_array($default_address_query);
-
-    return $default_address['customers_default_address_id'];
-  }
-  function tep_date_raw_social_logins($date, $reverse = false) { //we will use the format m/d/yyyy
-  if ($reverse) {
-    return substr($date, 3, 2) . substr($date, 0, 2) . substr($date, 6, 4);
-  } else {
-    return substr($date, 6, 4) . substr($date, 0, 2) . substr($date, 3, 2);
-  }
-}
-// social login end
 ?>

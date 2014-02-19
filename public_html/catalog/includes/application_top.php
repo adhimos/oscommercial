@@ -12,7 +12,8 @@
 
 // start the timer for the page parse time log
   define('PAGE_PARSE_START_TIME', microtime());
-
+	
+	set_include_path('/home/student/public_html/catalog/');
 // set the level of error reporting
   error_reporting(E_ALL & ~E_NOTICE);
 
@@ -127,7 +128,7 @@
 
 // include navigation history class
   require(DIR_WS_CLASSES . 'navigation_history.php');
- 
+
 // define how the session functions will be used
   require(DIR_WS_FUNCTIONS . 'sessions.php');
 
@@ -485,11 +486,4 @@
 // initialize the message stack for output messages
   require(DIR_WS_CLASSES . 'message_stack.php');
   $messageStack = new messageStack;
-
-  
-   //cs5331 - web analytics
-  require(DIR_WS_FUNCTIONS . 'web_analytics.php');
-
 ?>
-
-

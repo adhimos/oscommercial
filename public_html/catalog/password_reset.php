@@ -23,19 +23,22 @@
   }
 
   if ($error == false) {
-    $email_address = tep_db_prepare_input($HTTP_GET_VARS['account']);
+  	$guid=tep_db_prepare_input($HTTP_GET_VARS['account']);
+    //$email_address = tep_db_prepare_input($HTTP_GET_VARS['account']);
     $password_key = tep_db_prepare_input($HTTP_GET_VARS['key']);
-
-    if ( (strlen($email_address) < ENTRY_EMAIL_ADDRESS_MIN_LENGTH) || (tep_validate_email($email_address) == false) ) {
-      $error = true;
-
-      $messageStack->add_session('password_forgotten', TEXT_NO_EMAIL_ADDRESS_FOUND);
-    } elseif (strlen($password_key) != 40) {
+	
+	
+	
+     if (strlen($password_key) != 40) {
       $error = true;
 
       $messageStack->add_session('password_forgotten', TEXT_NO_RESET_LINK_FOUND);
     } else {
-      $check_customer_query = tep_db_query("select c.customers_id, c.customers_email_address, ci.password_reset_key, ci.password_reset_date from " . TABLE_CUSTOMERS . " c, " . TABLE_CUSTOMERS_INFO . " ci where c.customers_email_address = '" . tep_db_input($email_address) . "' and c.customers_id = ci.customers_info_id");
+    	
+	 // $check_customer_query = tep_db_query("select c.customers_id, c.customers_guid, c.customers_email_address, ci.password_reset_key, ci.password_reset_date from " . TABLE_CUSTOMERS . " c, " . TABLE_CUSTOMERS_INFO . " ci where c.customers_email_address = '" . tep_db_input($email_address) . "' and c.customers_id = ci.customers_info_id");
+	 $check_customer_query = tep_db_query("select c.customers_id,  c.customers_email_address, ci.password_reset_key, ci.password_reset_date from " . TABLE_CUSTOMERS . " c, " . TABLE_CUSTOMERS_INFO . " ci where c.customers_guid = '" . tep_db_input($guid) . "' and c.customers_id = ci.customers_info_id");
+	 
+		
       if (tep_db_num_rows($check_customer_query)) {
         $check_customer = tep_db_fetch_array($check_customer_query);
 
@@ -96,7 +99,7 @@
   }
 ?>
 
-<?php echo tep_draw_form('password_reset', tep_href_link(FILENAME_PASSWORD_RESET, 'account=' . $email_address . '&key=' . $password_key . '&action=process', 'SSL'), 'post', 'onsubmit="return check_form(password_reset);"', true); ?>
+<?php echo tep_draw_form('password_reset', tep_href_link(FILENAME_PASSWORD_RESET, 'account=' . $guid. '&key=' . $password_key . '&action=process', 'SSL'), 'post', 'onsubmit="return check_form(password_reset);"', true); ?>
 
 <div class="contentContainer">
   <div class="contentText">

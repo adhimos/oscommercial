@@ -35,6 +35,18 @@
   define('FILENAME_COOKIE_USAGE', 'cookie_usage.php');
   define('FILENAME_CREATE_ACCOUNT', 'create_account.php');
   define('FILENAME_CREATE_ACCOUNT_SUCCESS', 'create_account_success.php');
+  //Email Authentication
+  define('FILENAME_ACCOUNT_VERIFICATION', 'account_verification.php');
+  //END 
+  //EXPORT
+  define('FILENAME_EXPORT', 'export.php');
+  //
+  //VideoChat
+  define('FILENAME_VIDEOCHAT', 'videochat.php');
+  //END
+  //LiveCHAT
+  define('FILENAME_LIVECHAT', 'livechat.php');
+  //END
   define('FILENAME_DEFAULT', 'index.php');
   define('FILENAME_DOWNLOAD', 'download.php');
   define('FILENAME_INFO_SHOPPING_CART', 'info_shopping_cart.php');
