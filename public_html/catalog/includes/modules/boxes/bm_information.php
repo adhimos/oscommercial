@@ -36,6 +36,7 @@
       $data = '<div class="ui-widget infoBoxContainer">' .
               '  <div class="ui-widget-header infoBoxHeading">' . MODULE_BOXES_INFORMATION_BOX_TITLE . '</div>' .
               '  <div class="ui-widget-content infoBoxContents">' .
+              '    <a href="' . tep_href_link(FILENAME_LIVECHAT) . '">' . MODULE_BOXES_INFORMATION_BOX_LIVECHAT . '</a><br />' .
               '    <a href="' . tep_href_link(FILENAME_SHIPPING) . '">' . MODULE_BOXES_INFORMATION_BOX_SHIPPING . '</a><br />' .
               '    <a href="' . tep_href_link(FILENAME_PRIVACY) . '">' . MODULE_BOXES_INFORMATION_BOX_PRIVACY . '</a><br />' .
               '    <a href="' . tep_href_link(FILENAME_CONDITIONS) . '">' . MODULE_BOXES_INFORMATION_BOX_CONDITIONS . '</a><br />' .
