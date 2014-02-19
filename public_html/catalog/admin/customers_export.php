@@ -8,6 +8,5 @@
 
 require('includes/application_top.php');
 $ctype = $_GET['ctype'];
-//exportCustomers($ctype);
-import_customers('xml','');
+exportCustomers($ctype);
 ?>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/admin/customers_import_upload.php" line="13" mnemonic="9" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c8c5ec61-df93-4702-ba16-999bba2a7a38" name="Default" comment="" />
     <ignored path="catalog.iws" />
@@ -22,98 +25,7 @@
     <favorites_list name="catalog" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="videochat.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/videochat.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="7" selection-end="47" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="4794">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="import_export_customers.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/includes/functions/import_export_customers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="0" selection-start="5555" selection-end="5555" vertical-scroll-proportion="0.0" vertical-offset="1913" max-vertical-offset="2686">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="template_top.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/includes/template_top.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="41" selection-start="448" selection-end="450" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1428">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create_account.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/create_account.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="183" column="40" selection-start="6688" selection-end="6688" vertical-scroll-proportion="0.0" vertical-offset="3111" max-vertical-offset="8262">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="whos_online.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/functions/whos_online.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="20" selection-start="262" selection-end="262" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="918">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web_analytics.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/functions/web_analytics.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="51" selection-start="1516" selection-end="2669" vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="1615">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="customers.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/customers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="662" column="17" selection-start="26674" selection-end="26678" vertical-scroll-proportion="0.0" vertical-offset="11254" max-vertical-offset="13566">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="backup.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/backup.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="376" column="24" selection-start="14665" selection-end="14665" vertical-scroll-proportion="-0.33333334" vertical-offset="6392" max-vertical-offset="8228">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="customers_export.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/customers_export.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="2" selection-start="156" selection-end="156" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="306">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="countries.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/countries.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="61" selection-start="3888" selection-end="3947" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="3111">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -143,8 +55,10 @@
         <option value="$PROJECT_DIR$/admin/includes/configure.php" />
         <option value="$PROJECT_DIR$/videochat.php" />
         <option value="$PROJECT_DIR$/admin/includes/application_top.php" />
-        <option value="$PROJECT_DIR$/admin/customers_export.php" />
+        <option value="$PROJECT_DIR$/admin/customers_import.php" />
+        <option value="$PROJECT_DIR$/admin/customers_import_upload.php" />
         <option value="$PROJECT_DIR$/admin/includes/functions/import_export_customers.php" />
+        <option value="$PROJECT_DIR$/admin/customers_export.php" />
       </list>
     </option>
   </component>
@@ -209,57 +123,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="includes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="catalog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="catalog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="includes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="functions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="catalog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="catalog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="catalog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="catalog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="includes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -397,20 +261,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/includes/functions/html_output.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="29" selection-start="732" selection-end="744" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="7242" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/customers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="91" selection-start="4248" selection-end="4312" vertical-scroll-proportion="0.0" vertical-offset="1955" max-vertical-offset="13566" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/web_analytics.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="18" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1428" />
@@ -478,11 +332,6 @@
     <entry file="file://$PROJECT_DIR$/admin/includes/stylesheet.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="134" column="1" selection-start="5400" selection-end="5400" vertical-scroll-proportion="0.0" vertical-offset="2158" max-vertical-offset="2669" />
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/_superglobals.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="226" column="19" selection-start="6756" selection-end="6756" vertical-scroll-proportion="0.79435486" vertical-offset="3448" max-vertical-offset="3944" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/functions/sessions.php">
@@ -599,7 +448,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/includes/functions/sessions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="12" selection-start="650" selection-end="847" vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="2992" />
+        <state line="31" column="12" selection-start="650" selection-end="847" vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="2992">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/web_analytics_data.php">
@@ -621,19 +472,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/includes/functions/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="7" selection-start="4217" selection-end="4217" vertical-scroll-proportion="5.2222223" vertical-offset="0" max-vertical-offset="2618" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/videochat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="7" selection-end="47" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="4794">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/includes/functions/import_export_customers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="0" selection-start="5555" selection-end="5555" vertical-scroll-proportion="0.0" vertical-offset="1913" max-vertical-offset="2686">
+        <state line="150" column="7" selection-start="4217" selection-end="4217" vertical-scroll-proportion="5.2222223" vertical-offset="0" max-vertical-offset="2618">
           <folding />
         </state>
       </provider>
@@ -652,44 +491,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/functions/whos_online.php">
+    <entry file="file://$PROJECT_DIR$/admin/countries.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="262" selection-end="262" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="918">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/functions/web_analytics.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="51" selection-start="1516" selection-end="2669" vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="1615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/customers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="662" column="17" selection-start="26674" selection-end="26678" vertical-scroll-proportion="0.0" vertical-offset="11254" max-vertical-offset="13566">
+        <state line="74" column="61" selection-start="3888" selection-end="3947" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="3111">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/backup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="376" column="24" selection-start="14665" selection-end="14665" vertical-scroll-proportion="-0.33333334" vertical-offset="6392" max-vertical-offset="8228">
+        <state line="85" column="30" selection-start="3036" selection-end="3036" vertical-scroll-proportion="0.25925925" vertical-offset="1173" max-vertical-offset="8228">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/customers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="662" column="17" selection-start="26674" selection-end="26678" vertical-scroll-proportion="5.8846154" vertical-offset="11254" max-vertical-offset="13413">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/_superglobals.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="0" selection-start="1557" selection-end="1557" vertical-scroll-proportion="0.3522976" vertical-offset="655" max-vertical-offset="3944">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/videochat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="7" selection-end="47" vertical-scroll-proportion="165.5" vertical-offset="4337" max-vertical-offset="4794">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/customers_import.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="7" selection-start="279" selection-end="279" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="306">
+          <folding>
+            <marker date="1392839809280" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1392839809280" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1392839809280" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/customers_import_upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="45" selection-start="1464" selection-end="1464" vertical-scroll-proportion="-9.769231" vertical-offset="426" max-vertical-offset="1122">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/includes/functions/import_export_customers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="3" selection-start="86" selection-end="86" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="3162">
+          <folding>
+            <marker date="1392841637912" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/customers_export.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="2" selection-start="156" selection-end="156" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="306">
+        <state line="10" column="24" selection-start="178" selection-end="178" vertical-scroll-proportion="0.18085106" vertical-offset="0" max-vertical-offset="470">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/countries.php">
+    <entry file="file://$PROJECT_DIR$/includes/functions/web_analytics.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="61" selection-start="3888" selection-end="3947" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="3111">
+        <state line="84" column="51" selection-start="1516" selection-end="2669" vertical-scroll-proportion="0.85531914" vertical-offset="1026" max-vertical-offset="1615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/functions/whos_online.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="20" selection-start="262" selection-end="262" vertical-scroll-proportion="-0.32008368" vertical-offset="255" max-vertical-offset="765">
           <folding />
         </state>
       </provider>

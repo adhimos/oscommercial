@@ -10,6 +10,15 @@ $customers_columns = "customers_id,customers_gender,customers_firstname,customer
 
 $address_book_columns = "address_book_id,entry_gender,entry_company,entry_firstname,entry_lastname,entry_street_address,entry_suburb,entry_postcode,entry_city,entry_state,entry_country_id,entry_zone_id";
 
+function escape_csv_value($value) {
+    $value = str_replace('"', '""', $value); // First off escape all " and make them ""
+    if(preg_match('/,/', $value) or preg_match("/\n/", $value) or preg_match('/"/', $value)) { // Check if I have any commas or new lines
+        return '"'.$value.'"'; // If I have new lines or commas escape them
+    } else {
+        return $value; // If no new lines or commas just return the value
+    }
+}
+
 function exportCustomers($exportCtype)
 {
     global  $address_book_columns, $customers_columns;
@@ -18,13 +27,14 @@ function exportCustomers($exportCtype)
     $export_customer_table_query = tep_db_query("SELECT ".$customers_columns." FROM " . TABLE_CUSTOMERS );
     $output = "";
     if($exportCtype == 'csv'){
-        $output = $customers_columns_array."\n";
-
-
-
-        while ($customer = tep_db_fetch_array($export_customer_table_query))   {
+        $output = $customers_columns.",".$address_book_columns."\n";
+        $export_customer_table_query = tep_db_query("SELECT ".TABLE_CUSTOMERS.".".$customers_columns.",".$address_book_columns." FROM " . TABLE_CUSTOMERS." INNER JOIN ".TABLE_ADDRESS_BOOK." ON address_book_id = customers_default_address_id");
+        while ($customer = tep_db_fetch_array($export_customer_table_query)) {
             for ($i = 0; $i < count($customers_columns_array); $i++) {
-                $output .='"'.$customer[$customers_columns_array[$i]].'",';
+                $output .='\''.escape_csv_value($customer[$customers_columns_array[$i]]).'\',';
+            }
+            for ($i = 0; $i < count($address_columns_array); $i++) {
+                $output .='\''.escape_csv_value($customer[$address_columns_array[$i]]).'\',';
             }
             $output .="\n";
         }
@@ -86,18 +96,15 @@ function exportCustomers($exportCtype)
 }
 
 
-function import_customers($content_type, $content){
+function import_customers_from_XML($content){
     global $customers_columns, $address_book_columns;
     $customers_columns_array = explode(',', $customers_columns);
     $address_columns_array = explode(',', $address_book_columns);
     print $customers_columns;
 
-
-
-    if($content_type == 'xml'){
         $xmlDoc = new DOMDocument();
-        //$xmlDoc ->loadXML($content);
-        $xmlDoc -> load('customers.xml');
+
+        $xmlDoc -> loadXML($content);
         $x = $xmlDoc->documentElement;
         $sql_data_array = array();
         echo count($customers_columns_array);
@@ -146,8 +153,34 @@ function import_customers($content_type, $content){
 
         }
 
-
 }
+
+function import_customers_by_csv($handle) {
+
+
+            // get headers
+
+            $columns = fgetcsv($handle,1000,",","'");
+            $column_list = implode(",",$columns);
+            echo $column_list;
+            //loop through the csv file and insert into database
+            while ($data = fgetcsv($handle,1000,",","'")) {
+                if ($data[0]) {
+                    for ($i=0;$i<count($columns);$i++){
+                        $data[$i]="'".mysql_real_escape_string($data[$i])."'";
+                        echo $data[$i].",<br>";
+                    }
+                    $values = implode(",",$data);
+                    echo $values;
+                    //$query = "INSERT INTO contacts ($column_list) ($values)";
+
+                    //mysql_query($query);
+
+
+
+                }
+            }
+
 }
 
 ?>
