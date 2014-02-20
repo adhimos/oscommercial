@@ -414,3 +414,10 @@ SPAN.errorText {
   float: left;
   margin-right: 5px;
 }
+
+.shadow{
+    -moz-box-shadow: 4px 4px 6px 4px #ccc;
+    -webkit-box-shadow: 4px 4px 6px 4px #ccc;
+     box-shadow:         4px 4px 6px 4px #ccc;
+}
+

@@ -29,4 +29,8 @@
       tep_gzip_output(GZIP_LEVEL);
     }
   }
+   tep_activate_plugin($_SERVER['PHP_SELF']);
 ?>
+
+
+

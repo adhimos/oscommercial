@@ -29,6 +29,10 @@
   define('FILENAME_LANGUAGES', 'languages.php');
   define('FILENAME_LOGIN', 'login.php');
   define('FILENAME_MAIL', 'mail.php');
+  //EXPORT VCARD
+  define('FILENAME_EXPORTVCARD', 'vcardexport.php');
+  define('FILENAME_VCARDIMPORT', 'vcardimport.php');
+  //
   define('FILENAME_MANUFACTURERS', 'manufacturers.php');
   define('FILENAME_MODULES', 'modules.php');
   define('FILENAME_NEWSLETTERS', 'newsletters.php');
@@ -52,5 +56,8 @@
   define('FILENAME_TAX_RATES', 'tax_rates.php');
   define('FILENAME_VERSION_CHECK', 'version_check.php');
   define('FILENAME_WHOS_ONLINE', 'whos_online.php');
+//web_analytics
+  define('FILENAME_WEB_ANALYTICS', 'web_analytics.php');
+//web_analyitcs
   define('FILENAME_ZONES', 'zones.php');
 ?>

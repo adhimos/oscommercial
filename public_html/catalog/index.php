@@ -271,6 +271,12 @@
 <?php
   }
 
+if($no_products){	
+include_customer_assistant("No items available.", 10);
+} else {
+include_customer_assistant("You can browse through more categories from the menu on left side. Click on a product to view more information about the product. Or you can quickly proceed to buy the product by clicking on the 'Buy Now' button.", 10, -254, 599);
+}
+
   require(DIR_WS_INCLUDES . 'template_bottom.php');
   require(DIR_WS_INCLUDES . 'application_bottom.php');
 ?>

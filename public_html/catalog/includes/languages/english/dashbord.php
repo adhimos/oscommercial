@@ -10,8 +10,11 @@
   Released under the GNU General Public License
 */
 
-define('NAVBAR_TITLE', 'My Account');
-define('HEADING_TITLE', 'My Account Information');
+define('AVAILABLE_PLUGINS', 'Available Plugins');
+define('HEADING_TITLE', 'Dashbord');
+define('INSTALL_PLUGIN', 'Install Plugins');
+define('INSTALLED_PLUGIN', 'Already Installed Plugins');
+
 
 define('OVERVIEW_TITLE', 'Overview');
 define('OVERVIEW_SHOW_ALL_ORDERS', '(show all orders)');
