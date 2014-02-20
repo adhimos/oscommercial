@@ -40,6 +40,10 @@ ALTER TABLE `customers` ADD `customers_guid` VARCHAR(255) DEFAULT NULL;
 ALTER TABLE `customers` ADD `customers_authentication` VARCHAR(255) DEFAULT NULL;
 ALTER TABLE `customers` ADD `customers_verified` INT(11) NOT NULL DEFAULT '0' ;
 
+ALTER TABLE `customers_info` ADD  `valid_address` tinyint(1) DEFAULT '1';
+ALTER TABLE `customers_info` ADD  `personal_details_valid` tinyint(1) DEFAULT '1';
+
+
 CREATE TABLE IF NOT EXISTS `chat_room` (
   `room_name` varchar(255) NOT NULL,
   `room_owner` varchar(255) NOT NULL
