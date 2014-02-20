@@ -6,6 +6,7 @@
  * Time: 3:51 AM
  */
 require('includes/application_top.php');
+require('includes/template_top.php');
 $allowedExts = array("xml", "csv");
 $temp = explode(".", $_FILES["file"]["name"]);
 $extension = end($temp);
@@ -58,4 +59,6 @@ else
 }
 
 require('includes/application_bottom.php');
+
+require('includes/template_bottom.php');
 ?>

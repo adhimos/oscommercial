@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/admin/customers_import_upload.php" line="13" mnemonic="9" />
+    <bookmark url="file://$PROJECT_DIR$/admin/customers_import_upload.php" line="14" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8c5ec61-df93-4702-ba16-999bba2a7a38" name="Default" comment="" />
@@ -26,10 +26,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="import_export_customers.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="import_export_customers.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/includes/functions/import_export_customers.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="176" column="23" selection-start="7453" selection-end="7453" vertical-scroll-proportion="0.55625" vertical-offset="2725" max-vertical-offset="4624">
+            <state line="176" column="23" selection-start="7453" selection-end="7453" vertical-scroll-proportion="-10.269231" vertical-offset="2725" max-vertical-offset="4624">
               <folding>
                 <element signature="e#6#86#0" expanded="true" />
               </folding>
@@ -37,10 +37,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customers_import.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="customers_import.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/customers_import.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="7" selection-start="279" selection-end="279" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="306">
+            <state line="12" column="7" selection-start="279" selection-end="279" vertical-scroll-proportion="0.41379312" vertical-offset="0" max-vertical-offset="493">
               <folding />
             </state>
           </provider>
@@ -49,7 +49,7 @@
       <file leaf-file-name="customers_import_upload.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/customers_import_upload.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="49" selection-start="1248" selection-end="1256" vertical-scroll-proportion="-9.307693" vertical-offset="387" max-vertical-offset="1122">
+            <state line="60" column="0" selection-start="1717" selection-end="1802" vertical-scroll-proportion="-13.884615" vertical-offset="659" max-vertical-offset="1173">
               <folding />
             </state>
           </provider>
@@ -105,8 +105,8 @@
         <option value="$PROJECT_DIR$/admin/includes/application_top.php" />
         <option value="$PROJECT_DIR$/admin/customers_import.php" />
         <option value="$PROJECT_DIR$/admin/customers_export.php" />
-        <option value="$PROJECT_DIR$/admin/customers_import_upload.php" />
         <option value="$PROJECT_DIR$/admin/includes/functions/import_export_customers.php" />
+        <option value="$PROJECT_DIR$/admin/customers_import_upload.php" />
       </list>
     </option>
   </component>
@@ -607,26 +607,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/customers_import.php">
+    <entry file="file://$PROJECT_DIR$/admin/includes/functions/import_export_customers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="7" selection-start="279" selection-end="279" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="306">
-          <folding />
+        <state line="176" column="23" selection-start="7453" selection-end="7453" vertical-scroll-proportion="-10.269231" vertical-offset="2725" max-vertical-offset="4624">
+          <folding>
+            <element signature="e#6#86#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/customers_import_upload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="49" selection-start="1248" selection-end="1256" vertical-scroll-proportion="-9.307693" vertical-offset="387" max-vertical-offset="1122">
+        <state line="60" column="0" selection-start="1717" selection-end="1802" vertical-scroll-proportion="-13.884615" vertical-offset="659" max-vertical-offset="1173">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/includes/functions/import_export_customers.php">
+    <entry file="file://$PROJECT_DIR$/admin/customers_import.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="176" column="23" selection-start="7453" selection-end="7453" vertical-scroll-proportion="0.55625" vertical-offset="2725" max-vertical-offset="4624">
-          <folding>
-            <element signature="e#6#86#0" expanded="true" />
-          </folding>
+        <state line="12" column="7" selection-start="279" selection-end="279" vertical-scroll-proportion="0.41379312" vertical-offset="0" max-vertical-offset="493">
+          <folding />
         </state>
       </provider>
     </entry>
