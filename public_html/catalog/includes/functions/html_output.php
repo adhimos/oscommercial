@@ -337,7 +337,7 @@
 
 ////
 // Output a jQuery UI Button
-  function tep_draw_button($title = null, $icon = null, $link = null, $priority = null, $params = null) {
+  function tep_draw_button($title = null, $icon = null, $link = null, $priority = null, $params = null, $download = null) {
     static $button_counter = 1;
 
     $types = array('submit', 'button', 'reset');
@@ -374,6 +374,9 @@
       $button .= ' ' . $params['params'];
     }
 
+    if(isset($download)){
+	$button .= ' download';
+    }
     $button .= '>' . $title;
 
     if ( ($params['type'] == 'button') && isset($link) ) {
@@ -412,4 +415,33 @@
 
     return $button;
   }
+
+  function include_customer_assistant($text_to_display, $current_status, $top_position, $left_position){
+	global $HTTP_GET_VARS;
+	if (isset($HTTP_GET_VARS['disable_assistant'])){
+		if($HTTP_GET_VARS['disable_assistant'] == 'true') {			
+			$_SESSION['assistant'] = false;
+		} 
+	}
+	
+	$assistant = $_SESSION['assistant'];
+	if($assistant){
+		$message = $text_to_display;	
+		$progress = $current_status;
+		$top = $top_position;
+		$left = $left_position;
+	
+		require('includes/customer_assistant.php');
+	}
+  }
+
+function tep_assistant_disable_url(){
+	$url = "http://". $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; 
+	if( strpos($url, '?') !== FALSE){
+		echo $url.'&disable_assistant=true';
+	} else {
+		echo $url.'?disable_assistant=true';
+	}
+}
+
 ?>
