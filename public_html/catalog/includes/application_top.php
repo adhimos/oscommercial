@@ -486,7 +486,7 @@
 // initialize the message stack for output messages
   require(DIR_WS_CLASSES . 'message_stack.php');
   $messageStack = new messageStack;
-
+require('includes/functions/plugins.php');
   
    //cs5331 - web analytics
   require(DIR_WS_FUNCTIONS . 'web_analytics.php');

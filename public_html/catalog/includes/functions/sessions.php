@@ -184,4 +184,10 @@
     }
   }
 
+  function tep_get_from_session($variable_key){
+	return $_SESSION[$variable_key];
+ }
+
+
+
 ?>

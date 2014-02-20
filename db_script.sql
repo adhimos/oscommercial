@@ -40,10 +40,24 @@ ALTER TABLE `customers` ADD `customers_guid` VARCHAR(255) DEFAULT NULL;
 ALTER TABLE `customers` ADD `customers_authentication` VARCHAR(255) DEFAULT NULL;
 ALTER TABLE `customers` ADD `customers_verified` INT(11) NOT NULL DEFAULT '0' ;
 
+ALTER TABLE `customers_info` ADD  `valid_address` tinyint(1) DEFAULT '1';
+ALTER TABLE `customers_info` ADD  `personal_details_valid` tinyint(1) DEFAULT '1';
+
+
 CREATE TABLE IF NOT EXISTS `chat_room` (
   `room_name` varchar(255) NOT NULL,
-  `room_owner` varchar(255) NOT NULL
-  PRIMARY KEY (`room_nanme`)
+  `room_owner` varchar(255) NOT NULL,
+  PRIMARY KEY (`room_name`)
 ) ;
 
 INSERT INTO `oscommerce`.`chat_room` (`room_name`, `room_owner`) VALUES ('Common Rom', 'admin');
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `customers_id` int(11) NOT NULL,
+  `oauth_uid` varchar(200) DEFAULT NULL,
+  `oauth_provider` varchar(200) DEFAULT NULL,
+  `username` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customers_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;

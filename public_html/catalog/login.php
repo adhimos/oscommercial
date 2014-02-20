@@ -84,6 +84,10 @@ if (array_key_exists("oauth_provider", $_GET)) {
         tep_session_register('customer_first_name');
         tep_session_register('customer_country_id');
         tep_session_register('customer_zone_id');
+	tep_initialize_plugins();
+	
+
+
 
         tep_db_query("update " . TABLE_CUSTOMERS_INFO . " set customers_info_date_of_last_logon = now(), customers_info_number_of_logons = customers_info_number_of_logons+1, password_reset_key = null, password_reset_date = null where customers_info_id = '" . (int)$customer_id . "'");
 
