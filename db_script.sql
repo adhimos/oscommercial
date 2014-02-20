@@ -51,3 +51,13 @@ CREATE TABLE IF NOT EXISTS `chat_room` (
 ) ;
 
 INSERT INTO `oscommerce`.`chat_room` (`room_name`, `room_owner`) VALUES ('Common Rom', 'admin');
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `customers_id` int(11) NOT NULL,
+  `oauth_uid` varchar(200) DEFAULT NULL,
+  `oauth_provider` varchar(200) DEFAULT NULL,
+  `username` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customers_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
