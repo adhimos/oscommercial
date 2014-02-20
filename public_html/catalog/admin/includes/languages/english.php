@@ -81,7 +81,7 @@ define('BOX_CATALOG_PRODUCTS_EXPECTED', 'Products Expected');
 define('BOX_HEADING_CUSTOMERS', 'Customers');
 define('BOX_CUSTOMERS_CUSTOMERS', 'Customers');
 define('BOX_CUSTOMERS_ORDERS', 'Orders');
-
+define('BOX_CUSTOMERS_IMPORT','Import');
 // taxes box text in includes/boxes/taxes.php
 define('BOX_HEADING_LOCATION_AND_TAXES', 'Locations / Taxes');
 define('BOX_TAXES_COUNTRIES', 'Countries');
