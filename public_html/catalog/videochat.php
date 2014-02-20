@@ -86,14 +86,15 @@ $name=mysql_real_escape_string($name);
             <!-- just copy this <section> and next script -->
             <section class="experiment">                
                 <section>
-					<span>
+					<!--<span>
                         Private ?? <a href="/socket.io/" target="_blank" title="Setup Private Room!"><code><strong id="unique-token">#123456789</strong></code></a>
-                    </span>
+                    </span>-->
                     <?php
                        echo "<input type='hidden' id='your-name' value='$name'>";
 
                     ?>
-                    <button id="start-broadcasting" class="setup">Start</button>
+
+                    <button id="start-broadcasting" class="setup">Start Video</button>
                 </section>
                 
                 <!-- list of all available conferencing rooms -->
@@ -134,7 +135,7 @@ $name=mysql_real_escape_string($name);
                     var td1 = document.createElement('td');
                     var td2 = document.createElement('td');
 
-                    td1.innerHTML = userid + ' is waiting for video chat. Click start to initiate video chat?';
+                    td1.innerHTML = userid.replace(/\#\d*$/g, "") + ' is waiting for video chat. Click start to initiate video chat?';
 
                     var button = document.createElement('button');
                     button.innerHTML = 'Join';
@@ -153,6 +154,7 @@ $name=mysql_real_escape_string($name);
                     tr.appendChild(td1);
                     tr.appendChild(td2);
                     roomsList.appendChild(tr);
+                    jQuery('#start-broadcasting').hide();
                 };
 
                 peer.onStreamAdded = function(e) {
@@ -177,8 +179,8 @@ $name=mysql_real_escape_string($name);
                     }
                 };
 
-                jQuery(document).ready(function() {
-                    alert('ttt');
+                jQuery('#start-broadcasting').click(function() {
+
                     this.disabled = true;
 					getUserMedia(function(stream) {
 						peer.addStream(stream);
@@ -187,7 +189,7 @@ $name=mysql_real_escape_string($name);
                 });
 
                 document.querySelector('#your-name').onchange = function() {
-                    alert(this.value);
+                    //alert(this.value);
                     peer.userid = this.value;
                 };
 
@@ -264,11 +266,13 @@ $name=mysql_real_escape_string($name);
 					});
 				}
 				
-				(function() {
+			    (function() {
                     var uniqueToken = document.getElementById('unique-token');
-                    if (uniqueToken)
-                        if (location.hash.length > 2) uniqueToken.parentNode.parentNode.parentNode.innerHTML = '<h2 style="text-align:center;"><a href="' + location.href + '" target="_blank">Share this link</a></h2>';
-                        else uniqueToken.innerHTML = uniqueToken.parentNode.parentNode.href = '#' + (Math.random() * new Date().getTime()).toString(36).toUpperCase().replace( /\./g , '-');
+                    //if (uniqueToken)
+                        //if (location.hash.length > 2)
+                        //    uniqueToken.parentNode.parentNode.parentNode.innerHTML = '<h2 style="text-align:center;"><a href="' + location.href + '" target="_blank">Share this link</a></h2>';
+                        //else
+                        //    uniqueToken.innerHTML = uniqueToken.parentNode.parentNode.href = '#' + (Math.random() * new Date().getTime()).toString(36).toUpperCase().replace( /\./g , '-');
                 })();
 
             </script>
