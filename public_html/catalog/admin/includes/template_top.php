@@ -22,7 +22,23 @@
 <script type="text/javascript" src="<?php echo tep_catalog_href_link('ext/jquery/jquery-1.8.0.min.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo tep_catalog_href_link('ext/jquery/ui/jquery-ui-1.8.22.min.js'); ?>"></script>
 
-<script type="text/javascript">
+    <script type="text/javascript" src="<?php echo tep_catalog_href_link('ext/jquery/jquery-1.8.0.min.js'); ?>"></script>
+   <script type="text/javascript" src="<?php echo tep_catalog_href_link('ext/jquery/ui/jquery-ui-1.8.22.min.js'); ?>"></script>
+    <link rel="stylesheet" type="text/css" href="includes/stylesheet.css">
+    <link rel="stylesheet" href="<?php echo tep_catalog_href_link('ext/jqwidgets/styles/jqx.base.css'); ?>" type="text/css" />
+   <link rel="stylesheet" href="<?php echo tep_catalog_href_link('ext/jqwidgets/styles/jqx.darkblue.css'); ?>" type="text/css" />
+
+    <script type="text/javascript" src="<?php echo tep_catalog_href_link('ext/jqwidgets/jqxcore.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo tep_catalog_href_link('ext/jqwidgets/jqxbuttons.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo tep_catalog_href_link('ext/jqwidgets/jqxscrollbar.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo tep_catalog_href_link('ext/jqwidgets/jqxmenu.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo tep_catalog_href_link('ext/jqwidgets/jqxdata.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo tep_catalog_href_link('ext/jqwidgets/jqxgrid.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo tep_catalog_href_link('ext/jqwidgets/jqxgrid.selection.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo tep_catalog_href_link('ext/jqwidgets/jqxchart.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo tep_catalog_href_link('ext/jqwidgets/jqxtabs.js'); ?>"></script>
+
+    <script type="text/javascript">
 // fix jQuery 1.8.0 and jQuery UI 1.8.22 bug with dialog buttons; http://bugs.jqueryui.com/ticket/8484
 if ( $.attrFn ) { $.attrFn.text = true; }
 </script>
@@ -39,7 +55,7 @@ $.datepicker.setDefaults($.datepicker.regional['<?php echo JQUERY_DATEPICKER_I18
 ?>
 
 <script type="text/javascript" src="<?php echo tep_catalog_href_link('ext/flot/jquery.flot.js'); ?>"></script>
-<link rel="stylesheet" type="text/css" href="includes/stylesheet.css">
+
 <script type="text/javascript" src="includes/general.js"></script>
 </head>
 <body>

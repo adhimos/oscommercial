@@ -60,6 +60,7 @@ require(DIR_WS_INCLUDES . 'template_top.php');
                 showGridLines: true
             },
             colorScheme: 'scheme01',
+            renderEngine: 'HTML5',
             seriesGroups:
                 [
                     {
@@ -70,8 +71,7 @@ require(DIR_WS_INCLUDES . 'template_top.php');
                         valueAxis:
                         {
                             minValue: 0,
-                            maxValue: 100,
-                            unitInterval: 10,
+
                             description: chartType + ' Count'
                         },
                         series: [
