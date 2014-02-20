@@ -517,26 +517,7 @@
       }
 
       if (EMAIL_TRANSPORT == 'smtp') {
-		 require_once(DIR_WS_CLASSES . "class.phpmailer.php");
-		$pMail = new PHPMailer();
-		$pMail->From = $from_addr;
-		$pMail->FromName = $from_name;
-		$pMail->IsSMTP();
-		$pMail->Host = "smtp.gmail.com"; // replace with your smtp server
-		$pMail->Port = 465;
-		$pMail->SMTPSecure = "ssl";
-		$pMail->Username = "group15cs5331@gmail.com"; // replace with your smtp username (if SMTPAuth is true)
-		$pMail->Password = "group15@cs5331"; // replace with your smtp password (if SMTPAuth is true)
-		$pMail->SMTPAuth = true; // true/false - turn on/off smtp authentication
-		$pMail->Subject = $subject;
-		$pMail->Body = $this->output;
-		$pMail->AddAddress($to_addr, $to_name);
-		$pMail->IsHTML(false);
-		return $pMail->Send();
-		$pMail->ClearAddresses();
-		$pMail->ClearAttachments();
-	  
-        //return mail($to_addr, $subject, $this->output, 'From: ' . $from . $this->lf . 'To: ' . $to . $this->lf . implode($this->lf, $this->headers) . $this->lf . implode($this->lf, $xtra_headers));
+        return mail($to_addr, $subject, $this->output, 'From: ' . $from . $this->lf . 'To: ' . $to . $this->lf . implode($this->lf, $this->headers) . $this->lf . implode($this->lf, $xtra_headers));
       } else {
         return mail($to, $subject, $this->output, 'From: '.$from.$this->lf.implode($this->lf, $this->headers).$this->lf.implode($this->lf, $xtra_headers));
       }

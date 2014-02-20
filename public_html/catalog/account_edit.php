@@ -30,16 +30,6 @@
     $fax = tep_db_prepare_input($HTTP_POST_VARS['fax']);
 
     $error = false;
-	
-	// social login start
-	if ($telephone == 'default') {
-      
-        $error = true;
-
-        $messageStack->add('account_edit', ENTRY_TELEPHONE_NUMBER_ERROR);
-      
-    }
-// social login end
 
     if (ACCOUNT_GENDER == 'true') {
       if ( ($gender != 'm') && ($gender != 'f') ) {
@@ -107,10 +97,8 @@
 
       tep_db_perform(TABLE_CUSTOMERS, $sql_data_array, 'update', "customers_id = '" . (int)$customer_id . "'");
 
-      //tep_db_query("update " . TABLE_CUSTOMERS_INFO . " set customers_info_date_account_last_modified = now() where customers_info_id = '" . (int)$customer_id . "'");
-// social login start
-      tep_db_query("update " . TABLE_CUSTOMERS_INFO . " set customers_info_date_account_last_modified = now(), personal_details_valid = 1 where customers_info_id = '" . (int)$customer_id . "'");
-// social login end
+      tep_db_query("update " . TABLE_CUSTOMERS_INFO . " set customers_info_date_account_last_modified = now() where customers_info_id = '" . (int)$customer_id . "'");
+
       $sql_data_array = array('entry_firstname' => $firstname,
                               'entry_lastname' => $lastname);
 
@@ -200,13 +188,7 @@
         <td class="fieldKey"><?php echo ENTRY_EMAIL_ADDRESS; ?></td>
         <td class="fieldValue"><?php echo tep_draw_input_field('email_address', $account['customers_email_address']) . '&nbsp;' . (tep_not_null(ENTRY_EMAIL_ADDRESS_TEXT) ? '<span class="inputRequirement">' . ENTRY_EMAIL_ADDRESS_TEXT . '</span>': ''); ?></td>
       </tr>
-      <!--<tr>
-        <td class="fieldKey"><?php echo ENTRY_TELEPHONE_NUMBER; ?></td>
-        <td class="fieldValue"><?php echo tep_draw_input_field('telephone', $account['customers_telephone']) . '&nbsp;' . (tep_not_null(ENTRY_TELEPHONE_NUMBER_TEXT) ? '<span class="inputRequirement">' . ENTRY_TELEPHONE_NUMBER_TEXT . '</span>': ''); ?></td>
-      </tr>-->
-	  <!--social login start -->
-      <tr<? echo ($account['customers_telephone']=="default"?' class="messageStackError' : '')?>">
-      <!--social login end -->
+      <tr>
         <td class="fieldKey"><?php echo ENTRY_TELEPHONE_NUMBER; ?></td>
         <td class="fieldValue"><?php echo tep_draw_input_field('telephone', $account['customers_telephone']) . '&nbsp;' . (tep_not_null(ENTRY_TELEPHONE_NUMBER_TEXT) ? '<span class="inputRequirement">' . ENTRY_TELEPHONE_NUMBER_TEXT . '</span>': ''); ?></td>
       </tr>
