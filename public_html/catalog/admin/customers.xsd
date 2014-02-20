@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-15"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="customers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="customer">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="addresses">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="address" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="address_book_id" type="xs:unsignedShort" use="optional" />
+                        <xs:attribute name="entry_gender" type="xs:string" use="required" />
+                        <xs:attribute name="entry_company" type="xs:string" use="required" />
+                        <xs:attribute name="entry_firstname" type="xs:string" use="required" />
+                        <xs:attribute name="entry_lastname" type="xs:string" use="required" />
+                        <xs:attribute name="entry_street_address" type="xs:string" use="required" />
+                        <xs:attribute name="entry_suburb" type="xs:string" use="required" />
+                        <xs:attribute name="entry_postcode" type="xs:string" use="required" />
+                        <xs:attribute name="entry_city" type="xs:string" use="required" />
+                        <xs:attribute name="entry_state" type="xs:string" use="required" />
+                        <xs:attribute name="entry_country_id" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="entry_zone_id" type="xs:unsignedByte" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="customers_id" type="xs:unsignedShort" use="optional" />
+            <xs:attribute name="customers_gender" type="xs:string" use="required" />
+            <xs:attribute name="customers_firstname" type="xs:string" use="required" />
+            <xs:attribute name="customers_lastname" type="xs:string" use="required" />
+            <xs:attribute name="customers_dob" type="xs:string" use="required" />
+            <xs:attribute name="customers_email_address" type="xs:string" use="required" />
+            <xs:attribute name="customers_telephone" type="xs:string" use="required" />
+            <xs:attribute name="customers_fax" type="xs:string" use="required" />
+            <xs:attribute name="customers_password" type="xs:string" use="required" />
+            <xs:attribute name="customers_newsletter" type="xs:string" use="required" />
+            <xs:attribute name="customers_authentication" type="xs:string" use="required" />
+            <xs:attribute name="customers_guid" type="xs:string" use="required" />
+            <xs:attribute name="customers_verified" type="xs:unsignedByte" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

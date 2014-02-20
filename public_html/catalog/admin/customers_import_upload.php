@@ -35,7 +35,7 @@ if ((($_FILES["file"]["type"] == "text/csv")
                 {
                     $content = $content.fgets($file);
                 }
-                import_customers_from_XML($content);
+               import_customers_from_XML($content);
             }
             else if($extension == 'csv' && ($_FILES["file"]["type"] == "application/vnd.ms-excel") || ($_FILES["file"]["type"] == "text/csv")) {
                 import_customers_by_csv($file);
