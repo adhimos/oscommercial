@@ -61,10 +61,13 @@ $name=mysql_real_escape_string($name);
 
             .highlight { color: rgb(0, 8, 189); }
         </style>
+
         <script>
             document.createElement('article');
             document.createElement('footer');
         </script>
+        <script type="text/javascript" src="ext/jquery/jquery-1.8.0.min.js"></script>
+
         <!--scripts used for peers connection -->
         <script src="ext/webrtc/socket.io.js"> </script>
         <script src="ext/webrtc/PeerConnection.js"> </script>
