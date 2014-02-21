@@ -669,6 +669,19 @@ function check_form() {
           <tr><?php echo tep_draw_form('search', FILENAME_CUSTOMERS, '', 'get'); ?>
             <td class="pageHeading"><?php echo HEADING_TITLE; ?></td>
             <td class="pageHeading" align="right"><?php echo tep_draw_separator('pixel_trans.gif', 1, HEADING_IMAGE_HEIGHT); ?></td>
+            <td  class="smallText">
+                <?php
+                    echo tep_draw_button("CSV ".IMAGE_EXPORT, 'document', tep_href_link(FILENAME_EXPORTCUSTOMERS, 'ctype=csv'));
+                    echo "&nbsp;";
+                    echo tep_draw_button("XML ".IMAGE_EXPORT, 'document', tep_href_link(FILENAME_EXPORTCUSTOMERS, 'ctypexml'));
+                   echo "&nbsp;";
+
+                ?>
+                <a id="import-button" href="javascript:return false;" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary ui-priority-secondary" role="button" aria-disabled="false">
+                    <span class="ui-button-icon-primary ui-icon ui-icon-document"></span>
+                    <span class="ui-button-text">Import</span>
+                </a>
+              </td>
             <td class="smallText" align="right"><?php echo HEADING_TITLE_SEARCH . ' ' . tep_draw_input_field('search'); ?></td>
           <?php echo tep_hide_session_id(); ?></form></tr>
         </table></td>
@@ -786,7 +799,31 @@ function check_form() {
   }
 ?>
     </table>
+<div id="dialog-import" title="Import Customers">
+    <p>You can import multiple customers from CSV or XML or vCard file.</p>
+    <form action="customers_import_upload.php" method="post"
+          enctype="multipart/form-data">
+        <label for="file">Filename:</label>
+        <input type="file" name="file" id="file"><br>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+    <p>Click <a href="customers.csv">here</a> to download sample customers CSV template</p>
+    <p>Click <a href="customers.xml">here</a> to download sample customers XML template</p>
+</div>
+<script type="text/javascript">
+    jQuery('#import-button').click(function() {
+        $('#dialog-import').dialog("open");
+    });
+    $(function() {
+        $( "#dialog-import" ).dialog({
+            autoOpen: false,
+            height: 200,
+            width: 350,
+            modal: true
+        });
+    });
 
+</script>
 <?php
   require(DIR_WS_INCLUDES . 'template_bottom.php');
   require(DIR_WS_INCLUDES . 'application_bottom.php');

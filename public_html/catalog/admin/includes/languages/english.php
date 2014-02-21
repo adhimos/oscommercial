@@ -199,6 +199,8 @@ define('IMAGE_DELETE', 'Delete');
 define('IMAGE_EDIT', 'Edit');
 define('IMAGE_EMAIL', 'Email');
 define('IMAGE_EXPORT', 'Export');
+// Export & Import CSV & XML
+define('IMAGE_IMPORT', 'Import');
 define('IMAGE_ICON_STATUS_GREEN', 'Active');
 define('IMAGE_ICON_STATUS_GREEN_LIGHT', 'Set Active');
 define('IMAGE_ICON_STATUS_RED', 'Inactive');

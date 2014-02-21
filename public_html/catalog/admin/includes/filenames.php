@@ -33,6 +33,10 @@
   define('FILENAME_EXPORTVCARD', 'vcardexport.php');
   define('FILENAME_VCARDIMPORT', 'vcardimport.php');
   //
+  //EXPORT CUSTOMERS BY XML & CSV
+  define('FILENAME_EXPORTCUSTOMERS', 'customers_export.php');
+  define('FILENAME_EXPORTCUSTOMERS', 'customers_import.php');
+  //
   define('FILENAME_MANUFACTURERS', 'manufacturers.php');
   define('FILENAME_MODULES', 'modules.php');
   define('FILENAME_NEWSLETTERS', 'newsletters.php');
