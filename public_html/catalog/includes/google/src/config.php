@@ -25,7 +25,7 @@ $apiConfig = array(
 // OAuth2 Settings, you can get these keys at https://code.google.com/apis/console
     'oauth2_client_id' => '194108436411.apps.googleusercontent.com',
     'oauth2_client_secret' => 'n3WdFkKGDpsy0LGtsKjkOA6H',
-    'oauth2_redirect_uri' => 'http://localhost/catalog/googleloader.php',
+    'oauth2_redirect_uri' => 'http://group15cs5331.info/catalog/googleloader.php',
 
     // The developer key, you get this at https://code.google.com/apis/console
     'developer_key' => 'AIzaSyBsXSd18nWb233_LduE-vJ5W3tF5pU3qo4',

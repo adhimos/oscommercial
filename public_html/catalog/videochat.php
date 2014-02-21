@@ -107,7 +107,7 @@ $name=mysql_real_escape_string($name);
             <script>
                var channel = location.href.replace(/\/|:|#|%|\.|\[|\]/g, '');
 				var sender =  document.getElementById('your-name').value; //Math.round(Math.random() * 999999999) + 999999999;
-				var SIGNALING_SERVER = 'http://localhost:8888/';
+				var SIGNALING_SERVER = 'http://group15cs5331.info:8888/';
 				io.connect(SIGNALING_SERVER).emit('new-channel', {
 					channel: channel,
 					sender: sender
