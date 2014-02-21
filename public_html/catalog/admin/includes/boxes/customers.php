@@ -23,11 +23,7 @@
         'title' => BOX_CUSTOMERS_ORDERS,
         'link' => tep_href_link(FILENAME_ORDERS)
       ),
-      array(
-        'code' => FILENAME_VCARDIMPORT,
-        'title' => BOX_CUSTOMERS_IMPORT,
-        'link' => tep_href_link(FILENAME_VCARDIMPORT)
-      ),
+    
     )
   );
 ?>

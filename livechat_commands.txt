@@ -1,0 +1,10 @@
+LIVECHAT
+
+For the livechat you can join a new room by using the command /join roomname. If users are already in the room you can't join the room since
+you are not the owner of it. If the room doesn't exist then you join the room and you are the owner for the duration of the session.
+
+If you are the owner of a room you can invite people to join you by using the command /invite username.
+
+You can talk privateley with someone by using the command /privmsg username. it will open a private room for you and the other one
+
+When you are in a private room you can use the command /video username to start a video chat 
