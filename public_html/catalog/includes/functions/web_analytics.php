@@ -50,9 +50,14 @@ else
 function insert_wa_session()
 {
 	$ip_address = $_SERVER['REMOTE_ADDR'];
+	//for testing purposes added sample Ips
+    $ip_address_array = array("125.214.169.95", "137.132.21.27", "203.127.23.18", "83.98.28.10", "213.174.127.10",
+    "164.100.109.240", "62.50.43.44", "203.35.229.223", "220.181.111.85", "205.193.117.158" );
+    $random_num = rand(0,9);
+    $ip_address = $ip_address_array[$random_num];
+	//$ip_address = '50.23.115.104';
 	//test
-	$ip_address = '50.23.115.104';
-	//test
+
 	$country = file_get_contents('http://api.hostip.info/country.php?ip='.$ip_address);
     $customerId =$_SESSION["customer_id"];
 	if(empty($customer_id))

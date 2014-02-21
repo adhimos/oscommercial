@@ -158,7 +158,7 @@ function import_customers_from_XML($content){
                 $sql_data_address = array();
 
                 $addressesNode = $item -> childNodes->item(0);
-               
+
                 foreach ($addressesNode->childNodes AS $address)
                 {
 

@@ -109,6 +109,9 @@ define('BOX_TOOLS_SEC_DIR_PERMISSIONS', 'Security Directory Permissions');
 define('BOX_TOOLS_SERVER_INFO', 'Server Info');
 define('BOX_TOOLS_VERSION_CHECK', 'Version Checker');
 define('BOX_TOOLS_WHOS_ONLINE', 'Who\'s Online');
+//Web Analytics
+define('BOX_TOOLS_WEB_ANALYTICS', 'Web Analytics');
+//Web Analytics
 
 // localizaion box text in includes/boxes/localization.php
 define('BOX_HEADING_LOCALIZATION', 'Localization');

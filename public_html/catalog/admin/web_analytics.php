@@ -160,8 +160,8 @@ if(isVisit)
             changeTab(event, false);
         });
 
-        $('#visitTabs').jqxTabs({ height: 600, width: 600 });
-        $('#viewTabs').jqxTabs({ height: 600, width: 600 });
+        $('#visitTabs').jqxTabs({ height: 400 });
+        $('#viewTabs').jqxTabs({ height: 400 });
         load_chart("Daily", true);
         load_chart("Daily", false);
         $.getJSON( "web_analytics_data.php?fn=allvisits", function( json ) {
