@@ -115,7 +115,7 @@ function import_customers_from_XML($content){
 
     set_error_handler('HandleXmlError');
         $xmlDoc = new DOMDocument();
-
+        $xmlDoc->preserveWhiteSpace = FALSE;
         $xmlDoc -> load('customers.xml');
         if (!$xmlDoc->schemaValidate('customers.xsd')) {
             print '<b>DOMDocument::schemaValidate() Generated Errors!</b>';
@@ -138,10 +138,8 @@ function import_customers_from_XML($content){
 
 
             for ($i = 0; $i < count($customers_columns_array); $i++) {
-
-
                 $sql_data_array[$customers_columns_array[$i]] =  tep_db_prepare_input($item->getAttribute($customers_columns_array[$i]));
-                echo  $customers_columns_array[$i]."=>". $sql_data_array[$customers_columns_array[$i]]. "<br>";
+                //echo  $customers_columns_array[$i]."=>". $sql_data_array[$customers_columns_array[$i]]. "<br>";
             }
 
 
@@ -153,19 +151,20 @@ function import_customers_from_XML($content){
             }
             else {
 
+
                 tep_db_perform(TABLE_CUSTOMERS, $sql_data_array);
                 $customer_id = tep_db_insert_id();
 
                 $sql_data_address = array();
 
                 $addressesNode = $item -> childNodes->item(0);
-
+               
                 foreach ($addressesNode->childNodes AS $address)
                 {
 
                     for ($j = 0; $j < count($address_columns_array); $j++) {
                         $sql_data_address[$address_columns_array[$j]]=  tep_db_prepare_input($address->getAttribute($address_columns_array[$j]));
-                        print  $address_columns_array[$j]."=>". $sql_data_address[$address_columns_array[$j]]. "<br>";
+                        //print  $address_columns_array[$j]."=>". $sql_data_address[$address_columns_array[$j]]. "<br>";
                     }
                 }
 
@@ -174,6 +173,8 @@ function import_customers_from_XML($content){
 
                 $address_id = tep_db_insert_id();
                 tep_db_query("update " . TABLE_CUSTOMERS . " set customers_default_address_id = '" . (int)$address_id . "'    where customers_id = '" . (int)$customer_id . "'");
+
+
                 $customer_info_data = array('customers_info_id'=> $customer_id, 'customers_info_number_of_logons' => '0', 'customers_info_date_account_created' => 'now()',
                     'valid_address'=> '1', 'personal_details_valid' => '1');
                 tep_db_perform(TABLE_CUSTOMERS_INFO, $customer_info_data);
@@ -232,13 +233,14 @@ function import_customers_from_XML($content){
                             tep_db_perform(TABLE_CUSTOMERS, $sql_data_array);
                             $customer_id = tep_db_insert_id();
                             $sql_data_address["customers_id"]= $customer_id;
+
+
                             tep_db_perform(TABLE_ADDRESS_BOOK, $sql_data_address);
+                            $address_id = tep_db_insert_id();
+                            tep_db_query("update " . TABLE_CUSTOMERS . " set customers_default_address_id = '" . (int)$address_id . "'    where customers_id = '" . (int)$customer_id . "'");
                             $customer_info_data = array('customers_info_id'=> $customer_id, 'customers_info_number_of_logons' => '0', 'customers_info_date_account_created' => 'now()',
                                 'valid_address'=> '1', 'personal_details_valid' => '1');
                             tep_db_perform(TABLE_CUSTOMERS_INFO, $customer_info_data);
-                            $address_id = tep_db_insert_id();
-                            tep_db_query("update " . TABLE_CUSTOMERS . " set customers_default_address_id = '" . (int)$address_id . "'    where customers_id = '" . (int)$customer_id . "'");
-
                             echo "Successfull imported record #".$record;
 
                         }
@@ -246,19 +248,6 @@ function import_customers_from_XML($content){
 
 
                         $record +=1;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                 }
 

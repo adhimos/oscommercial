@@ -673,7 +673,7 @@ function check_form() {
                 <?php
                     echo tep_draw_button("CSV ".IMAGE_EXPORT, 'document', tep_href_link(FILENAME_EXPORTCUSTOMERS, 'ctype=csv'));
                     echo "&nbsp;";
-                    echo tep_draw_button("XML ".IMAGE_EXPORT, 'document', tep_href_link(FILENAME_EXPORTCUSTOMERS, 'ctypexml'));
+                    echo tep_draw_button("XML ".IMAGE_EXPORT, 'document', tep_href_link(FILENAME_EXPORTCUSTOMERS, 'ctype=xml'));
                    echo "&nbsp;";
 
                 ?>

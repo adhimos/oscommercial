@@ -7,6 +7,15 @@
  */
 require('includes/application_top.php');
 require('includes/template_top.php');
+?>
+
+    <br>
+    <a href="customers.php" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary ui-priority-secondary" role="button" aria-disabled="false">
+        <span class="ui-button-text">Back to Customers List</span>
+    </a>
+    <br>
+
+<?php
 $allowedExts = array("xml", "csv");
 $temp = explode(".", $_FILES["file"]["name"]);
 $extension = end($temp);
@@ -57,7 +66,13 @@ else
 {
     echo "Invalid file";
 }
+?>
+<br>
+    <a href="customers.php" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary ui-priority-secondary" role="button" aria-disabled="false">
+         <span class="ui-button-text">Back to Customers List</span>
+    </a>
 
+<?php
 require('includes/application_bottom.php');
 
 require('includes/template_bottom.php');
