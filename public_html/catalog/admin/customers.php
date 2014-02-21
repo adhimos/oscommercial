@@ -675,6 +675,8 @@ function check_form() {
                     echo "&nbsp;";
                     echo tep_draw_button("XML ".IMAGE_EXPORT, 'document', tep_href_link(FILENAME_EXPORTCUSTOMERS, 'ctype=xml'));
                    echo "&nbsp;";
+				   echo tep_draw_button("VCARD ".IMAGE_EXPORT, 'document', tep_href_link(FILENAME_EXPORTVCARD, 'all=true'));
+                   echo "&nbsp;";
 
                 ?>
                 <a id="import-button" href="javascript:return false;" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary ui-priority-secondary" role="button" aria-disabled="false">
