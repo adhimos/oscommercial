@@ -61,3 +61,12 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   KEY `customer_id` (`customers_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+
+
+
+CREATE TABLE IF NOT EXISTS `plugin_data` (
+  `customer_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `plugin_name` varchar(255) DEFAULT NULL,
+  `data` varchar(5000) , PRIMARY KEY (`customer_id`, `plugin_name`)
+);

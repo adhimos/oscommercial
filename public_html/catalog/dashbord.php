@@ -36,9 +36,9 @@
 		<table class="productListingHeader" width="100%">
 		<tbody>
 		<tr>
-			<td>Plugin</td>
-			<td>Description</td>
-			<td>&nbsp</td>
+			<td style = 'width:100px;'>Plugin</td>
+			<td style = 'text-align: center;'>Description</td>
+			<td style = 'width:100px;'>&nbsp</td>
 		</tr>
 		</tbody>
 		</table>			
@@ -64,9 +64,9 @@ if (tep_session_is_registered('customer_id')) {
 		<table class="productListingHeader" width="100%">
 		<tbody>
 		<tr>
-			<td>Plugin</td>
-			<td>Description</td>
-			<td>&nbsp</td>
+			<td style = 'width:100px;'>Plugin</td>
+			<td style = 'text-align: center;'>Description</td>
+			<td style = 'width:100px;'>&nbsp</td>
 		</tr>
 		</tbody>
 		</table>			

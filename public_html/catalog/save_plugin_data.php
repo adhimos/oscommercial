@@ -13,11 +13,10 @@ if(isset($_POST['plugin_data'])) {
 			array_push($pluginData, $newData);
 			$pluginData = array_unique($pluginData);
 		} else { 
-			$pluginData = array($newData);
+			$pluginData = array($newData);	
 		}
 		$_SESSION['plugins'][$pluginName]['plugin_data'] = $pluginData;		
 	} 
-			
   } 
 
 
