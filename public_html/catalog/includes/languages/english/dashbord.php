@@ -9,7 +9,7 @@
 
   Released under the GNU General Public License
 */
-
+define('NAVBAR_TITLE', 'Dashbord');
 define('AVAILABLE_PLUGINS', 'Available Plugins');
 define('HEADING_TITLE', 'Dashbord');
 define('INSTALL_PLUGIN', 'Install Plugins');

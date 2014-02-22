@@ -15,7 +15,7 @@
 
   require(DIR_WS_LANGUAGES . $language . '/' . FILENAME_DASHBORD);
 
-  $breadcrumb->add(NAVBAR_TITLE, tep_href_link(FILENAME_ACCOUNT, '', 'SSL'));
+  $breadcrumb->add(NAVBAR_TITLE, tep_href_link(FILENAME_DASHBORD, '', 'SSL'));
 
   require(DIR_WS_INCLUDES . 'template_top.php');
 ?>
@@ -36,9 +36,9 @@
 		<table class="productListingHeader" width="100%">
 		<tbody>
 		<tr>
-			<td>Plugin</td>
-			<td>Description</td>
-			<td>&nbps</td>
+			<td style = 'width:100px;'>Plugin</td>
+			<td style = 'text-align: center;'>Description</td>
+			<td style = 'width:100px;'>&nbsp</td>
 		</tr>
 		</tbody>
 		</table>			
@@ -53,6 +53,10 @@
 
 </div>
 
+<?php
+if (tep_session_is_registered('customer_id')) {
+?>
+
   <h2><?php echo INSTALLED_PLUGIN; ?></h2>
 
   <div class="ui-widget infoBoxContainer">
@@ -60,9 +64,9 @@
 		<table class="productListingHeader" width="100%">
 		<tbody>
 		<tr>
-			<td>Plugin</td>
-			<td>Description</td>
-			<td>&nbps</td>
+			<td style = 'width:100px;'>Plugin</td>
+			<td style = 'text-align: center;'>Description</td>
+			<td style = 'width:100px;'>&nbsp</td>
 		</tr>
 		</tbody>
 		</table>			
@@ -93,7 +97,13 @@
 
 ?>
   </div>
+
+<?php
+}
+?>
+
 </div>
+
 
 
 <?php

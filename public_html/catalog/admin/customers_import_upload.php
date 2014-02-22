@@ -16,13 +16,14 @@ require('includes/template_top.php');
     <br>
 
 <?php
-$allowedExts = array("xml", "csv");
+$allowedExts = array("xml", "csv","vcf");
 $temp = explode(".", $_FILES["file"]["name"]);
 $extension = end($temp);
 
 if ((($_FILES["file"]["type"] == "text/csv")
         || ($_FILES["file"]["type"] == "text/xml")
         || ($_FILES["file"]["type"] == "application/vnd.ms-excel")
+		|| ($_FILES["file"]["type"] == "text/x-vcard")
         )
     && ($_FILES["file"]["size"] < 200000000)
     && in_array($extension, $allowedExts))
@@ -52,6 +53,9 @@ if ((($_FILES["file"]["type"] == "text/csv")
 
 
             }
+			else if($extension == 'vcf' ){
+				import_customers_by_vcard($_FILES["file"]["tmp_name"]);
+			}
         }
         catch(Exception $e)
         {

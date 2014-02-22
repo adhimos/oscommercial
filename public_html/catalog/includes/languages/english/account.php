@@ -29,6 +29,10 @@ define('EMAIL_NOTIFICATIONS_TITLE', 'E-Mail Notifications');
 define('EMAIL_NOTIFICATIONS_NEWSLETTERS', 'Subscribe or unsubscribe from newsletters.');
 define('EMAIL_NOTIFICATIONS_PRODUCTS', 'View or change my product notification list.');
 
+define('ADVERTISEMENT_TITLE', 'Advertisements');
+define('ADVERTISEMENT_PLACEMENT', 'Place advertisements.');
+define('ADVERTISEMENT_VIEW', 'View the advertisements I have placed.');
+
 define('TITLE_CUSTOMER_ASSITANCE_REQUIRED', 'Automated Customer Assistance');
 define('IS_CUSTOMER_ASSISTANT_REQUIRED', 'Do you need our automated customer assistant to help you with the buying process? ');
 define('CUSTOMER_ASSISTANT_NEEDED', 'I need assistance');

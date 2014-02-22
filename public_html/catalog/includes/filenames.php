@@ -73,4 +73,6 @@
   define('FILENAME_TELL_A_FRIEND', 'tell_a_friend.php');
   define('FILENAME_UPCOMING_PRODUCTS', 'upcoming_products.php');
   define('FILENAME_DASHBORD', 'dashbord.php');
+  define('FILENAME_ADVERTISEMENT_HISTORY', 'advertisement_history.php');
+  define('FILENAME_CREATE_ADVERTISEMENT', 'create_advertisement.php');
 ?>

@@ -1,7 +1,7 @@
 <?php
   define('HTTP_SERVER', 'http://group15cs5331.info');
   define('HTTPS_SERVER', 'http://group15cs5331.info');
-  define('ENABLE_SSL', false);
+  define('ENABLE_SSL', true);
   define('HTTP_COOKIE_DOMAIN', '');
   define('HTTPS_COOKIE_DOMAIN', '');
   define('HTTP_COOKIE_PATH', '/catalog/');

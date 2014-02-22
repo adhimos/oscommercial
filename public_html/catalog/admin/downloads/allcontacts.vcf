@@ -1,0 +1,66 @@
+BEGIN:VCARD
+VERSION:3.0
+N:student;student;Mr.
+FN:student student
+BDAY:20140101
+ORG:student
+TEL;TYPE=HOME,VOICE:12345678
+ADR;TYPE=HOME:;;student;student;student;1234567;Singapore
+EMAIL;TYPE=PREF,INTERNET:student@student.com
+END:VCARD
+
+BEGIN:VCARD
+VERSION:3.0
+N:Thaminda;Karunanayake;Mr.
+FN:Thaminda Karunanayake
+BDAY:19851010
+ORG:NUS
+TEL;TYPE=HOME,VOICE:92214933
+ADR;TYPE=HOME:;;NUS SOC;Kent Ridge;Singapore;111111;Singapore
+EMAIL;TYPE=PREF,INTERNET:A0096035@nus.edu.sg
+END:VCARD
+
+BEGIN:VCARD
+VERSION:3.0
+N:Lasith;Ng;Mr.
+FN:Lasith Ng
+BDAY:20140218
+ORG:NUS
+TEL;TYPE=HOME,VOICE:1234567
+ADR;TYPE=HOME:;;sdlfj;sdfkl;sdfkj;119001;Singapore
+EMAIL;TYPE=PREF,INTERNET:lasithh@gmail.com
+END:VCARD
+
+BEGIN:VCARD
+VERSION:3.0
+N:Lasith;Ng;Mr.
+FN:Lasith Ng
+BDAY:19851002
+ORG:NUS
+TEL;TYPE=HOME,VOICE:1234567
+ADR;TYPE=HOME:;;sdlfj;Kent Ridge;Singapore;119001;Singapore
+EMAIL;TYPE=PREF,INTERNET:thamindadarshana@gmail.com
+END:VCARD
+
+BEGIN:VCARD
+VERSION:3.0
+N:User A;Group 15;Mr.
+FN:User A Group 15
+BDAY:20000101
+ORG:default
+TEL;TYPE=HOME,VOICE:default
+ADR;TYPE=HOME:;;default;default;;default;United States
+EMAIL;TYPE=PREF,INTERNET:uagroup15@gmail.com
+END:VCARD
+
+BEGIN:VCARD
+VERSION:3.0
+N:Thaminda;Karunanayake;Mr.
+FN:Thaminda Karunanayake
+BDAY:19851010
+ORG:NUS
+TEL;TYPE=HOME,VOICE:92214933
+ADR;TYPE=HOME:;;sdlfj;Kent Ridge;Singapore;119001;Singapore
+EMAIL;TYPE=PREF,INTERNET:thaminda.kp@autoscan.sg
+END:VCARD
+
