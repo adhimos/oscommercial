@@ -675,7 +675,7 @@ function check_form() {
                     echo "&nbsp;";
                     echo tep_draw_button("XML ".IMAGE_EXPORT, 'document', tep_href_link(FILENAME_EXPORTCUSTOMERS, 'ctype=xml'));
                    echo "&nbsp;";
-				   echo tep_draw_button("VCARD ".IMAGE_EXPORT, 'document', tep_href_link(FILENAME_EXPORTVCARD, 'all=true'));
+				   echo tep_draw_button("VCARD ".IMAGE_EXPORT, 'document', tep_href_link(FILENAME_EXPORTCUSTOMERS, 'ctype=vcf'));
                    echo "&nbsp;";
 
                 ?>
@@ -774,7 +774,7 @@ function check_form() {
         $heading[] = array('text' => '<strong>' . $cInfo->customers_firstname . ' ' . $cInfo->customers_lastname . '</strong>');
 
         $contents[] = array('align' => 'center', 'text' => tep_draw_button(IMAGE_EDIT, 'document', tep_href_link(FILENAME_CUSTOMERS, tep_get_all_get_params(array('cID', 'action')) . 'cID=' . $cInfo->customers_id . '&action=edit')) . tep_draw_button(IMAGE_DELETE, 'trash', tep_href_link(FILENAME_CUSTOMERS, tep_get_all_get_params(array('cID', 'action')) . 'cID=' . $cInfo->customers_id . '&action=confirm')) . tep_draw_button(IMAGE_ORDERS, 'cart', tep_href_link(FILENAME_ORDERS, 'cID=' . $cInfo->customers_id)) . tep_draw_button(IMAGE_EMAIL, 'mail-closed', tep_href_link(FILENAME_MAIL, 'customer=' . $cInfo->customers_email_address)));
-		$contents[] = array('text' => '<br />' . tep_draw_button("export", 'mail-closed', tep_href_link(FILENAME_EXPORTVCARD, 'cID=' . $cInfo->customers_id)));
+		$contents[] = array('text' => '<br />' . tep_draw_button("export", 'mail-closed', tep_href_link(FILENAME_EXPORTCUSTOMERS, 'cID=' . $cInfo->customers_id)));
         $contents[] = array('text' => '<br />' . TEXT_DATE_ACCOUNT_CREATED . ' ' . tep_date_short($cInfo->date_account_created));
         $contents[] = array('text' => '<br />' . TEXT_DATE_ACCOUNT_LAST_MODIFIED . ' ' . tep_date_short($cInfo->date_account_last_modified));
         $contents[] = array('text' => '<br />' . TEXT_INFO_DATE_LAST_LOGON . ' '  . tep_date_short($cInfo->date_last_logon));
