@@ -137,7 +137,7 @@ tep_session_register(assistant);
 if (!tep_session_is_registered('assistant')) {
 
 ?>
-<div class="ui-widget infoBoxContainer">
+<div class="ui-widget infoBoxContainer shadow" id="customerAssistantMessageBox">
 <div class="ui-widget-header infoBoxHeading">
 <?php
 echo TITLE_CUSTOMER_ASSITANCE_REQUIRED; ?>

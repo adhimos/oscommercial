@@ -150,4 +150,99 @@
       return $string;
     }
   }
+
+function tep_save_plugin_data_db($customer_id, $plugin_name, $data){
+
+$db_link = mysqli_connect(DB_SERVER, DB_SERVER_USERNAME, DB_SERVER_PASSWORD, DB_DATABASE);
+
+$result_customer_id = tep_check_plugin_data_available($db_link, $customer_id, $plugin_name);
+
+if(!isset($result_customer_id)){
+	$query = "insert into plugin_data (customer_id, plugin_name, data) values (?, ?, ?);";
+} else {
+	$query = "update plugin_data set customer_id = ?, plugin_name = ?, data = ?;";
+
+}
+
+$stmt = mysqli_stmt_init($db_link);
+
+if (mysqli_stmt_prepare($stmt, $query)) {
+
+	
+    /* Lecture des marqueurs */
+    mysqli_stmt_bind_param($stmt, "iss", $customer_id, $plugin_name, $data);
+
+    /* Exécution de la requête */
+    mysqli_stmt_execute($stmt);    
+}
+mysqli_stmt_close($stmt);
+mysqli_close($db_link);
+}
+
+
+function tep_check_plugin_data_available($db_link, $customer_id, $plugin_name){	
+	$select_query = "select customer_id from plugin_data where customer_id = ? and plugin_name = ?";
+	$stmt = mysqli_stmt_init($db_link);
+
+	if (mysqli_stmt_prepare($stmt, $select_query)) {
+	    	/* Lecture des marqueurs */
+		mysqli_stmt_bind_param($stmt, "is", $customer_id, $plugin_name);
+
+	    	/* Exécution de la requête */
+	    	mysqli_stmt_execute($stmt);
+		
+		mysqli_stmt_bind_result($stmt, $result_customer);
+
+		mysqli_stmt_fetch($stmt);
+	}
+	mysqli_stmt_close($stmt);
+	return $result_customer;	
+}
+
+function tep_load_plugin_database($customer_id, $plugin_name){
+	$db_link = mysqli_connect(DB_SERVER, DB_SERVER_USERNAME, DB_SERVER_PASSWORD, DB_DATABASE);
+
+	$select_query = "select data from plugin_data where customer_id = ? and plugin_name = ?";
+	$stmt = mysqli_stmt_init($db_link);
+	
+	if (mysqli_stmt_prepare($stmt, $select_query)) {		
+	    	/* Lecture des marqueurs */
+		mysqli_stmt_bind_param($stmt, "is", $customer_id, $plugin_name);
+
+	    	/* Exécution de la requête */
+	    	mysqli_stmt_execute($stmt);
+		
+		mysqli_stmt_bind_result($stmt, $result_data);
+
+		mysqli_stmt_fetch($stmt);
+
+	
+	}
+	mysqli_stmt_close($stmt);
+	mysqli_close($db_link);
+	return $result_data;	
+}
+
+
+function tep_uninstall_plugin_database($customer_id, $plugin_name){
+	$db_link = mysqli_connect(DB_SERVER, DB_SERVER_USERNAME, DB_SERVER_PASSWORD, DB_DATABASE);
+
+	$delete_query = "delete from plugin_data where customer_id = ? and plugin_name = ?";
+	$stmt = mysqli_stmt_init($db_link);
+	
+	if (mysqli_stmt_prepare($stmt, $delete_query)) {		
+	    	/* Lecture des marqueurs */
+		mysqli_stmt_bind_param($stmt, "is", $customer_id, $plugin_name);
+
+	    	/* Exécution de la requête */
+	    	mysqli_stmt_execute($stmt);
+		
+		
+	
+	}
+	mysqli_stmt_close($stmt);
+	mysqli_close($db_link);
+}
+
+
 ?>

@@ -136,14 +136,16 @@ function read_plugin_descriptions($plugins_download_path){
 
 
 function tep_initialize_plugins(){
-$customer_id = (int) tep_get_from_session('customer_id');
-$plugin_path = 'plugin/user/'.$customer_id;
-if ($handle = opendir('plugin/user/'.$customer_id)) {
-        while (false !== ($entry = readdir($handle))) {
-            if ($entry != "." && $entry != "..") {
-		      tep_read_plugin_config($plugin_path.'/'.$entry);
-	}
-        }
+	$customer_id = (int) tep_get_from_session('customer_id');
+	$plugin_path = 'plugin/user/'.$customer_id;
+	if ($handle = opendir('plugin/user/'.$customer_id)) {
+	        while (false !== ($entry = readdir($handle))) {
+	            if ($entry != "." && $entry != "..") {
+		    	tep_read_plugin_config($plugin_path.'/'.$entry);
+			$plugin_data = tep_load_plugin_database($customer_id, $entry);
+			$_SESSION['plugins'][$entry]['plugin_data'] = json_decode($plugin_data, true);
+		}
+        	}
         closedir($handle);
    } else {
  	echo "No plugins available";
@@ -251,9 +253,11 @@ if ($handle = opendir('plugin/user/'.$customer_id)) {
 
 function tep_remove_plugin(){
 	global $HTTP_GET_VARS;
+	$plugin_name = $HTTP_GET_VARS['pluginName'];
 	$customer_id = (int) tep_get_from_session('customer_id');
-	deleteDir('plugin/user/'.$customer_id.'/'.$HTTP_GET_VARS['pluginName']);
-	unset($_SESSION['plugins'][$HTTP_GET_VARS['pluginName']]);	
+	deleteDir('plugin/user/'.$customer_id.'/'.$plugin_name);
+	unset($_SESSION['plugins'][$plugin_name]);	
+	tep_uninstall_plugin_database($customer_id, $plugin_name);
 	
 }
 

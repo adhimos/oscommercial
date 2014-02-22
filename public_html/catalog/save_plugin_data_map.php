@@ -7,21 +7,11 @@ if(isset($_POST['plugin_data'])) {
 	$newData = $data['data'];
 
 	require('includes/application_top.php');
-
-	$all = $_SESSION['plugins']['Converter']['plugin_data'];
-	foreach($all as $key => $val){
-		echo "Key = ".$key." value = ".$val;
-	}
-	echo"================================";
-	if(isset($pluginName)){
-		
+	$customer_id = (int) tep_get_from_session('customer_id');
+	if(isset($pluginName)){		
 		$_SESSION['plugins'][$pluginName]['plugin_data'][$key] = $newData;		
+		tep_save_plugin_data_db($customer_id, $pluginName, json_encode($_SESSION['plugins'][$pluginName]['plugin_data']));
 	} 
-	
-	$all = $_SESSION['plugins']['Converter']['plugin_data'];
-	foreach($all as $key => $val){
-		echo "Key = ".$key." value = ".$val;
-	}
 	
   } 
 ?>

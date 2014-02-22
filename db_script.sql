@@ -70,3 +70,10 @@ CREATE TABLE IF NOT EXISTS `plugin_data` (
   `plugin_name` varchar(255) DEFAULT NULL,
   `data` varchar(5000) , PRIMARY KEY (`customer_id`, `plugin_name`)
 );
+
+CREATE TABLE  `osCommerce`.`plugin_data` (
+  `customer_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `plugin_name` varchar(255) NOT NULL DEFAULT '',
+  `data` varchar(5000) DEFAULT NULL,
+  PRIMARY KEY (`customer_id`,`plugin_name`)
+); 
