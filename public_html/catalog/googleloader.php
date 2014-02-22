@@ -186,7 +186,7 @@ if ($client->getAccessToken()) {
 			if(isset($_SESSION["javascript"])){
 				
 					echo"<script>
-						alert('test');
+						
 							window.opener.location.href = '".tep_href_link(FILENAME_LOGIN, '', 'SSL')."';
 							self.close();
 						</script>";
