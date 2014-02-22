@@ -103,6 +103,17 @@ if(!tep_get_valid_address_status($customer_id)){
       <li><span class="ui-icon ui-icon-heart accountLinkListEntry"></span><?php echo '<a href="' . tep_href_link(FILENAME_ACCOUNT_NOTIFICATIONS, '', 'SSL') . '">' . EMAIL_NOTIFICATIONS_PRODUCTS . '</a>'; ?></li>
     </ul>
   </div>
+	
+  
+  <h2><?php echo ADVERTISEMENT_TITLE; ?></h2>
+
+  <div class="contentText">
+    <ul class="accountLinkList">
+      <li><span class="ui-icon ui-icon-image accountLinkListEntry"></span><?php echo '<a href="' . tep_href_link(FILENAME_CREATE_ADVERTISEMENT, '', 'SSL') . '">' . ADVERTISEMENT_PLACEMENT . '</a>'; ?></li>
+      <li><span class="ui-icon ui-icon-suitcase accountLinkListEntry"></span><?php echo '<a href="' . tep_href_link(FILENAME_ADVERTISEMENT_HISTORY, '', 'SSL') . '">' . ADVERTISEMENT_VIEW . '</a>'; ?></li>
+    </ul>
+  </div>
+
 </div>
 
 <?php

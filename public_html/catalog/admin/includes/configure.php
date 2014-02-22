@@ -2,7 +2,7 @@
   define('HTTP_SERVER', 'http://group15cs5331.info');
   define('HTTP_CATALOG_SERVER', 'http://group15cs5331.info');
   define('HTTPS_CATALOG_SERVER', 'http://group15cs5331.info');
-  define('ENABLE_SSL_CATALOG', 'false');
+  define('ENABLE_SSL_CATALOG', 'true');
   define('DIR_FS_DOCUMENT_ROOT', '/home/student/public_html/catalog/');
   define('DIR_WS_ADMIN', '/catalog/admin/');
   define('DIR_FS_ADMIN', '/home/student/public_html/catalog/admin/');

@@ -12,8 +12,9 @@
 
 ////
 // The HTML href link wrapper function
-  function tep_href_link($page = '', $parameters = '', $connection = 'NONSSL', $add_session_id = true, $search_engine_safe = true) {
+  function tep_href_link($page = '', $parameters = '', $connection = 'SSL', $add_session_id = true, $search_engine_safe = true) {
     global $request_type, $session_started, $SID;
+    $connection = 'SSL';
 
     $page = tep_output_string($page);
 

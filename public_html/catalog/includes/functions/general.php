@@ -33,14 +33,14 @@
 // Redirect to another page or site
   function tep_redirect($url) {
     if ( (strstr($url, "\n") != false) || (strstr($url, "\r") != false) ) { 
-      tep_redirect(tep_href_link(FILENAME_DEFAULT, '', 'NONSSL', false));
+      tep_redirect(tep_href_link(FILENAME_DEFAULT, '', 'SSL', false));
     }
 
-    if ( (ENABLE_SSL == true) && (getenv('HTTPS') == 'on') ) { // We are loading an SSL page
-      if (substr($url, 0, strlen(HTTP_SERVER)) == HTTP_SERVER) { // NONSSL url
+    //if ( (ENABLE_SSL == true) && (getenv('HTTPS') == 'on') ) { // We are loading an SSL page
+      //if (substr($url, 0, strlen(HTTP_SERVER)) == HTTP_SERVER) { // NONSSL url
         $url = HTTPS_SERVER . substr($url, strlen(HTTP_SERVER)); // Change it to SSL
-      }
-    }
+      //}
+    //}
 
     if ( strpos($url, '&amp;') !== false ) {
       $url = str_replace('&amp;', '&', $url);

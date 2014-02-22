@@ -13,7 +13,7 @@
   $login_request = true;
 
   require('includes/application_top.php');
-  require('includes/functions/password_funcs.php');
+  require_once('includes/functions/password_funcs.php');
 
   $action = (isset($HTTP_GET_VARS['action']) ? $HTTP_GET_VARS['action'] : '');
 
