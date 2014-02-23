@@ -160,7 +160,7 @@ $result_customer_id = tep_check_plugin_data_available($db_link, $customer_id, $p
 if(!isset($result_customer_id)){
 	$query = "insert into plugin_data (customer_id, plugin_name, data) values (?, ?, ?);";
 } else {
-	$query = "update plugin_data set customer_id = ?, plugin_name = ?, data = ?;";
+	$query = "update plugin_data set data = ? where customer_id = ? and plugin_name = ?;";
 
 }
 
@@ -170,7 +170,12 @@ if (mysqli_stmt_prepare($stmt, $query)) {
 
 	
     /* Lecture des marqueurs */
-    mysqli_stmt_bind_param($stmt, "iss", $customer_id, $plugin_name, $data);
+    
+    if(!isset($result_customer_id)){
+	mysqli_stmt_bind_param($stmt, "iss", $customer_id, $plugin_name, $data);
+    } else {
+	mysqli_stmt_bind_param($stmt, "sis", $data, $customer_id, $plugin_name);
+    }
 
     /* Exécution de la requête */
     mysqli_stmt_execute($stmt);    
