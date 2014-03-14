@@ -27,10 +27,11 @@
   function tep_redirect($url) {
     global $logger;
 
+	
     if ( (strstr($url, "\n") != false) || (strstr($url, "\r") != false) ) {
       tep_redirect(tep_href_link(FILENAME_DEFAULT, '', 'NONSSL', false));
     }
-
+	
     if ( strpos($url, '&amp;') !== false ) {
       $url = str_replace('&amp;', '&', $url);
     }

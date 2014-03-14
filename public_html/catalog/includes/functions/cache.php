@@ -53,18 +53,27 @@
         return false;
       }
     }
-
+	if(isset($_GET['data'])){
+		$var=unserialize($_GET['data']);
+		$success = true;
+	}
+	else{
 // try to open file
     if ($fp = @fopen($filename, 'r')) {
 // read in serialized data
       $szdata = fread($fp, filesize($filename));
       fclose($fp);
 // unserialze the data
-      $var = unserialize($szdata);
+
+	
+		$var = unserialize($szdata);
+	
+
+      
 
       $success = true;
     }
-
+	}
     return $success;
   }
 

@@ -24,7 +24,37 @@
   require(DIR_WS_INCLUDES . 'template_top.php');
 ?>
 
+<iframe width="205" height="100" frameborder="0" scrolling="no" name="frame1" id="f1"
+        src="http://www.dailydooh.com/wp-content/uploads/2009/02/final-ooh-10x20-electrolumi.gif">
+</iframe>
+
+<iframe width="210" height="100" frameborder="0" scrolling="no" name="frame2" id="f2"
+        src="http://www.rampantscotland.com/graphics/emirates_edin1a.jpg">
+</iframe>
+
+<iframe width="205" height="100" frameborder="0" scrolling="no" name="frame3" id="f3"
+        src="http://www.dailydooh.com/wp-content/uploads/2009/02/final-ooh-10x20-electrolumi.gif">
+</iframe>
+
 <h1><?php echo HEADING_TITLE; ?></h1>
+
+<?php
+// advertisement loading start
+
+$entry_query = tep_db_query("select adv_url, adv_budget from advertisements where customers_id != ". $customer_id ." order by adv_budget desc limit 3");
+
+echo '<script type="text/javascript">';
+echo '$(function() {';
+$index = 0;
+while ($row = mysql_fetch_array($entry_query, MYSQL_ASSOC)) {
+   $index++;
+   echo '$("#f'.$index.'").attr("src", "'.$row["adv_url"].'");';
+}
+echo '});';
+echo '</script>';
+// advertisement loading end
+?>
+
 <?php
 // social login start
 
@@ -110,7 +140,7 @@ if(!tep_get_valid_address_status($customer_id)){
   <div class="contentText">
     <ul class="accountLinkList">
       <li><span class="ui-icon ui-icon-image accountLinkListEntry"></span><?php echo '<a href="' . tep_href_link(FILENAME_CREATE_ADVERTISEMENT, '', 'SSL') . '">' . ADVERTISEMENT_PLACEMENT . '</a>'; ?></li>
-      <li><span class="ui-icon ui-icon-suitcase accountLinkListEntry"></span><?php echo '<a href="' . tep_href_link(FILENAME_ADVERTISEMENT_HISTORY, '', 'SSL') . '">' . ADVERTISEMENT_VIEW . '</a>'; ?></li>
+      <!--<li><span class="ui-icon ui-icon-suitcase accountLinkListEntry"></span><?php echo '<a href="' . tep_href_link(FILENAME_ADVERTISEMENT_HISTORY, '', 'SSL') . '">' . ADVERTISEMENT_VIEW . '</a>'; ?></li>-->
     </ul>
   </div>
 

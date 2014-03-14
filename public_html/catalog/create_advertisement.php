@@ -134,14 +134,16 @@
     }
 
     if ($error == false) {
-      $sql_data_array = array('customers_name' => $firstname . $lastname,
+      $sql_data_array = array('customers_name' => $firstname." ".$lastname,
                               'customers_email_address' => $email_address,
                               'adv_budget' => $budget,
                               'customers_telephone' => $telephone,
                               'adv_type' => $type,
                               'adv_url' => $url,
                               'customers_address' => $address,
-                              'customers_company' => $company);
+                              'customers_company' => $company,
+			      'customers_id' => $customer_id,
+			      'customers_address' => $street_address." ".$suburb." ".$city." ".$postcode." ".$state." ".$country);
 
      
       tep_db_perform(TABLE_ADVERTISEMENTS, $sql_data_array);
@@ -321,18 +323,28 @@ eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,lo
       </tr>
       <tr>
         <td class="fieldKey"><?php echo "Advertisement URL"; ?></td>
-        <td class="fieldValue"><?php echo tep_draw_input_field('url') . '&nbsp;' . (tep_not_null(ENTRY_PASSWORD_CONFIRMATION_TEXT) ? '<span class="inputRequirement">' . ENTRY_PASSWORD_CONFIRMATION_TEXT . '</span>': ''); ?></td>
+        <td id="adv_url" class="fieldValue"><?php echo tep_draw_input_field('url') . '&nbsp;' . (tep_not_null(ENTRY_PASSWORD_CONFIRMATION_TEXT) ? '<span class="inputRequirement">' . ENTRY_PASSWORD_CONFIRMATION_TEXT . '</span>': ''); ?></td>
       </tr>
     </table>
   </div>
 
   <div class="buttonSet">
     <span class="buttonAction"><?php echo tep_draw_button(IMAGE_BUTTON_SAVE, 'disk', null, 'primary'); ?></span>
-    <span class="buttonAction"><?php echo tep_draw_button(IMAGE_BUTTON_PREVIEW, 'search', tep_href_link(FILENAME_ACCOUNT, null),'primary',array('newwindow' => true)); ?> </span>
+    <span class="buttonAction" id="prev_id"><?php echo tep_draw_button(IMAGE_BUTTON_PREVIEW, 'search', '','primary',null); ?> </span>
   </div>
 </div>
 
 </form>
+
+<script type="text/javascript">
+$(function() {
+$("#prev_id").click(function(e){
+e.preventDefault();
+var opn_url = $("#adv_url input")[0].value;
+window.open(opn_url);
+});
+});
+</script>
 
 <?php
   require(DIR_WS_INCLUDES . 'template_bottom.php');

@@ -41,7 +41,7 @@
 
       $actionRecorder->record();
 
-      tep_redirect(tep_href_link(FILENAME_CONTACT_US, 'action=success'));
+      tep_redirect(tep_href_link(FILENAME_CONTACT_US, 'action=success&enquiry='.$_POST['enquiry']));
     }
   }
 
@@ -58,11 +58,17 @@
   }
 
   if (isset($HTTP_GET_VARS['action']) && ($HTTP_GET_VARS['action'] == 'success')) {
+  	
+
+		$message=TEXT_SUCCESS;
+	
+	
 ?>
 
 <div class="contentContainer">
   <div class="contentText">
-    <?php echo TEXT_SUCCESS; ?>
+  	
+    <?php echo $message; ?>
   </div>
 
   <div style="float: right;">

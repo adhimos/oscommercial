@@ -1,7 +1,7 @@
 <?php
-  define('HTTP_SERVER', 'http://group15cs5331.info');
-  define('HTTP_CATALOG_SERVER', 'http://group15cs5331.info');
-  define('HTTPS_CATALOG_SERVER', 'http://group15cs5331.info');
+  define('HTTP_SERVER', 'https://192.168.56.115');
+  define('HTTP_CATALOG_SERVER', 'https://192.168.56.115');
+  define('HTTPS_CATALOG_SERVER', 'https://192.168.56.115');
   define('ENABLE_SSL_CATALOG', 'true');
   define('DIR_FS_DOCUMENT_ROOT', '/home/student/public_html/catalog/');
   define('DIR_WS_ADMIN', '/catalog/admin/');

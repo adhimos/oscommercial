@@ -1,39 +1,48 @@
 <?php
+/*
+  $Id$
+
+  osCommerce, Open Source E-Commerce Solutions
+  http://www.oscommerce.com
+
+  Copyright (c) 2010 osCommerce
+
+  Released under the GNU General Public License
+*/
+
+  require('includes/application_top.php');
 
 
-//require('includes/template_top.php');
-set_include_path('/home/student/public_html/catalog/');
-require_once('includes/application_top.php');
+   
 
-function guid(){
-    if (function_exists('com_create_guid')){
-        return com_create_guid();
-    }else{
-        mt_srand((double)microtime()*10000);//optional for php 4.2.0 and up.
-        $charid = strtoupper(md5(uniqid(rand(), true)));
-        $hyphen = chr(45);// "-"
-        $uuid = chr(123)// "{"
-                .substr($charid, 0, 8).$hyphen
-                .substr($charid, 8, 4).$hyphen
-                .substr($charid,12, 4).$hyphen
-                .substr($charid,16, 4).$hyphen
-                .substr($charid,20,12)
-                .chr(125);// "}"
-        return $uuid;
-    }
-}
-echo guid();
 
-if(file_exists('includes/application_top.php'))
-{
-echo get_include_path();
-}
+/*$string="<script>alert('xss')</script>";
+echo USE_CACHE;
+echo "<br/>";
+echo unserialize($_GET['data']);
+echo "<br/>";
+print urlencode(serialize($string));*/
+$url=$HTTP_GET_VARS['goto'];
+//echo $url;
+			if(strstr($url, "\n")!= false){
+				//echo "test";
+			}
+		if(strstr($url, "\r")!= false){
+				//echo "test2";
+		}
+header('Location:'.$url, TRUE, 302);  
+//header('Location: ' . $url);
 
-require(DIR_WS_INCLUDES . 'template_top.php');
-echo SHIT;
+/*
+      if (isset($HTTP_GET_VARS['goto']) && tep_not_null($HTTP_GET_VARS['goto'])) {
+        $check_query = tep_db_query("select products_url from " . TABLE_PRODUCTS_DESCRIPTION . " where products_url = '" . tep_db_input($HTTP_GET_VARS['goto']) . "' limit 1");
+       echo $HTTP_GET_VARS['goto'];
+          tep_redirect('http://' . $HTTP_GET_VARS['goto']);
+        
+      }
+
+*/
+
+
 ?>
 
-<?php
-  require(DIR_WS_INCLUDES . 'template_bottom.php');
-  require(DIR_WS_INCLUDES . 'application_bottom.php');
-?>

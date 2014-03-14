@@ -33,7 +33,7 @@
 
     if (ACCOUNT_GENDER == 'true') {
       if ( ($gender != 'm') && ($gender != 'f') ) {
-        $error = true;
+         $error = true;
 
         $messageStack->add('account_edit', ENTRY_GENDER_ERROR);
       }
