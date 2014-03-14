@@ -1,6 +1,6 @@
 <?php
-  define('HTTP_SERVER', 'http://group15cs5331.info');
-  define('HTTPS_SERVER', 'http://group15cs5331.info');
+  define('HTTP_SERVER', 'https://192.168.56.115');
+  define('HTTPS_SERVER', 'https://192.168.56.115');
   define('ENABLE_SSL', true);
   define('HTTP_COOKIE_DOMAIN', '');
   define('HTTPS_COOKIE_DOMAIN', '');
@@ -26,6 +26,7 @@
   define('DB_SERVER_PASSWORD', 'student');
   define('DB_DATABASE', 'osCommerce');
   define('USE_PCONNECT', 'false');
+  define('USE_CACHE', 'true');
   define('STORE_SESSIONS', 'mysql');
   define('CFG_TIME_ZONE', 'Asia/Singapore');
 ?>
