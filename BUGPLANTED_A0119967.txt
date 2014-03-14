@@ -1,0 +1,84 @@
+Bug Description Form 
+
+Name : Arnaud Dhimolea
+MATNR :A0119967
+GROUP :Group15
+APPLICATION :OsCommerce
+
+== Bug 1 ==
+
+1. Class of vulnerabilities : SQL INJECTION
+
+2. Specific configurations / settings (i.e settings on /etc/hosts file): 
+
+3. Brief description :
+The attack uses an unsecure parameter (reviews_id) to do an SQL INJECTION. The attack results in showing the admin's username and  hashed password
+4. Bug Description:
+- Filename (if applicable):product_reviews_info.php
+- Line number (if applicable):
+- Variable name (if applicable):reviews_id
+- Database table (if applicable):administrators
+- Is exploit for this bug automatable? (Full)
+- Exploit for this bug runs successfully on : (Please tick)
+	1. Chrome :
+	2. Firefox :X
+	3. Internet Explorer :
+
+
+== Bug 2 ==
+
+1. Class of vulnerabilities :PHP INJECTION
+
+2. Specific configurations / settings (i.e settings on /etc/hosts file): 
+
+3. Brief description :
+This attack uses an unsecure unserialize to inject some serialized php code.
+4. Bug Description:
+- Filename (if applicable):product_info.php;
+- Line number (if applicable):
+- Variable name (if applicable):data
+- Database table (if applicable):
+- Is exploit for this bug automatable? (Full)
+- Exploit for this bug runs successfully on : (Please tick)
+	1. Chrome :
+	2. Firefox :X
+	3. Internet Explorer :
+
+
+== Bug 3 ==
+
+1. Class of vulnerabilities :Local File Inclusion
+
+2. Specific configurations / settings (i.e settings on /etc/hosts file): 
+
+3. Brief description :
+Unsercured filename variable allows attacker to download php files from the web application
+4. Bug Description:
+- Filename (if applicable):download.php
+- Line number (if applicable):
+- Variable name (if applicable):filename
+- Database table (if applicable):
+- Is exploit for this bug automatable? Full
+- Exploit for this bug runs successfully on : (Please tick)
+	1. Chrome :
+	2. Firefox :X
+	3. Internet Explorer :
+
+== Bug 4 ==
+
+1. Class of vulnerabilities :Unvalidated Redirects
+
+2. Specific configurations / settings (i.e settings on /etc/hosts file): 
+
+3. Brief description :
+The attacker uses the redirect.php page of the web application to redirect a user to an url of his choice
+4. Bug Description:
+- Filename (if applicable):redirect.php
+- Line number (if applicable):
+- Variable name (if applicable):goto
+- Database table (if applicable):
+- Is exploit for this bug automatable? Full
+- Exploit for this bug runs successfully on : (Please tick)
+	1. Chrome :
+	2. Firefox :X
+	3. Internet Explorer :
