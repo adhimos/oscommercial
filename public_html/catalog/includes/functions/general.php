@@ -1436,7 +1436,20 @@ function guid(){
       return str_replace($from, $to, $string);
     }
   }
-  
+  function get_token() {
+  $r = rand(1,100);
+  if(!isset($_SESSION['CSRF_TOKEN'])){
+    session_start();
+    $_SESSION['CSRF_TOKEN'] = $r;
+	}
+
+
+
+return $_SESSION['CSRF_TOKEN'];
+
+
+
+}
   // social login start
 function tep_get_valid_address_status($customer_id) {
     $address_status_query = tep_db_query("select valid_address from " . TABLE_CUSTOMERS_INFO . " where customers_info_id = '" . (int)$customer_id . "'");

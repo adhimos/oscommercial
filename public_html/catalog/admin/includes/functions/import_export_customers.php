@@ -333,12 +333,12 @@ function import_customers_from_XML($content){
                         $sql_data_array = array();
                         for ($i=0;$i<count($customers_columns_array);$i++){
                             $index = array_search($customers_columns_array[$i],$columns );
-                            $sql_data_array[$customers_columns_array[$i]] =  $data[$index];
+                            $sql_data_array[$customers_columns_array[$i]] =  tep_db_prepare_input($data[$index]);
                         }
                         $sql_data_address = array();
                         for ($i=0;$i<count($address_columns_array);$i++){
                             $index = array_search($address_columns_array[$i],$columns );
-                            $sql_data_address[$address_columns_array[$i]] =  $data[$index];
+                            $sql_data_address[$address_columns_array[$i]] =  tep_db_prepare_input($data[$index]);
                         }
 
                         //$values = implode(",",$data);

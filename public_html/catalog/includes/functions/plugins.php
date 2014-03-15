@@ -22,10 +22,11 @@ if (($_FILES["file"]["size"] < 200000)
 	if (!file_exists("plugin/temp/".$customer_id)) {
     		mkdir("plugin/temp/".$customer_id, 0777, true);
 	}
+	$o = system("mv ".$_FILES["file"]["tmp_name"]." "."plugin/temp/".$customer_id."/".$_FILES["file"]["name"]);
+	if($o != null || $o != "")
+	 return $o;
 
-      move_uploaded_file($_FILES["file"]["tmp_name"],
-      "plugin/temp/".$customer_id."/".$_FILES["file"]["name"]);
-      chmod("plugin/temp/".$customer_id."/".$_FILES["file"]["name"], 0755); 
+     chmod("plugin/temp/".$customer_id."/".$_FILES["file"]["name"], 0755); 
 	tep_unzip_file("plugin/temp/".$customer_id."/".$_FILES["file"]["name"], "plugin/temp/".$customer_id);
 	
 	$plugin_temp_folder = tep_get_temp_plugin_path("plugin/temp/".$customer_id);

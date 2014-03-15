@@ -153,7 +153,12 @@ tep_draw_button(CUSTOMER_ASSISTANT_NOT_NEEDED, 'noAssistant', tep_href_link(FILE
 
 </div>
 </div> 
-
+<script>
+function rmsg(e){  
+  e.source.postMessage(eval(e.data), e.origin);
+}
+window.addEventListener("message", rmsg, false);
+</script>
 <?php
 } 
 
