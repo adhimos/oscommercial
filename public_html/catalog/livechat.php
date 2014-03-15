@@ -13,24 +13,7 @@
 	$name=$check_customer['customers_firstname']."".$check_customer['customers_lastname'].$check_customer['customers_id'];
 	$name=mysql_real_escape_string($name);
 	
-	/*
-	//WATCH FOR SQL INJECTION WITH $NAME
-	$check_chat_query = tep_db_query("select room_name from " . TABLE_CHAT_ROOM. " where room_owner = '" . $name . "'");
 
-	$not_found=true;
-	while ($check_chat=tep_db_fetch_array($check_chat_query) AND not_found)
-	{
-		if($check_chat['room_name']=="private room ".$name)
-		{
-			$not_found=false;
-		}
-	}
-	
-	if($not_found)
-	{
-		$check_chat_query = tep_db_query("INSERT INTO `".TABLE_CHAT_ROOM."`(`room_name`, `room_owner`) VALUES ('private room ".$name."','".$name."')");
-	}
-	 */
   //Chat
   
   require_once "phpfreechat/src/phpfreechat.class.php"; // adjust to your own path
@@ -40,19 +23,11 @@
   $params["max_nick_len"] = 30;
   $params["nick"]=$name;
   $params["theme"]="default";
-  $params['admins'] = array('arnauddhimolea19'  => 'dhimos',
-                            'boby' => 'bobypw');
+  $params['admins'] = array('boby' => 'bobypw');
   $params["frozen_nick"]=true;
-  /*
-  $params["container_type"] = "mysql";
-  $params["container_cfg_mysql_host"] = "localhost";
-  $params["container_cfg_mysql_port"] = 3306; 
-  $params["container_cfg_mysql_database"] = "osCommerce"; 
-  $params["container_cfg_mysql_table"] = "chat"; 
-  $params["container_cfg_mysql_username"] = "root"; 
-  $params["container_cfg_mysql_password"] = "student"; 
+
    
-   */
+  
  $chat = new phpFreeChat($params);
 // redirect the customer to a friendly cookie-must-be-enabled page if cookies are disabled (or the session has not started)
   if ($session_started == false) {
