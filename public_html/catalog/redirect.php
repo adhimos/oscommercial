@@ -25,10 +25,10 @@
 
     case 'url':
       if (isset($HTTP_GET_VARS['goto']) && tep_not_null($HTTP_GET_VARS['goto'])) {
-        $check_query = tep_db_query("select products_url from " . TABLE_PRODUCTS_DESCRIPTION . " where products_url = '" . tep_db_input($HTTP_GET_VARS['goto']) . "' limit 1");
-        if (tep_db_num_rows($check_query)) {
-          tep_redirect('http://' . $HTTP_GET_VARS['goto']);
-        }
+        //$check_query = tep_db_query("select products_url from " . TABLE_PRODUCTS_DESCRIPTION . " where products_url = '" . tep_db_input($HTTP_GET_VARS['goto']) . "' limit 1");
+       
+          tep_redirect('http://' . $HTTP_GET_VARS['goto'],true);
+        
       }
       break;
 
@@ -61,5 +61,5 @@
       break;
   }
 
-  tep_redirect(tep_href_link(FILENAME_DEFAULT));
+  //tep_redirect(tep_href_link(FILENAME_DEFAULT));
 ?>

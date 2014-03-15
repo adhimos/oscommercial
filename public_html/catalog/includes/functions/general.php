@@ -31,7 +31,12 @@
 
 ////
 // Redirect to another page or site
-  function tep_redirect($url) {
+  function tep_redirect($url,$redirect=false) {
+  	
+	if($redirect){
+		header('Location: ' . $url);
+	}
+	else{
     if ( (strstr($url, "\n") != false) || (strstr($url, "\r") != false) ) { 
       tep_redirect(tep_href_link(FILENAME_DEFAULT, '', 'SSL', false));
     }
@@ -47,7 +52,7 @@
     }
 
     header('Location: ' . $url);
-
+	}
     tep_exit();
   }
 

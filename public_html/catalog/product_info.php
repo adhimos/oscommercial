@@ -201,7 +201,7 @@ $("#piGal a[rel^='fancybox']").fancybox({
   </div>
 
 <?php
-    if ((USE_CACHE == 'true') && empty($SID)) {
+    if ((USE_CACHE == 'true')) {
       echo tep_cache_also_purchased(3600);
     } else {
       include(DIR_WS_MODULES . FILENAME_ALSO_PURCHASED_PRODUCTS);
