@@ -63,7 +63,7 @@ function check_password(field_name_1, field_name_2, field_size, message_1, messa
     var password = form.elements[field_name_1].value;
     var confirmation = form.elements[field_name_2].value;
 
-    if (password.length < field_size) {
+    if (password.length > field_size) {
       error_message = error_message + "* " + message_1 + "\n";
       error = true;
     } else if (password != confirmation) {
@@ -101,8 +101,8 @@ function check_form(form_name) {
 
   check_input("telephone", <?php echo ENTRY_TELEPHONE_MIN_LENGTH; ?>, "<?php echo ENTRY_TELEPHONE_NUMBER_ERROR; ?>");
 
-  check_password("password", "confirmation", <?php echo ENTRY_PASSWORD_MIN_LENGTH; ?>, "<?php echo ENTRY_PASSWORD_ERROR; ?>", "<?php echo ENTRY_PASSWORD_ERROR_NOT_MATCHING; ?>");
-  check_password("password_new", "password_confirmation", <?php echo ENTRY_PASSWORD_MIN_LENGTH; ?>, "<?php echo ENTRY_PASSWORD_NEW_ERROR; ?>", "<?php echo ENTRY_PASSWORD_NEW_ERROR_NOT_MATCHING; ?>");
+  check_password("password", "confirmation", <?php echo ENTRY_PASSWORD_MIN_LENGTH; ?>, "<?php echo ENTRY_PASSWORD_ERROR_MAX_LENGTH; ?>", "<?php echo ENTRY_PASSWORD_ERROR_NOT_MATCHING; ?>");
+  check_password("password_new", "password_confirmation", <?php echo ENTRY_PASSWORD_MIN_LENGTH; ?>, "<?php echo ENTRY_NEW_PASSWORD_ERROR_MAX_LENGTH; ?>", "<?php echo ENTRY_PASSWORD_NEW_ERROR_NOT_MATCHING; ?>");
 
   if (error == true) {
     alert(error_message);

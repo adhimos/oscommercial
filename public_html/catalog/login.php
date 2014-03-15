@@ -39,7 +39,8 @@ if (array_key_exists("oauth_provider", $_GET)) {
   require(DIR_WS_LANGUAGES . $language . '/' . FILENAME_LOGIN);
 
   $error = false;
-  if (isset($HTTP_GET_VARS['action']) && ($HTTP_GET_VARS['action'] == 'process') && isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $sessiontoken)) {
+  if (isset($HTTP_GET_VARS['action']) && ($HTTP_GET_VARS['action'] == 'process') && isset($HTTP_POST_VARS['formid'])) {
+	
     $email_address = tep_db_prepare_input($HTTP_POST_VARS['email_address']);
     $password = tep_db_prepare_input($HTTP_POST_VARS['password']);
 

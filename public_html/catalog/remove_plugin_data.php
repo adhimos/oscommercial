@@ -1,5 +1,8 @@
 <?php
-
+ if (!tep_session_is_registered('customer_id')) {
+    $navigation->set_snapshot();
+    tep_redirect(tep_href_link(FILENAME_LOGIN, '', 'SSL'));
+  }
 
 if(isset($_POST['plugin_data'])) {
     	$data =  json_decode($_POST['plugin_data'], true);		

@@ -157,11 +157,14 @@
     }
 
 
-    if (strlen($password) < ENTRY_PASSWORD_MIN_LENGTH) {
+    if (strlen($password) > ENTRY_PASSWORD_MIN_LENGTH) {
       $error = true;
 
-      $messageStack->add('create_account', ENTRY_PASSWORD_ERROR);
-    } elseif ($password != $confirmation) {
+      $messageStack->add('create_account', ENTRY_PASSWORD_ERROR_MAX_LENGTH);
+    } elseif (ctype_digit($password) == false){
+	$error = true;
+	$messageStack->add('create_account', ENTRY_PASSWORD_ERROR_NUMERIC);
+    }elseif ($password != $confirmation) {
       $error = true;
 
       $messageStack->add('create_account', ENTRY_PASSWORD_ERROR_NOT_MATCHING);

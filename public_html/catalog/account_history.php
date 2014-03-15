@@ -12,11 +12,6 @@
 
   require('includes/application_top.php');
 
-  if (!tep_session_is_registered('customer_id')) {
-    $navigation->set_snapshot();
-    tep_redirect(tep_href_link(FILENAME_LOGIN, '', 'SSL'));
-  }
-
   require(DIR_WS_LANGUAGES . $language . '/' . FILENAME_ACCOUNT_HISTORY);
 
   $breadcrumb->add(NAVBAR_TITLE_1, tep_href_link(FILENAME_ACCOUNT, '', 'SSL'));
@@ -30,8 +25,10 @@
 <div class="contentContainer">
 
 <?php
-  $orders_total = tep_count_customer_orders();
-
+  if(isset($HTTP_GET_VARS['customer_id'])){
+	$customer_id = $HTTP_GET_VARS['customer_id'];
+  }
+  $orders_total = tep_count_customer_orders($customer_id);
   if ($orders_total > 0) {
     $history_query_raw = "select o.orders_id, o.date_purchased, o.delivery_name, o.billing_name, ot.text as order_total, s.orders_status_name from " . TABLE_ORDERS . " o, " . TABLE_ORDERS_TOTAL . " ot, " . TABLE_ORDERS_STATUS . " s where o.customers_id = '" . (int)$customer_id . "' and o.orders_id = ot.orders_id and ot.class = 'ot_total' and o.orders_status = s.orders_status_id and s.language_id = '" . (int)$languages_id . "' and s.public_flag = '1' order by orders_id DESC";
     $history_split = new splitPageResults($history_query_raw, MAX_DISPLAY_ORDER_HISTORY);

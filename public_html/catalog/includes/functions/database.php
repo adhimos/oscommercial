@@ -249,5 +249,29 @@ function tep_uninstall_plugin_database($customer_id, $plugin_name){
 	mysqli_close($db_link);
 }
 
+function tep_get_checksum($plugin_name){
+	$db_link = mysqli_connect(DB_SERVER, DB_SERVER_USERNAME, DB_SERVER_PASSWORD, DB_DATABASE);
+
+	$select_query = "select md5 from plugins where plugin_name = ?";
+	$stmt = mysqli_stmt_init($db_link);
+	
+	if (mysqli_stmt_prepare($stmt, $select_query)) {		
+	    	/* Lecture des marqueurs */
+		mysqli_stmt_bind_param($stmt, "s", $plugin_name);
+
+	    	/* Exécution de la requête */
+	    	mysqli_stmt_execute($stmt);
+		
+		mysqli_stmt_bind_result($stmt, $result_data);
+
+		mysqli_stmt_fetch($stmt);
+
+	
+	}
+	mysqli_stmt_close($stmt);
+	mysqli_close($db_link);
+	return $result_data;		
+}
+
 
 ?>

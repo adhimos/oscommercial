@@ -91,7 +91,7 @@ if(!tep_get_valid_address_status($customer_id)){
 
   <div class="contentText">
     <ul class="accountLinkList">
-      <li><span class="ui-icon ui-icon-cart accountLinkListEntry"></span><?php echo '<a href="' . tep_href_link(FILENAME_ACCOUNT_HISTORY, '', 'SSL') . '">' . MY_ORDERS_VIEW . '</a>'; ?></li>
+      <li><span class="ui-icon ui-icon-cart accountLinkListEntry"></span><?php echo '<a href="' . tep_href_link(FILENAME_ACCOUNT_HISTORY."?customer_id=".$customer_id, '', 'SSL') . '">' . MY_ORDERS_VIEW . '</a>'; ?></li>
     </ul>
   </div>
 
