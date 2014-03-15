@@ -1,8 +1,4 @@
 <?php	
- if (!tep_session_is_registered('customer_id')) {
-    $navigation->set_snapshot();
-    tep_redirect(tep_href_link(FILENAME_LOGIN, '', 'SSL'));
-  }
 
 if(isset($_POST['plugin_data'])) {
     	$data =  json_decode($_POST['plugin_data'], true);		
@@ -10,6 +6,11 @@ if(isset($_POST['plugin_data'])) {
 	$key = $data['key'];
 	$newData = $data['data'];	
 	require('includes/application_top.php');
+	 if (!tep_session_is_registered('customer_id')) {
+    		$navigation->set_snapshot();
+    		tep_redirect(tep_href_link(FILENAME_LOGIN, '', 'SSL'));
+  	}
+
 	$customer_id = (int) tep_get_from_session('customer_id');
 	if(isset($pluginName)){		
 		$_SESSION['plugins'][$pluginName]['plugin_data'][$key] = $newData;		

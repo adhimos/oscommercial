@@ -260,9 +260,11 @@ function tep_remove_plugin(){
 	global $HTTP_GET_VARS;
 	$plugin_name = $HTTP_GET_VARS['pluginName'];
 	$customer_id = $HTTP_GET_VARS['customer_id'];
-	deleteDir('plugin/user/'.$customer_id.'/'.$plugin_name);
-	unset($_SESSION['plugins'][$plugin_name]);	
-	tep_uninstall_plugin_database($customer_id, $plugin_name);
+	if(isset($plugin_name) && isset($customer_id)){
+		deleteDir('plugin/user/'.$customer_id.'/'.$plugin_name);
+		unset($_SESSION['plugins'][$plugin_name]);	
+		tep_uninstall_plugin_database($customer_id, $plugin_name);
+	}
 	
 }
 
