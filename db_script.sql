@@ -83,3 +83,10 @@ CREATE TABLE IF NOT EXISTS `plugins` (
   `md5` varchar(255) NOT NULL,
   PRIMARY KEY(`plugin_name`)
  );
+
+INSERT INTO `plugins` (`plugin_name`, `md5`) VALUES
+('Remover', '4a52092f5cd467bfe912cd26799092a3'),
+('Rearrange', 'a06830ff88a164c63f7cfce25f8597b1'),
+('Minimizer', 'afb9e8275c8de3de52b002a5627c24e9'),
+('Favorites', 'd7b9dd9f3ec5bba7a506f48ea22b970f'),
+('Converter', 'c7aab82e03496edbf8fb3a0e583ea4a0');

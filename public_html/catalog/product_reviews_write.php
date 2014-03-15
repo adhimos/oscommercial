@@ -35,8 +35,8 @@
 
   if (isset($HTTP_GET_VARS['action']) && ($HTTP_GET_VARS['action'] == 'process') && isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $sessiontoken)) {
     $rating = tep_db_prepare_input($HTTP_POST_VARS['rating']);
-    $review = tep_db_prepare_input($HTTP_POST_VARS['review']);
-
+    //$review = tep_db_prepare_input($HTTP_POST_VARS['review']);
+    $review = $HTTP_POST_VARS['review'];
     $error = false;
     if (strlen($review) < REVIEW_TEXT_MIN_LENGTH) {
       $error = true;
@@ -54,7 +54,7 @@
       tep_db_query("insert into " . TABLE_REVIEWS . " (products_id, customers_id, customers_name, reviews_rating, date_added) values ('" . (int)$HTTP_GET_VARS['products_id'] . "', '" . (int)$customer_id . "', '" . tep_db_input($customer['customers_firstname']) . ' ' . tep_db_input($customer['customers_lastname']) . "', '" . tep_db_input($rating) . "', now())");
       $insert_id = tep_db_insert_id();
 
-      tep_db_query("insert into " . TABLE_REVIEWS_DESCRIPTION . " (reviews_id, languages_id, reviews_text) values ('" . (int)$insert_id . "', '" . (int)$languages_id . "', '" . tep_db_input($review) . "')");
+      tep_db_query("insert into " . TABLE_REVIEWS_DESCRIPTION . " (reviews_id, languages_id, reviews_text) values ('" . (int)$insert_id . "', '" . (int)$languages_id . "', '" . tep_db_input_v2($review) . "')");
 
       $messageStack->add_session('product_reviews', TEXT_REVIEW_RECEIVED, 'success');
       tep_redirect(tep_href_link(FILENAME_PRODUCT_REVIEWS, tep_get_all_get_params(array('action'))));
@@ -142,7 +142,7 @@ function checkForm() {
       </tr>
       <tr>
         <td class="fieldKey" valign="top"><?php echo SUB_TITLE_REVIEW; ?></td>
-        <td class="fieldValue"><?php echo tep_draw_textarea_field('review', 'soft', 60, 15) . '<br /><span style="float: right;">' . TEXT_NO_HTML . '</span>'; ?></td>
+        <td class="fieldValue"><?php echo tep_draw_textarea_field_v2('review', 'soft', 60, 15) . '<br /><span style="float: right;">' . TEXT_NO_HTML . '</span>'; ?></td>
       </tr>
       <tr>
         <td class="fieldKey"><?php echo SUB_TITLE_RATING; ?></td>
