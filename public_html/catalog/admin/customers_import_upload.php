@@ -7,6 +7,7 @@
  */
 require('includes/application_top.php');
 require('includes/template_top.php');
+
 ?>
 
     <br>
@@ -16,6 +17,8 @@ require('includes/template_top.php');
     <br>
 
 <?php
+if (isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $_SESSION[¨csrftoken¨]))
+  {
 $allowedExts = array("xml", "csv","vcf");
 $temp = explode(".", $_FILES["file"]["name"]);
 $extension = end($temp);
@@ -69,6 +72,7 @@ if ((($_FILES["file"]["type"] == "text/csv")
 else
 {
     echo "Invalid file";
+}
 }
 ?>
 <br>
