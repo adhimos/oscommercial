@@ -99,7 +99,7 @@
       <tr>
         <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td class="main" valign="top"><strong><?php echo ENTRY_REVIEW; ?></strong><br /><br /><?php echo tep_draw_textarea_field('reviews_text', 'soft', '60', '15', $rInfo->reviews_text); ?></td>
+            <td class="main" valign="top"><strong><?php echo ENTRY_REVIEW; ?></strong><br /><br /><?php echo tep_draw_textarea_field_v2('reviews_text', 'soft', '60', '15', $rInfo->reviews_text); ?></td>
           </tr>
           <tr>
             <td class="smallText" align="right"><?php echo ENTRY_REVIEW_TEXT; ?></td>
@@ -149,7 +149,8 @@
       <tr>
         <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td valign="top" class="main"><strong><?php echo ENTRY_REVIEW; ?></strong><br /><br /><?php echo nl2br(tep_db_output(tep_break_string($rInfo->reviews_text, 15))); ?></td>
+            <!--<td valign="top" class="main"><strong><?php echo ENTRY_REVIEW; ?></strong><br /><br /><?php echo nl2br(tep_db_output(tep_break_string($rInfo->reviews_text, 15))); ?></td>-->
+            <td valign="top" class="main"><strong><?php echo ENTRY_REVIEW; ?></strong><br /><br /><?php echo tep_db_output_v2($rInfo->reviews_text); ?></td>
           </tr>
         </table></td>
       </tr>

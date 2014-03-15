@@ -137,6 +137,10 @@
     return addslashes($string);
   }
 
+  function tep_db_input_v2($string) {
+    return $string;
+  }
+
   function tep_db_prepare_input($string) {
     if (is_string($string)) {
       return trim(tep_sanitize_string(stripslashes($string)));

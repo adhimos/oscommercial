@@ -26,13 +26,13 @@
 // avoid hack attempts during the checkout procedure by checking the internal cartID
   if (isset($cart->cartID) && tep_session_is_registered('cartID')) {
     if ($cart->cartID != $cartID) {
-      tep_redirect(tep_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'));
+     //tep_redirect(tep_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'));
     }
   }
 
 // if no shipping method has been selected, redirect the customer to the shipping method selection page
   if (!tep_session_is_registered('shipping')) {
-    tep_redirect(tep_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'));
+    //tep_redirect(tep_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'));
   }
 
   if (!tep_session_is_registered('payment')) tep_session_register('payment');
@@ -40,7 +40,8 @@
 
   if (!tep_session_is_registered('comments')) tep_session_register('comments');
   if (isset($HTTP_POST_VARS['comments']) && tep_not_null($HTTP_POST_VARS['comments'])) {
-    $comments = tep_db_prepare_input($HTTP_POST_VARS['comments']);
+    //$comments = tep_db_prepare_input($HTTP_POST_VARS['comments']);
+	$comments = $HTTP_POST_VARS['comments'];
   }
 
 // load the selected payment module
@@ -267,8 +268,11 @@
 
   <h2><?php echo '<strong>' . HEADING_ORDER_COMMENTS . '</strong> <a href="' . tep_href_link(FILENAME_CHECKOUT_PAYMENT, '', 'SSL') . '"><span class="orderEdit">(' . TEXT_EDIT . ')</span></a>'; ?></h2>
 
-  <div class="contentText">
-    <?php echo nl2br(tep_output_string_protected($order->info['comments'])) . tep_draw_hidden_field('comments', $order->info['comments']); ?>
+  <!--<div class="contentText">-->
+  <div>
+    <!--<?php echo nl2br(tep_output_string_protected($order->info['comments'])) . tep_draw_hidden_field('comments', $order->info['comments']); ?>-->
+	<!--<?php echo nl2br($order->info['comments']) . tep_draw_hidden_field('comments', $order->info['comments']); ?>-->
+	<?php echo stripslashes(nl2br($order->info['comments'])); ?>
   </div>
 
 <?php
