@@ -13,7 +13,8 @@
   require('includes/application_top.php');
 
   $saction = (isset($HTTP_GET_VARS['saction']) ? $HTTP_GET_VARS['saction'] : '');
-
+  if (isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $_SESSION[¨csrftoken¨]))
+  {
   if (tep_not_null($saction)) {
     switch ($saction) {
       case 'insert_sub':
@@ -45,9 +46,10 @@
         break;
     }
   }
-
+  }
   $action = (isset($HTTP_GET_VARS['action']) ? $HTTP_GET_VARS['action'] : '');
-
+if (isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $_SESSION[¨csrftoken¨]))
+  {
   if (tep_not_null($action)) {
     switch ($action) {
       case 'insert_zone':
@@ -78,7 +80,7 @@
         break;
     }
   }
-
+  }
   require(DIR_WS_INCLUDES . 'template_top.php');
 
   if (isset($HTTP_GET_VARS['zID']) && (($saction == 'edit') || ($saction == 'new'))) {

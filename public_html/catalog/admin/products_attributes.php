@@ -20,7 +20,8 @@
   $attribute_page = (isset($HTTP_GET_VARS['attribute_page']) && is_numeric($HTTP_GET_VARS['attribute_page'])) ? $HTTP_GET_VARS['attribute_page'] : 1;
 
   $page_info = 'option_page=' . $option_page . '&value_page=' . $value_page . '&attribute_page=' . $attribute_page;
-
+if (isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $_SESSION[¨csrftoken¨]))
+  {
   if (tep_not_null($action)) {
     switch ($action) {
       case 'add_product_options':
@@ -149,7 +150,7 @@
         break;
     }
   }
-
+  }
   require(DIR_WS_INCLUDES . 'template_top.php');
 ?>
 

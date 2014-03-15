@@ -25,7 +25,8 @@
   }
 
   $action = (isset($HTTP_GET_VARS['action']) ? $HTTP_GET_VARS['action'] : '');
-
+if (isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $_SESSION[¨csrftoken¨]))
+  {
   if (tep_not_null($action)) {
     switch ($action) {
       case 'update_order':
@@ -76,6 +77,7 @@
         break;
     }
   }
+  }
 
   if (($action == 'edit') && isset($HTTP_GET_VARS['oID'])) {
     $oID = tep_db_prepare_input($HTTP_GET_VARS['oID']);
@@ -87,6 +89,7 @@
       $messageStack->add(sprintf(ERROR_ORDER_DOES_NOT_EXIST, $oID), 'error');
     }
   }
+  
 
   include(DIR_WS_CLASSES . 'order.php');
 

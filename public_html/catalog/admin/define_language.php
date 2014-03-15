@@ -66,7 +66,9 @@
 
   $action = (isset($HTTP_GET_VARS['action']) ? $HTTP_GET_VARS['action'] : '');
 
-  if (tep_not_null($action)) {
+  if (isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $_SESSION[¨csrftoken¨]))
+  {
+  	if (tep_not_null($action)) {
     switch ($action) {
       case 'save':
         if (isset($HTTP_GET_VARS['lngdir']) && isset($HTTP_GET_VARS['filename'])) {
@@ -82,7 +84,8 @@
           tep_redirect(tep_href_link(FILENAME_DEFINE_LANGUAGE, 'lngdir=' . $HTTP_GET_VARS['lngdir']));
         }
         break;
-    }
+    	}	
+	}
   }
 
   require(DIR_WS_INCLUDES . 'template_top.php');

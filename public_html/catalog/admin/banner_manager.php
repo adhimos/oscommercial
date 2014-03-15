@@ -15,7 +15,8 @@
   $action = (isset($HTTP_GET_VARS['action']) ? $HTTP_GET_VARS['action'] : '');
 
   $banner_extension = tep_banner_image_extension();
-
+if (isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $_SESSION[¨csrftoken¨]))
+  {
   if (tep_not_null($action)) {
     switch ($action) {
       case 'setflag':
@@ -165,7 +166,7 @@
         break;
     }
   }
-
+  }
 // check if the graphs directory exists
   $dir_ok = false;
   if (function_exists('imagecreate') && tep_not_null($banner_extension)) {

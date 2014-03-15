@@ -154,6 +154,11 @@
 ////
 // Output a form
   function tep_draw_form($name, $action, $parameters = '', $method = 'post', $params = '') {
+  	$session_token= $_SESSION[¨csrftoken¨];
+	if (!isset($session_token)) {
+	$session_token = md5(tep_rand() . tep_rand() . tep_rand() . tep_rand());
+	$_SESSION[¨csrftoken¨] = $session_token;	
+		}
     $form = '<form name="' . tep_output_string($name) . '" action="';
     if (tep_not_null($parameters)) {
       $form .= tep_href_link($action, $parameters);
@@ -165,6 +170,9 @@
       $form .= ' ' . $params;
     }
     $form .= '>';
+    if (isset($session_token)) {
+      $form .= '<input type="hidden" name="formid" value="' . tep_output_string($session_token) . '" />';
+    }
 
     return $form;
   }

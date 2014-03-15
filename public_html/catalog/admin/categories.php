@@ -16,7 +16,8 @@
   $currencies = new currencies();
 
   $action = (isset($HTTP_GET_VARS['action']) ? $HTTP_GET_VARS['action'] : '');
-
+if (isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $_SESSION[¨csrftoken¨]))
+  {
   if (tep_not_null($action)) {
     switch ($action) {
       case 'setflag':
@@ -373,7 +374,7 @@
         break;
     }
   }
-
+}
 // check if the catalog image directory exists
   if (is_dir(DIR_FS_CATALOG_IMAGES)) {
     if (!tep_is_writable(DIR_FS_CATALOG_IMAGES)) $messageStack->add(ERROR_CATALOG_IMAGE_DIRECTORY_NOT_WRITEABLE, 'error');

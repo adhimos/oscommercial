@@ -11,7 +11,8 @@
 */
 
   require('includes/application_top.php');
-
+if (isset($HTTP_POST_VARS['action']) && ($HTTP_POST_VARS['action'] == 'process') && isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $sessiontoken))
+{
   $action = (isset($HTTP_GET_VARS['action']) ? $HTTP_GET_VARS['action'] : '');
 
   if (tep_not_null($action)) {
@@ -44,7 +45,7 @@
         break;
     }
   }
-
+  }
   require(DIR_WS_INCLUDES . 'template_top.php');
 ?>
 

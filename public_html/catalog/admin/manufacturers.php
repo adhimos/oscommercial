@@ -13,7 +13,8 @@
   require('includes/application_top.php');
 
   $action = (isset($HTTP_GET_VARS['action']) ? $HTTP_GET_VARS['action'] : '');
-
+if (isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $_SESSION[¨csrftoken¨]))
+  {
   if (tep_not_null($action)) {
     switch ($action) {
       case 'insert':
@@ -102,7 +103,7 @@
         break;
     }
   }
-
+}
   require(DIR_WS_INCLUDES . 'template_top.php');
 ?>
 

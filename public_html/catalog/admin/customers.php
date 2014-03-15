@@ -16,7 +16,8 @@
 
   $error = false;
   $processed = false;
-
+if (isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $_SESSION[¨csrftoken¨]))
+  {
   if (tep_not_null($action)) {
     switch ($action) {
       case 'update':
@@ -226,7 +227,7 @@
         $cInfo = new objectInfo($customers);
     }
   }
-
+  }
   require(DIR_WS_INCLUDES . 'template_top.php');
 
   if ($action == 'edit' || $action == 'update') {

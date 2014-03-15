@@ -44,8 +44,9 @@
     }
   }
 
-  $action = (isset($HTTP_GET_VARS['action']) ? $HTTP_GET_VARS['action'] : '');
-
+  	$action = (isset($HTTP_GET_VARS['action']) ? $HTTP_GET_VARS['action'] : '');
+if (isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $_SESSION[¨csrftoken¨]))
+  {
   if (tep_not_null($action)) {
     switch ($action) {
       case 'insert':
@@ -217,7 +218,7 @@
         break;
     }
   }
-
+  }
   $secMessageStack = new messageStack();
 
   if (is_array($htpasswd_array)) {

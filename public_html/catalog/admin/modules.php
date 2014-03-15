@@ -28,7 +28,8 @@
   $template_integration = $cfgModules->get($set, 'template_integration');
 
   $action = (isset($HTTP_GET_VARS['action']) ? $HTTP_GET_VARS['action'] : '');
-
+if (isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $_SESSION[¨csrftoken¨]))
+  {
   if (tep_not_null($action)) {
     switch ($action) {
       case 'save':
@@ -64,6 +65,7 @@
         tep_redirect(tep_href_link(FILENAME_MODULES, 'set=' . $set . '&module=' . $class));
         break;
     }
+  }
   }
 
   require(DIR_WS_INCLUDES . 'template_top.php');

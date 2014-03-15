@@ -16,7 +16,8 @@
   $currencies = new currencies();
 
   $action = (isset($HTTP_GET_VARS['action']) ? $HTTP_GET_VARS['action'] : '');
-
+if (isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $_SESSION[¨csrftoken¨]))
+  {
   if (tep_not_null($action)) {
     switch ($action) {
       case 'insert':
@@ -142,7 +143,7 @@
       $currency_select_array[] = array('id' => $cs['code'], 'text' => '[' . $cs['code'] . '] ' . $cs['title']);
     }
   }
-
+  }
   require(DIR_WS_INCLUDES . 'template_top.php');
 ?>
 
