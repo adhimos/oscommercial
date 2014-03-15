@@ -52,7 +52,7 @@
     }
 
     header('Location: ' . $url);
-
+}
     tep_exit();
   }
 
