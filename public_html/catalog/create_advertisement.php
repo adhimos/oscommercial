@@ -21,7 +21,7 @@
   require(DIR_WS_LANGUAGES . $language . '/' . FILENAME_CREATE_ADVERTISEMENT);
 
   $process = false;
-  if (isset($HTTP_POST_VARS['action']) && ($HTTP_POST_VARS['action'] == 'process') && isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $sessiontoken)) {
+  if (isset($HTTP_POST_VARS['action']) && ($HTTP_POST_VARS['action'] == 'process') && isset($HTTP_POST_VARS['form_id']) && ($HTTP_POST_VARS['form_id'] == get_token())) {
     $process = true;
 
     if (ACCOUNT_GENDER == 'true') {
@@ -180,7 +180,7 @@ eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,lo
 ?>
 
 <?php echo tep_draw_form('create_advertisement', tep_href_link(FILENAME_CREATE_ADVERTISEMENT, '', 'SSL'), 'post', 'onsubmit="return check_form(create_advertisement);"', true) . tep_draw_hidden_field('action', 'process'); ?>
-
+<input type="hidden" value="<?php echo get_token();?>" id="form_id" name="form_id"/>
 <div class="contentContainer">
   <div>
     <span class="inputRequirement" style="float: right;"><?php echo FORM_REQUIRED_INFORMATION; ?></span>
