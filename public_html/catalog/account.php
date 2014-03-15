@@ -37,7 +37,7 @@
 // advertisement loading start
 $entry_query = tep_db_query("select adv_url, adv_budget from advertisements order by adv_budget desc limit 3");
 echo '<script type="text/javascript">';
-cho '$(function() {';
+echo '$(function() {';
 $index = 0;
 while ($row = mysql_fetch_array($entry_query, MYSQL_ASSOC)) {
    $index++;
