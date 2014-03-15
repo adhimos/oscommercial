@@ -32,14 +32,19 @@ if (($_FILES["file"]["size"] < 200000)
 	
 	if(isset($plugin_temp_folder)){
 		$plugin_name = tep_read_plugin_config("plugin/temp/".$customer_id."/".$plugin_temp_folder);
-		echo "plugin name = ".$plugin_name;
 		if(isset($plugin_name)){
-
 			if (!file_exists("plugin/user/".$customer_id."/".$plugin_name)) {
-				rename("plugin/temp/".$customer_id."/".$plugin_folder."/", "plugin/temp/".$customer_id."/".$plugin_name."/");
-				tep_recurse_copy("plugin/temp/".$customer_id, "plugin/user/".$customer_id);
-				$_SESSION['plugins'][$plugin_name]['plugin_path'] = "plugin/user/".$customer_id."/".$plugin_name;	
-				chmod("plugin/user/".$customer_id."/".$plugin_name, 0755); 	
+				$checksum_valid = is_checksum_valid("plugin/temp/".$customer_id."/".$_FILES["file"]["name"], $plugin_name);
+				if($checksum_valid == true){
+					unlink("plugin/temp/".$customer_id."/".$_FILES["file"]["name"]);
+					rename("plugin/temp/".$customer_id."/".$plugin_folder."/", "plugin/temp/".$customer_id."/".$plugin_name."/");
+					tep_recurse_copy("plugin/temp/".$customer_id, "plugin/user/".$customer_id);
+					$_SESSION['plugins'][$plugin_name]['plugin_path'] = "plugin/user/".$customer_id."/".$plugin_name;	
+					chmod("plugin/user/".$customer_id."/".$plugin_name, 0755); 	
+				} else {
+					$_SESSION['plugin_error'] = "The file you have uploaded contains invalid content.";	
+					$_SESSION['plugins'][$plugin_name] = null;
+				}
 			} else {
 				$_SESSION['plugin_error'] = "Plugin already exists on the server.";	
 				$_SESSION['plugins'][$plugin_name] = null;
@@ -48,7 +53,7 @@ if (($_FILES["file"]["size"] < 200000)
 		}
 	}
 	deleteDir("plugin/temp/".$customer_id);
-      
+        
     }
   }
 else
@@ -78,7 +83,7 @@ function tep_recurse_copy($src,$dst) {
 function tep_get_temp_plugin_path($path){
 	if ($handle = opendir($path)) {
         	while (false !== ($entry = readdir($handle))) {
-            		if ($entry != "." && $entry != "..") {
+            		if ($entry != "." && $entry != ".." && is_dir($path.'/'.$entry)) {
 				$plugin_folder = $entry;
 			}
             	}        
@@ -115,7 +120,7 @@ if (file_exists($config_path)) {
 	unlink($plugin_path);
    }
 } else {
-	$_SESSION['plugin_error'] = "Plugin could not be installed. Invalid content1. ".$config_path;
+	$_SESSION['plugin_error'] = "Plugin could not be installed. Invalid content. ".$config_path;
 	unlink($plugin_path);
 }
 }
@@ -235,7 +240,7 @@ if ($handle = opendir('plugin/user/'.$customer_id)) {
                 echo "<tr>";		
 		echo "<td style = 'width:150px;'>".$entry."</td>";
 		echo "<td>Plugin Installled.</td>";
-		echo "<td style = 'width:100px; text-align: center;'>".tep_draw_button("Uninstall", null, 'uninstall_plugin.php?pluginName='.$entry)."</td>";            
+		echo "<td style = 'width:100px; text-align: center;'>".tep_draw_button("Uninstall", null, 'uninstall_plugin.php?pluginName='.$entry.'&customer_id='.$customer_id)."</td>";            
 		echo "</tr>";
 		$plugins_found = true;
             }
@@ -254,7 +259,7 @@ if ($handle = opendir('plugin/user/'.$customer_id)) {
 function tep_remove_plugin(){
 	global $HTTP_GET_VARS;
 	$plugin_name = $HTTP_GET_VARS['pluginName'];
-	$customer_id = (int) tep_get_from_session('customer_id');
+	$customer_id = $HTTP_GET_VARS['customer_id'];
 	deleteDir('plugin/user/'.$customer_id.'/'.$plugin_name);
 	unset($_SESSION['plugins'][$plugin_name]);	
 	tep_uninstall_plugin_database($customer_id, $plugin_name);
@@ -285,9 +290,12 @@ if ($res === TRUE) {
 } else {
   	$_SESSION['plugin_error'] = "Plugin installation failed. Could not extract the archive.";
 }
-unlink($zip_file_path);
 }
 
-
+function is_checksum_valid($file, $plugin_name){
+	$check_sum_file = md5_file($file);		
+	$check_sum_db = tep_get_checksum($plugin_name);	
+	return ($check_sum_file == $check_sum_db);
+}
 ?>
 

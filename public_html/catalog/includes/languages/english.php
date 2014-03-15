@@ -159,8 +159,11 @@ define('ENTRY_PASSWORD_CURRENT_ERROR', 'Your Password must contain a minimum of 
 define('ENTRY_PASSWORD_NEW', 'New Password:');
 define('ENTRY_PASSWORD_NEW_TEXT', '*');
 define('ENTRY_PASSWORD_NEW_ERROR', 'Your new Password must contain a minimum of ' . ENTRY_PASSWORD_MIN_LENGTH . ' characters.');
+define('ENTRY_NEW_PASSWORD_ERROR_MAX_LENGTH', 'Your new Password must contain a maximum of ' . ENTRY_PASSWORD_MIN_LENGTH . ' characters.');
 define('ENTRY_PASSWORD_NEW_ERROR_NOT_MATCHING', 'The Password Confirmation must match your new Password.');
 define('PASSWORD_HIDDEN', '--HIDDEN--');
+define('ENTRY_PASSWORD_ERROR_MAX_LENGTH', 'Your Password must contain a maximum of ' . ENTRY_PASSWORD_MIN_LENGTH . ' characters.');
+define('ENTRY_PASSWORD_ERROR_NUMERIC', 'Your Password must only contain numeric values.');
 
 define('FORM_REQUIRED_INFORMATION', '* Required information');
 

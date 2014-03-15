@@ -27,10 +27,13 @@
 
     $error = false;
 
-    if (strlen($password_new) < ENTRY_PASSWORD_MIN_LENGTH) {
+    if (strlen($password_new) > ENTRY_PASSWORD_MIN_LENGTH) {
       $error = true;
 
-      $messageStack->add('account_password', ENTRY_PASSWORD_NEW_ERROR);
+      $messageStack->add('account_password', ENTRY_PASSWORD_ERROR_MAX_LENGTH);
+    } elseif (ctype_digit($password_new) == false){
+	$error = true;
+	$messageStack->add('account_password', ENTRY_PASSWORD_ERROR_NUMERIC);
     } elseif ($password_new != $password_confirmation) {
       $error = true;
 

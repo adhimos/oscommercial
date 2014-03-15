@@ -52,9 +52,29 @@
     }
 
     header('Location: ' . $url);
-	}
+
     tep_exit();
   }
+
+function tep_redirect_to_login($url) {
+    if ( (strstr($url, "\n") != false) || (strstr($url, "\r") != false) ) { 
+      tep_redirect(tep_href_link(FILENAME_DEFAULT, '', 'SSL', false));
+    }
+
+    //if ( (ENABLE_SSL == true) && (getenv('HTTPS') == 'on') ) { // We are loading an SSL page
+      //if (substr($url, 0, strlen(HTTP_SERVER)) == HTTP_SERVER) { // NONSSL url
+        $url = HTTPS_SERVER . substr($url, strlen(HTTP_SERVER)); // Change it to SSL
+      //}
+    //}
+
+    if ( strpos($url, '&amp;') !== false ) {
+      $url = str_replace('&amp;', '&', $url);
+    }
+
+    header('Location: ' . $url);
+
+  }
+
 
 ////
 // Parse the data used in the html tags to ensure the tags will not break
@@ -1344,7 +1364,7 @@
     return $ip_address;
   }
 
-  function tep_count_customer_orders($id = '', $check_session = true) {
+  function tep_count_customer_orders($id = '', $check_session = false) {
     global $customer_id, $languages_id;
 
     if (is_numeric($id) == false) {

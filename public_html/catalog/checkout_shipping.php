@@ -99,8 +99,28 @@
     $free_shipping = false;
   }
 
+ require(DIR_WS_LANGUAGES . $language . '/' . FILENAME_CHECKOUT_SHIPPING);
+
+if ( (isset($HTTP_GET_VARS['shipping'])) && (strpos($HTTP_GET_VARS['shipping'], '_')) ) {
+        $shipping = $HTTP_GET_VARS['shipping'];
+
+        list($module, $method) = explode('_', $shipping);
+        if ( is_object($$module) || ($shipping == 'free_free') ) {
+          if ($shipping == 'free_free') {
+            $quote[0]['methods'][0]['title'] = FREE_SHIPPING_TITLE;
+            $quote[0]['methods'][0]['cost'] = '0';
+          
+              $shipping = array('id' => $shipping,
+                                'title' => (($free_shipping == true) ?  $quote[0]['methods'][0]['title'] : $quote[0]['module'] . ' (' . $quote[0]['methods'][0]['title'] . ')'),
+                                'cost' => $quote[0]['methods'][0]['cost']);
+
+              tep_redirect(tep_href_link(FILENAME_CHECKOUT_PAYMENT, '', 'SSL'));
+            }
+          }
+          }
+
 // process the selected shipping method
-  if ( isset($HTTP_POST_VARS['action']) && ($HTTP_POST_VARS['action'] == 'process') && isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $sessiontoken) ) {
+    if ( isset($HTTP_POST_VARS['action']) && ($HTTP_POST_VARS['action'] == 'process') && isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $sessiontoken) ) {
     if (!tep_session_is_registered('comments')) tep_session_register('comments');
     if (tep_not_null($HTTP_POST_VARS['comments'])) {
       $comments = tep_db_prepare_input($HTTP_POST_VARS['comments']);
@@ -141,7 +161,6 @@
       tep_redirect(tep_href_link(FILENAME_CHECKOUT_PAYMENT, '', 'SSL'));
     }    
   }
-
 // get all available shipping quotes
   $quotes = $shipping_modules->quote();
 
@@ -151,7 +170,7 @@
 // method if more than one module is now enabled
   if ( !tep_session_is_registered('shipping') || ( tep_session_is_registered('shipping') && ($shipping == false) && (tep_count_shipping_modules() > 1) ) ) $shipping = $shipping_modules->cheapest();
 
-  require(DIR_WS_LANGUAGES . $language . '/' . FILENAME_CHECKOUT_SHIPPING);
+ 
 
   $breadcrumb->add(NAVBAR_TITLE_1, tep_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'));
   $breadcrumb->add(NAVBAR_TITLE_2, tep_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'));

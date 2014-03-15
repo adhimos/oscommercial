@@ -28,4 +28,5 @@ define('TABLE_HEADING_COMMENTS', 'Add Comments About Your Order');
 
 define('TITLE_CONTINUE_CHECKOUT_PROCEDURE', 'Continue Checkout Procedure');
 define('TEXT_CONTINUE_CHECKOUT_PROCEDURE', 'to select the preferred payment method.');
+define('FREE_SHIPPING_TITLE', 'Free Shipping');
 ?>
