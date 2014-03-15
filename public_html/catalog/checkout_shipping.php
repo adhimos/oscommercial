@@ -120,10 +120,11 @@ if ( (isset($HTTP_GET_VARS['shipping'])) && (strpos($HTTP_GET_VARS['shipping'], 
           }
 
 // process the selected shipping method
-    if ( isset($HTTP_POST_VARS['action']) && ($HTTP_POST_VARS['action'] == 'process') && isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $sessiontoken) ) {
+  if ( isset($HTTP_POST_VARS['action']) && ($HTTP_POST_VARS['action'] == 'process') && isset($HTTP_POST_VARS['formid']) && ($HTTP_POST_VARS['formid'] == $sessiontoken) ) {
     if (!tep_session_is_registered('comments')) tep_session_register('comments');
     if (tep_not_null($HTTP_POST_VARS['comments'])) {
-      $comments = tep_db_prepare_input($HTTP_POST_VARS['comments']);
+      //$comments = tep_db_prepare_input($HTTP_POST_VARS['comments']);
+	$comments = $HTTP_POST_VARS['comments'];
     }
 
     if (!tep_session_is_registered('shipping')) tep_session_register('shipping');
@@ -345,8 +346,9 @@ function rowOutEffect(object) {
 
   <h2><?php echo TABLE_HEADING_COMMENTS; ?></h2>
 
-  <div class="contentText">
-    <?php echo tep_draw_textarea_field('comments', 'soft', '60', '5'); ?>
+  <!--<div class="contentText">-->
+  <div>
+    <?php echo tep_draw_textarea_field_v2('comments', 'soft', '60', '5'); ?>
   </div>
 
   <div class="contentText">

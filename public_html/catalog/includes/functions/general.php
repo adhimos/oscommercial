@@ -92,6 +92,21 @@ function tep_redirect_to_login($url) {
         return tep_parse_input_field_data($string, $translate);
       }
     }
+	return $string;
+  }
+
+  function tep_output_string_v2($string, $translate = false, $protected = false) {
+    /*if ($protected == true) {
+      //return htmlspecialchars($string);
+	return $string;
+    } else {
+      if ($translate == false) {
+        return tep_parse_input_field_data($string, array('"' => '&quot;'));
+      } else {
+        return tep_parse_input_field_data($string, $translate);
+      }
+    }*/
+	return $string;
   }
 
   function tep_output_string_protected($string) {

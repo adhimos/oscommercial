@@ -129,6 +129,10 @@
     return htmlspecialchars($string);
   }
 
+  function tep_db_output_v2($string) {
+    return $string;
+  }
+
   function tep_db_input($string, $link = 'db_link') {
     global $$link;
 
